@@ -31,7 +31,7 @@ def login():
         # makes this session last as long as defined on line 10 of this doc
         session.permanent = True
         user = request.form["name"]
-        # a sessions stores data in a dictionary while the user is on the site
+        # session stores data in a dictionary while the user is on the site
         session["user"] = user
         return redirect(url_for("user"))
         flash("Login Successful!")
@@ -70,3 +70,10 @@ def logout():
 
     session.pop("user", None)
     return redirect(url_for("login"))
+
+
+# displays the test page
+# changes the username to steven for test purposes
+@app.route("/sign-up")
+def sign_up():
+    return render_template("sign_up.html", value="Deux")

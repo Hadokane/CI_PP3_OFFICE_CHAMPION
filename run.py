@@ -2,7 +2,7 @@ import os
 from officechampion import app
 
 
-# takes variables from the secured env file
+# takes variables from the secured env file and runs the app
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),

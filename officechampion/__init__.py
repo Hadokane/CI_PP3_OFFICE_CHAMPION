@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 if os.path.exists("env.py"):
     import env
 
-# set Flask equal to app
+# set Flask equal to app variable
 app = Flask(__name__)
 # allows us to read encrypted data (eg - sessions)
 # pulled from hidden env file

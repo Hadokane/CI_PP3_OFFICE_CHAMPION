@@ -3,22 +3,23 @@
     Login Page
 {% endblock %}
 {% block content %}
-    <!-- Checks if there are flash messages to display and shows them to the user -->
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for msg in messages %}
-                <p>{{msg}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
 
-<!-- Form sends get request to backend on submission, to compare against stored account data -->
+<!-- Checks if there are flash messages to display and shows them to the user -->
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<!-- Form sends post request to backend on submission -->
 <div class="row">
-    <form class="col s12" action="#" method="GET">
+    <form class="col s12" method="POST">
         <div class="row">
             <!-- Title -->
             <div class="div center">
-                <h3>Login</h3>
+                <h3>Sign Up</h3>
             </div>
             <!-- Name Input -->
             <div class="input-field">
@@ -28,10 +29,16 @@
                 <label for="username">Username</label>
             </div>
             <!-- Password Input -->
-            <div class="input-field">
+            <div class="input-field col s6">
                 <i class="material-icons prefix">stars</i>
                 <input id="password1" name="password1" placeholder="Enter Password" type="password" class="validate">
                 <label for="password1">Password</label>
+            </div>
+            <!-- Password Confirm Input -->
+            <div class="input-field col s6">
+                <i class="material-icons prefix">stars</i>
+                <input id="password2" name="password2" placeholder="Confirm Password" type="password" class="validate">
+                <label for="password2">Password Confirm</label>
             </div>
         </div>
         <div class="div center">
