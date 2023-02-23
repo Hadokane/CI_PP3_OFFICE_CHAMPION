@@ -4,18 +4,9 @@
 {% endblock %}
 {% block content %}
 
-<!-- Checks if there are flash messages to display and shows them to the user -->
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for msg in messages %}
-            <p>{{msg}}</p>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
-
 <!-- Form sends post request to backend on submission -->
 <div class="row">
-    <form class="col s12" method="POST">
+    <form class="col s12" action="#" method="POST">
         <div class="row">
             <!-- Title -->
             <div class="div center">
@@ -42,7 +33,7 @@
             </div>
         </div>
         <div class="div center">
-            <button type="submit" value="submit">submit</button>
+            <button type="submit" value="submit">Submit</button>
         </div>
     </form>
 </div>
