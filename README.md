@@ -1,4 +1,4 @@
-![UI](static/assets/images/docs/oc_logo.png)
+![UI](officechampion/static/assets/images/docs/oc_logo.png)
 
 # OFFICE CHAMPION
 
