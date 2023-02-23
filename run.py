@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect
 
 # set Flask equal to app
 app = Flask(__name__)
@@ -18,6 +18,25 @@ def home():
 @app.route("/test")
 def test():
     return render_template("test.html", username="steven")
+
+
+# handles data requests
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    # when data is posted to us via the form, the name field is read
+    # user is then directed to a new page using their name as a value
+    if request.method == "POST":
+        user = request.form["name"]
+        return redirect(url_for("user", usr=user))
+    # no data currently returns user home as nothing is amended to the url
+    else:
+        return render_template("login.html")
+
+
+# uses the name read by the above login request to display it on a new page
+@app.route("/<usr>")
+def user(usr):
+    return f"<h1>Hello {usr}!</h1>"
 
 
 # debug allows the app to reload without relaunching every change
