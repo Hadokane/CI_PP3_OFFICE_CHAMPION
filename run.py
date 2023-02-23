@@ -3,6 +3,7 @@ from flask import (
     Flask, render_template, url_for, request, redirect, session, flash)
 from datetime import timedelta
 
+
 # set Flask equal to app
 app = Flask(__name__)
 # allows us to read encrypted data (eg - session)
