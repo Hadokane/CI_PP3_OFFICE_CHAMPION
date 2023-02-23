@@ -1,5 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>THIS IS THE INDEX CONTENT</h1>
+<!-- Page Header -->
+<header class="center">
+    <h1><strong>BECOME LEGENDARY!</strong></h1>
+</header>
+
+<!-- Main Website Logo/Hero Image -->
+<div class="center">
     <img src="{{ url_for('static', filename='assets/images/docs/oc_logo.png') }}" alt="website logo"></img>
+</div>
+
+<!-- Promo section - Three div's that proactively explain the website to the user. Motivating them to signup -->
+<div class="row spacer">
+    <div class="col s4 center">
+        <!-- Promo Content 1 goes here -->
+        <i class="fa-solid fa-medal fa-6x"></i>
+        <h2>Fight your friends!</h2>
+        <p>Assign titles within your friend & work groups to motivate each other.<br><strong>Then compete to prove who truly stands at the top
+                of the mountain.</strong></p>
+    </div>
+    <div class="col s4 center">
+        <!-- Promo Content 2 goes here -->
+        <i class="fa-solid fa-crown fa-6x"></i>
+        <h2>Beat your boss!</h2>
+        <p>Whether that boss sits a desk away from you or exists within your favourite game.<br><strong>Accomplishments
+                deserve to be recognised and rewarded.</strong></p>
+    </div>
+    <div class="col s4 center">
+        <!-- Promo Content 3 goes here -->
+        <i class="fa-solid fa-user-ninja fa-6x"></i>
+        <h2>Crush your colleagues!</h2>
+        <p>Why settle for <del>employee of the month</del> <br><strong>when you can be the CHAMPION of the office!</strong></p>
+    </div>
+</div>
 {% endblock %}
