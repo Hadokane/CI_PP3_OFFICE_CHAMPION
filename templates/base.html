@@ -23,6 +23,7 @@
                 <li><a href="{{ url_for('home') }}">Index</a></li>
                 <li><a href="{{ url_for('test') }}">Test Page</a></li>
                 <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
             </ul>
         </div>
     </nav>
@@ -31,14 +32,13 @@
         <li><a href="{{ url_for('home') }}">Index</a></li>
         <li><a href="{{ url_for('test') }}">Test Page</a></li>
         <li><a href="{{ url_for('login') }}">Login</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
     </ul>
 
-    <h1>Hello World!</h1>
-    <p>Here is the base.html content.</p>
     <!-- Value is specified in run.py file (test) -->
-    <p>{{username}}</p>
-    <!-- Displays values 1-5 on the page (test) -->
-    {% for num in range(1,6) %}
+    <p>{{value}}</p>
+    <!-- Displays values 1-2 on the page (test) -->
+    {% for num in range(1,3) %}
     <p>{{num}}</p>
     {% endfor %}
 
@@ -65,3 +65,5 @@
 </body>
 
 </html>
+
+ 
