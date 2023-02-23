@@ -5,14 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <!-- Link to Materialize 1.0.0 framework CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
     <!-- Link to custom CSS (Jinja Styled) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Hello World!</h1>
+    <!-- Materialize Responsive Navbar -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('home') }}">Index</a></li>
+                <li><a href="{{ url_for('test') }}">Test Page</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="{{ url_for('home') }}">Index</a></li>
+        <li><a href="{{ url_for('test') }}">Test Page</a></li>
+    </ul>
+
+    <h1>Hello World!</h1>
+    <p>Here is the base.html content.</p>
+    <!-- Value is specified in run.py file (test) -->
+    <p>{{username}}</p>
+    <!-- Displays values 1-5 on the page (test) -->
+    {% for num in range(1,6) %}
+    <p>{{num}}</p>
+    {% endfor %}
+
+    <!-- Template inheritance - content appears here -->
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Materialize Sticky Footer -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                For educational purposes only. Images of known people used without permission.
+                <a class="white-text right" href="https://codeinstitute.net" target="_blank">&copy; Code Institute</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to Materialize 1.0.0 framework JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Link to custom JS (Jinja Styled) -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
