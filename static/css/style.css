@@ -12,3 +12,7 @@ main {
 img {
     width: 100%;
 }
+
+.nav-img{
+    margin: 5px;
+}

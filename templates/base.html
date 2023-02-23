@@ -17,7 +17,11 @@
     <!-- Materialize Responsive Navbar -->
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
+            <!-- The main image acts as an anchor tag to the home page to meet user expectation -->
+                <a href="/" class="brand-logo center nav-img">
+                    <img class="center" src="{{ url_for('static', filename='assets/images/docs/oc_logo.png') }}"
+                    alt="website logo" width="56" height="56"></img>
+                </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Index</a></li>
@@ -39,9 +43,9 @@
     <p>{{value}}</p>
     <!-- Displays values 1-2 on the page (test) -->
     {% for num in range(1,3) %}
-    <p>{{num}}</p>
-    {% endfor %}
-
+        <p>{{num}}</p>
+    {% endfor %}    
+    
     <!-- Template inheritance - content appears here -->
     <main class="container">
         {% block content %}
@@ -65,5 +69,3 @@
 </body>
 
 </html>
-
- 
