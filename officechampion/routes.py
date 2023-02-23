@@ -9,71 +9,69 @@ app.permanent_session_lifetime = timedelta(days=5)
 
 # returns the homepage when Flask is ran
 # app route decorator uses "/"" to send user to homepage
-# adding the username variable as a placeholder, displays on html page
 @app.route("/")
 def home():
     return render_template("index.html", value="Uno")
 
 
 # displays the test page
-# changes the username to steven for test purposes
 @app.route("/test")
 def test():
     return render_template("test.html", value="Deux")
 
 
-# handles data requests
+# handles login data requests
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    # when data is posted to us via the form, the name field is read
-    # user is then directed to a new page using their name as a value
-    if request.method == "POST":
-        # makes this session last as long as defined on line 10 of this doc
-        session.permanent = True
-        user = request.form["name"]
-        # session stores data in a dictionary while the user is on the site
-        session["user"] = user
-        return redirect(url_for("user"))
-        flash("Login Successful!")
-    # no data currently returns user home as nothing is amended to the url
-    else:
-        if "user" in session:
-            # flashes a message to provide user action feedback
-            flash("Already Logged In!")
-            return redirect(url_for("user"))
-        return render_template("login.html")
-
-
-# uses the name read by the above login request to display it on a new page
-@app.route("/user")
-def user():
-    # if someone has logged in on the login form, session reads the username
-    if "user" in session:
-        user = session["user"]
-        return render_template("user.html", user=user)
-    # if not logged in, sends the user to the login form
-    else:
-        # flashes a message to provide user action feedback
-        flash("You are not logged in!")
-        return render_template("login.html")
+    # gets the data from the POST request of the form
+    data = request.form
+    # prints it to the console
+    print(data)
+    # flash("Login Successful!", category="success")
+    return render_template("login.html")
 
 
 # logs the user out of their session
 @app.route("/logout")
 def logout():
-    if "user" in session:
-        # alerts user they have signed out
-        flash("You have been logged out!", "info")
-    else:
-        # alerts a non-signed in user that they aren't logged in
-        flash("You are not logged in!")
-
-    session.pop("user", None)
-    return redirect(url_for("login"))
+    return "<p>Logout</p>"
 
 
-# displays the test page
-# changes the username to steven for test purposes
-@app.route("/sign-up")
+# displays the sign-up page
+@app.route("/sign-up", methods=["GET", "POST"])
 def sign_up():
-    return render_template("sign_up.html", value="Deux")
+    # when data is POSTed we acquire the requested information
+    if request.method == "POST":
+        username = request.form.get("username")
+        password1 = request.form.get("password1")
+        password2 = request.form.get("password2")
+        # if username is shorter than 4 characters
+        if len(username) < 4:
+            flash(
+                "Username must be greater than 3 characters.",
+                category="error")
+        # if username is longer than 25 characters
+        # maxlength allowed
+        elif len(username) > 25:
+            flash(
+                "Username cannot exceed 25 characters.",
+                category="error")
+        # if password is shorter than 7 characters
+        elif len(password1) < 8:
+            flash(
+                "Password must be greater than 7 characters.",
+                category="error")
+        # if password is longer than 25 characters
+        # maxlength allowed
+        elif len(password1) > 25:
+            flash(
+                "Password cannot exceed 25 characters.",
+                category="error")
+        # if password's dont match
+        elif password1 != password2:
+            flash("Passwords do not match.", category="error")
+        # add user to database
+        else:
+            flash("Account created!", category="success")
+
+    return render_template("sign_up.html")
