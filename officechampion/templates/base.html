@@ -48,14 +48,14 @@
         'success' %}
             <!-- Blue Alert -->
             <div class="alert card blue white-text" role="alert">
-                <div class="card-content">
+                <div class="card-content" id="alertCard">
                     <p><span><i class="material-icons">info</i>{{ message }}</span></p>
                 </div>
             </div>
             {% else %}
             <!-- Red Alert -->
             <div class="alert card red white-text" role="alert">
-                <div class="card-content">
+                <div class="card-content" id="alertCard" onclick="removeNode()">
                     <p><span><i class="material-icons">report</i>{{ message }}</span></p>
                 </div>
                 </button>
