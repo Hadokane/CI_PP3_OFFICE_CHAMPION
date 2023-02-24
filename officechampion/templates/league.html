@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+   Leagues
+{% endblock %}
+{% block content %}
+
+<h1 class="center-align">Create your League here:</h1>
+
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_league') }}" class="btn-large">
+            Add League <i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    {% for league in leagues %}
+    <div class="col s12 m6 l3">
+        <div class="card light-blue darken-4 center-align">
+            <div class="card-content white-text">
+                <span class="card-title">{{ league.league_name }}</span>
+            </div>
+            <div class="card-action">
+                <a href="#" class="btn green accent-4">Edit</a>
+                <a href="#" class="btn red">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

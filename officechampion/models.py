@@ -21,6 +21,9 @@ class User(db.Model, UserMixin):
     # lazy finds all related notes while searching tables
     notes = db.relationship(
         "Note", backref="user", cascade="all, delete", lazy=True)
+    # relationship with leagues table
+    leagues = db.relationship(
+        "League", backref="user", cascade="all, delete", lazy=True)
 
     # represent itself as a string
     def __repr__(self):
@@ -46,3 +49,20 @@ class Note(db.Model):
     # represent itself as a string
     def __repr__(self):
         return f"#{self.id} - Data: {self.data} - Date: {self.date}"
+
+
+# creates a table to store the leagues
+class League(db.Model):
+    # generated Id that will be used as the Primary Key
+    id = db.Column(db.Integer, primary_key=True)
+    # 100 character limit
+    league_name = db.Column(db.String(50))
+    # foreign key used to associate a note with the specific user object
+    # name is lowercase due to sql conventions
+    # CASCADE - if user is deleted, linked notes are also deleted
+    user_id = db.Column(db.Integer, db.ForeignKey(
+        "user.id", ondelete="CASCADE"))
+
+    # represent itself as a string
+    def __repr__(self):
+        return f"#{self.id} - League Name: {self.league_name}"

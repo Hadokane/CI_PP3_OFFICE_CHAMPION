@@ -1,12 +1,15 @@
 from flask import (
-    Flask, render_template, url_for, request, redirect, session, flash)
+    Flask, render_template, url_for, request,
+    redirect, session, flash, jsonify)
 from officechampion import app, db
 # imports tables from models document
-from officechampion.models import User, Note
+from officechampion.models import User, Note, League
 # stores the saved password as a secure hash
 from werkzeug.security import generate_password_hash, check_password_hash
 # flask user files to handle login/out requests and data
 from flask_login import login_user, login_required, logout_user, current_user
+# for note deletion along with jsonify above
+import json
 
 
 # returns the homepage when Flask is ran
@@ -121,3 +124,26 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for("login"))
+
+
+# Add a league
+@app.route("/league")
+@login_required
+def league():
+    return render_template("league.html", user=current_user)
+
+
+# Add a league
+@app.route("/add_league", methods=["GET", "POST"])
+def add_league():
+    if request.method == "POST":
+        # Get league name from the form
+        league = League(league_name=request.form.get("league_name"))
+        # Add it to the table
+        db.session.add(league)
+        db.session.commit()
+        # Provide positive user feedback
+        flash("League Added!", category="Success")
+        # Redirect back to the league page
+        return redirect(url_for("league"))
+    return render_template("add_league.html", user=current_user)
