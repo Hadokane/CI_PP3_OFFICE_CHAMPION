@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 if os.path.exists("env.py"):
     import env  # noqa
 
@@ -16,3 +17,16 @@ db = SQLAlchemy(app)
 # reliant on the above Flask app & db already running
 # so placed at bottom of this document
 from officechampion import routes  # noqa
+from officechampion.models import User, Note  # noqa
+
+
+# tells flask login manager how to load a user
+login_manager = LoginManager()
+login_manager.login_view = 'home'
+login_manager.init_app(app)
+
+
+# tells flask to reference the user by id
+@login_manager.user_loader
+def load_user(id):
+    return User.query.get(int(id))

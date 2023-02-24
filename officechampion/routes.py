@@ -16,8 +16,9 @@ def home():
     return render_template("index.html", value="Uno")
 
 
-# displays the test page
+# displays the test page, requires login to view
 @app.route("/test")
+@login_required
 def test():
     return render_template("test.html", value="Deux")
 
@@ -103,5 +104,7 @@ def login():
 
 # logs the user out
 @app.route("/logout")
+@login_required
 def logout():
-    return "<p>Logout</p>"
+    logout_user()
+    return redirect(url_for("login"))
