@@ -1,6 +1,7 @@
 from flask import (
     Flask, render_template, url_for, request, redirect, session, flash)
 from officechampion import app, db
+from officechampion.models import User, Note
 
 
 # returns the homepage when Flask is ran

@@ -25,6 +25,8 @@
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "HookyQR.beautify",
    "cSpell.words": [
-      "officechampion"
+      "backref",
+      "officechampion",
+      "ondelete"
    ]
 }
