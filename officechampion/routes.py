@@ -167,3 +167,15 @@ def edit_league(league_id):
         return redirect(url_for("league"))
     return render_template(
         "edit_league.html", user=current_user, league=league)
+
+
+# Delete a league
+# Add an "are you sure modal at some point"
+# set modals id to match the league_id
+@app.route("/delete_league/<int:league_id>")
+@login_required
+def delete_league(league_id):
+    league = League.query.get_or_404(league_id)
+    db.session.delete(league)
+    db.session.commit()
+    return redirect(url_for("league"))
