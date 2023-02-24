@@ -153,3 +153,17 @@ def add_league():
         # Redirect back to the league page
         return redirect(url_for("league"))
     return render_template("add_league.html", user=current_user)
+
+
+# Edit a league, use leagues id to generate route
+@app.route("/edit_league/<int:league_id>", methods=["GET", "POST"])
+@login_required
+def edit_league(league_id):
+    # Get league name from the form or trigger 404 error
+    league = League.query.get_or_404(league_id)
+    if request.method == "POST":
+        league.league_name = request.form.get("league_name")
+        db.session.commit()
+        return redirect(url_for("league"))
+    return render_template(
+        "edit_league.html", user=current_user, league=league)

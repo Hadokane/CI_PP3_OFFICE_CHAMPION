@@ -22,19 +22,12 @@
                 <span class="card-title">{{ league.league_name }}</span>
             </div>
             <div class="card-action">
-                <a href="#" class="btn green accent-4">Edit</a>
+                <a href="{{ url_for('edit_league', league_id=league.id) }}" class="btn green accent-4">Edit</a>
                 <a href="#" class="btn red">Delete</a>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
-<ul>
-    <!-- user.notes accesses all notes related to the user -->
-   {% for note in user.notes %}
-      <li>{{ note.data }}</li>
-   {% endfor %}
-</ul>
-
 
 {% endblock %}
