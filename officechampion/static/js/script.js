@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Materialize auto initialise 
+    M.AutoInit();
+
     // sidenav initialization
     let sidenav = document.querySelectorAll(".sidenav");
     M.Sidenav.init(sidenav);
