@@ -28,10 +28,12 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="{{ url_for('league') }}">Leagues</a></li>
-                <li><a href="{{ url_for('notes') }}">Notes</a></li>
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                {% else %}
+                    <!-- Display username for testing & screenshot purposes -->
+                    <li><a href="{{ url_for('league') }}">Leagues</a></li>
+                    <li><a href="{{ url_for('notes') }}">Notes</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li class="red">Hello "User [ {{ user.username }} ]"</li>
+                    {% else %}
                 <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
                 <li><a href="{{ url_for('login') }}">Login</a></li>
                 {% endif %}
@@ -49,12 +51,7 @@
         <li><a href="{{ url_for('login') }}">Login</a></li>
         {% endif %}
     </ul>
-    <!-- Display username for testing & screenshot purposes -->
-    {% if user.is_authenticated %}
-    <p class="container left">
-        Username = {{ user.username }}
-    </p>
-    {% endif %}
+
     <!-- Checks if there are flash messages to display and shows them to the user -->
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
