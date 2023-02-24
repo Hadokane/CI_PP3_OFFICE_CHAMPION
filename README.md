@@ -25,7 +25,14 @@ Install plugins/framework:
 psql in the terminal:
 
 `set_pg`
+
 `psql`
+
+View a user in psql:
+
+`psql -d officechampion`
+
+`TABLE "user";`
 
 ---
 
@@ -55,3 +62,13 @@ psql in the terminal:
 ## Academic Project Aims
 ---
 *-add-*
+
+## Reference
+
+(1) https://www.youtube.com/watch?v=dam0GPOAvVI - for creating the sign-up form and his course on Flask & Python in general. Additional knowledge and explanation at a helpful pace.
+
+(2) https://phoenixnap.com/kb/postgresql-drop-database#:~:text=The%20first%20method%20to%20remove,execute%20the%20DROP%20DATABASE%20command. - helped with dropping databases
+
+(3) https://docs.sqlalchemy.org/en/14/errors.html#error-9h9h - Researching error messages within bugs 5 & 6
+
+(4) https://stackoverflow.com/questions/26040493/how-to-show-data-in-a-table-by-using-psql-command-line-interface - How to view contents of a table in SQL, needed "around my table name"

@@ -9,21 +9,22 @@ class User(db.Model, UserMixin):
     # generated Id that will be used as the Primary Key
     id = db.Column(db.Integer, primary_key=True)
     # unique means only one instance of each username may exist,
-    # max string of 25 characters allowed but set to 30 for safety
     # nullable false means it can't be left blank
-    username = db.Column(db.String(30), unique=True, nullable=False)
-    # max string of 25 characters allowed but set to 30 for safety
-    password = db.Column(db.String(30), nullable=False)
+    username = db.Column(db.String(300), unique=True, nullable=False)
+    password = db.Column(db.String(300), nullable=False)
     # tells the table there is a relationship with the notes table
     # every time a note is created, sql adds the note id to the user
     # storing all the data associated with the user
     # one-to-many relationship (one user, many notes)
     # here sql wants the name capital the same as the class name
-    notes = db.relationship("Note", backref="user")
+    # cascade finds all related tasks & deletes them
+    # lazy finds all related notes while searching tables
+    notes = db.relationship(
+        "Note", backref="user", cascade="all, delete", lazy=True)
 
     # represent itself as a string
     def __repr__(self):
-        return self
+        return f"#{self.id} - Data: {self.username} - Date: {self.password}"
 
 
 # creates a test note table to give the user something to do
@@ -44,4 +45,4 @@ class Note(db.Model):
 
     # represent itself as a string
     def __repr__(self):
-        return f"#{note.id} - Data: {note.data} - Date: {note.date}"
+        return f"#{self.id} - Data: {self.data} - Date: {self.date}"
