@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <!-- Link to Materialize 1.0.0 framework CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    type="text/css">
+        type="text/css">
     <!-- Link to Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Link to custom CSS (Jinja Styled) -->
@@ -20,10 +20,10 @@
     <nav>
         <div class="nav-wrapper amber darken-3">
             <!-- The main image acts as an anchor tag to the home page to meet user expectation -->
-                <a href="/" class="brand-logo center nav-img">
-                    <img class="center" src="{{ url_for('static', filename='assets/images/docs/oc_logo.png') }}"
+            <a href="/" class="brand-logo center nav-img">
+                <img class="center" src="{{ url_for('static', filename='assets/images/docs/oc_logo.png') }}"
                     alt="website logo" width="56" height="56"></img>
-                </a>
+            </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -47,29 +47,34 @@
         <li><a href="{{ url_for('login') }}">Login</a></li>
         {% endif %}
     </ul>
-
+    <!-- Display username for testing & screenshot purposes -->
+    {% if user.is_authenticated %}
+    <p class="container left">
+        Username = {{ user.username }}
+    </p>
+    {% endif %}
     <!-- Checks if there are flash messages to display and shows them to the user -->
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
     {% for category, message in messages %}
-        {% if category == "success" %}
-            <!-- Blue Alert -->
-            <div class="alert card blue white-text" role="alert">
-                <div class="card-content" id="alertCard">
-                    <p><span><i class="material-icons">info</i>{{ message }}</span>
-                    <i class="material-icons right">close</i></p>
-                </div>
-            </div>
-            {% else %}
-            <!-- Red Alert -->
-            <div class="alert card red white-text" role="alert">
-                <div class="card-content" id="alertCard" onclick="removeNode()">
-                    <p><span><i class="material-icons">report</i>{{ message }}</span>
-                    <i class="material-icons right">close</i></p> 
-                </div>
-                </button>
-            </div>
-        {% endif %}
+    {% if category == "success" %}
+    <!-- Blue Alert -->
+    <div class="alert card blue white-text" role="alert">
+        <div class="card-content" id="alertCard" onclick="removeNode()">
+            <p><span><i class="material-icons">info</i>{{ message }}</span>
+                <i class="material-icons right">close</i></p>
+        </div>
+    </div>
+    {% else %}
+    <!-- Red Alert -->
+    <div class="alert card red white-text" role="alert">
+        <div class="card-content" id="alertCard" onclick="removeNode()">
+            <p><span><i class="material-icons">report</i>{{ message }}</span>
+                <i class="material-icons right">close</i></p>
+        </div>
+        </button>
+    </div>
+    {% endif %}
     {% endfor %}
     {% endif %}
     {% endwith %}

@@ -26,6 +26,7 @@
    "editor.defaultFormatter": "HookyQR.beautify",
    "cSpell.words": [
       "backref",
+      "jsonify",
       "officechampion",
       "ondelete",
       "werkzeug"
