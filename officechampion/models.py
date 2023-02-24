@@ -40,7 +40,7 @@ class Note(db.Model):
     # generated Id that will be used as the Primary Key
     id = db.Column(db.Integer, primary_key=True)
     # 5000 character text data
-    data = db.Column(db.String(5000))
+    data = db.Column(db.Text, nullable=False)
     # uses func to get the current date and time and store it on creation
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     # foreign key used to associate a note with the specific user object

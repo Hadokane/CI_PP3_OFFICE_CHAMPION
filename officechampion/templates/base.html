@@ -28,8 +28,8 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="{{ url_for('test') }}">Test Page</a></li>
                 <li><a href="{{ url_for('league') }}">Leagues</a></li>
+                <li><a href="{{ url_for('notes') }}">Notes</a></li>
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
                 <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
@@ -41,8 +41,8 @@
     <ul class="sidenav amber darken-3" id="mobile-demo">
         <li><a href="{{ url_for('home') }}">Home</a></li>
         {% if user.is_authenticated %}
-        <li><a href="{{ url_for('test') }}">Test Page</a></li>
         <li><a href="{{ url_for('league') }}">Leagues</a></li>
+        <li><a href="{{ url_for('notes') }}">Notes</a></li>
         <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
         <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>

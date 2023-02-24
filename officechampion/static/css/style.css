@@ -21,6 +21,10 @@ img {
     padding-top: 50px;
 }
 
+.right-spacer{
+    margin-right: 50px;
+}
+
 .card-content span {
 			font-weight: bold;
 			font-size: 1.1em;

@@ -1,6 +1,6 @@
 from flask import (
     Flask, render_template, url_for, request,
-    redirect, session, flash, jsonify)
+    redirect, session, flash)
 from officechampion import app, db
 # imports tables from models document
 from officechampion.models import User, Note, League
@@ -8,8 +8,6 @@ from officechampion.models import User, Note, League
 from werkzeug.security import generate_password_hash, check_password_hash
 # flask user files to handle login/out requests and data
 from flask_login import login_user, login_required, logout_user, current_user
-# for note deletion along with jsonify above
-import json
 
 
 # returns the homepage when Flask is ran
@@ -19,15 +17,15 @@ def home():
     return render_template("index.html", user=current_user)
 
 
-# displays the test page, requires login to view
+# displays the notes page, requires login to view
 # giving it note functionality to see if user can store data
-@app.route("/test", methods=["GET", "POST"])
+@app.route("/notes", methods=["GET", "POST"])
 @login_required
-def test():
+def notes():
     if request.method == "POST":
         note = request.form.get("note")
         # ensure something is written in the note
-        if len(note) < 1:
+        if len(note) < 3:
             flash("Note is too short!", category="error")
         # checks user id & POSTs the note
         else:
@@ -35,7 +33,34 @@ def test():
             db.session.add(new_note)
             db.session.commit()
             flash("Note added!", category="success")
-    return render_template("test.html", user=current_user)
+    return render_template("notes.html", user=current_user)
+
+
+# Edit notes, use notes id to generate route
+@app.route("/edit_notes/<int:note_id>", methods=["GET", "POST"])
+@login_required
+def edit_notes(note_id):
+    # Get note name from the form or trigger 404 error
+    note = Note.query.get_or_404(note_id)
+    if request.method == "POST":
+        note.data = request.form.get("data")
+        note.date = request.form.get("date")
+        db.session.commit()
+        flash("Note updated!", category="success")
+        return redirect(url_for("notes"))
+    return render_template(
+        "edit_notes.html", user=current_user, note=note)
+
+
+# Delete a note
+@app.route("/delete_note/<int:note_id>")
+@login_required
+def delete_note(note_id):
+    note = Note.query.get_or_404(note_id)
+    db.session.delete(note)
+    db.session.commit()
+    flash("Note deleted!", category="success")
+    return redirect(url_for("notes"))
 
 
 # displays the sign-up page
@@ -106,7 +131,7 @@ def login():
         # if username exists, compare the password against hashed result
         if user:
             if check_password_hash(user.password, password):
-                flash("Logged in Successful!y", category="success")
+                flash("Login Successful", category="success")
                 # remembers user is logged in, unless cache cleared
                 login_user(user, remember=True)
                 return redirect(url_for("home"))
@@ -170,7 +195,6 @@ def edit_league(league_id):
 
 
 # Delete a league
-# Add an "are you sure modal at some point"
 # set modals id to match the league_id
 @app.route("/delete_league/<int:league_id>")
 @login_required
