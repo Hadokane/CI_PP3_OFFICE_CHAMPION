@@ -143,7 +143,7 @@ def add_league():
         db.session.add(league)
         db.session.commit()
         # Provide positive user feedback
-        flash("League Added!", category="Success")
+        flash("League Added!", category="success")
         # Redirect back to the league page
         return redirect(url_for("league"))
     return render_template("add_league.html", user=current_user)
