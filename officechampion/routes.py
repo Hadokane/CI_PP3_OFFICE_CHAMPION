@@ -1,10 +1,6 @@
 from flask import (
     Flask, render_template, url_for, request, redirect, session, flash)
-from datetime import timedelta
 from officechampion import app, db
-
-# stores session data on browser for 5 days
-app.permanent_session_lifetime = timedelta(days=5)
 
 
 # returns the homepage when Flask is ran
@@ -31,7 +27,7 @@ def login():
     return render_template("login.html")
 
 
-# logs the user out of their session
+# logs the user out
 @app.route("/logout")
 def logout():
     return "<p>Logout</p>"
