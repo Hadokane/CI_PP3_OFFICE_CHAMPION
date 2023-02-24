@@ -55,7 +55,7 @@ class Note(db.Model):
 class League(db.Model):
     # generated Id that will be used as the Primary Key
     id = db.Column(db.Integer, primary_key=True)
-    # 100 character limit
+    # 50 character limit
     league_name = db.Column(db.String(50))
     # foreign key used to associate a note with the specific user object
     # name is lowercase due to sql conventions

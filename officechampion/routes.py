@@ -39,7 +39,7 @@ def test():
 
 
 # displays the sign-up page
-@app.route("/sign-up", methods=["GET", "POST"])
+@app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     # when data is POSTed we acquire the requested information
     if request.method == "POST":
@@ -126,21 +126,27 @@ def logout():
     return redirect(url_for("login"))
 
 
-# Add a league
+# Add the league page
 @app.route("/league")
 @login_required
 def league():
-    return render_template("league.html", user=current_user)
+    # Reads db and orders all data by league name values
+    league = list(League.query.order_by(League.league_name).all())
+    return render_template(
+        "league.html", user=current_user, league=league)
 
 
 # Add a league
 @app.route("/add_league", methods=["GET", "POST"])
+@login_required
 def add_league():
     if request.method == "POST":
         # Get league name from the form
-        league = League(league_name=request.form.get("league_name"))
+        new_league = League(
+            league_name=request.form.get("league_name"),
+            user_id=current_user.id)
         # Add it to the table
-        db.session.add(league)
+        db.session.add(new_league)
         db.session.commit()
         # Provide positive user feedback
         flash("League Added!", category="success")

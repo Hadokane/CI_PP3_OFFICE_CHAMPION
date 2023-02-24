@@ -15,7 +15,7 @@
 </div>
 
 <div class="row">
-    {% for league in leagues %}
+    {% for league in user.leagues %}
     <div class="col s12 m6 l3">
         <div class="card light-blue darken-4 center-align">
             <div class="card-content white-text">
@@ -29,5 +29,12 @@
     </div>
     {% endfor %}
 </div>
+<ul>
+    <!-- user.notes accesses all notes related to the user -->
+   {% for note in user.notes %}
+      <li>{{ note.data }}</li>
+   {% endfor %}
+</ul>
+
 
 {% endblock %}
