@@ -27,19 +27,25 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
+                {% if user.is_authenticated %}
                 <li><a href="{{ url_for('test') }}">Test Page</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
                 <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
                 <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
     <ul class="sidenav amber darken-3" id="mobile-demo">
         <li><a href="{{ url_for('home') }}">Home</a></li>
+        {% if user.is_authenticated %}
         <li><a href="{{ url_for('test') }}">Test Page</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
         <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
         <li><a href="{{ url_for('login') }}">Login</a></li>
-        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% endif %}
     </ul>
 
     <!-- Checks if there are flash messages to display and shows them to the user -->

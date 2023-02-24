@@ -13,14 +13,14 @@ from flask_login import login_user, login_required, logout_user, current_user
 # app route decorator uses "/"" to send user to homepage
 @app.route("/")
 def home():
-    return render_template("index.html", value="Uno")
+    return render_template("index.html", user=current_user)
 
 
 # displays the test page, requires login to view
 @app.route("/test")
 @login_required
 def test():
-    return render_template("test.html", value="Deux")
+    return render_template("test.html", user=current_user)
 
 
 # displays the sign-up page
@@ -73,8 +73,8 @@ def sign_up():
             # logs in the user
             login_user(user, remember=True)
             flash("Account created!", category="success")
-            return redirect(url_for("home"))
-    return render_template("sign_up.html")
+            return redirect(url_for("home"), user=current_user)
+    return render_template("sign_up.html", user=current_user)
 
 
 # handles login data requests
@@ -99,7 +99,7 @@ def login():
         else:
             flash("Username does not exists.", category="success")
     # flash("Login Successful!", category="success")
-    return render_template("login.html")
+    return render_template("login.html", user=current_user)
 
 
 # logs the user out
