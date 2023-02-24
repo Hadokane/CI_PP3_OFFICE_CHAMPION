@@ -17,9 +17,21 @@ def home():
 
 
 # displays the test page, requires login to view
-@app.route("/test")
+# giving it note functionality to see if user can store data
+@app.route("/test", methods=["GET", "POST"])
 @login_required
 def test():
+    if request.method == "POST":
+        note = request.form.get("note")
+        # ensure something is written in the note
+        if len(note) < 1:
+            flash("Note is too short!", category="error")
+        # checks user id & POSTs the note
+        else:
+            new_note = Note(data=note, user_id=current_user.id)
+            db.session.add(new_note)
+            db.session.commit()
+            flash("Note added!", category="success")
     return render_template("test.html", user=current_user)
 
 
@@ -70,10 +82,11 @@ def sign_up():
             # saves the information to User table
             db.session.add(new_user)
             db.session.commit()
-            # logs in the user
+            # logs in the user by finding there name first
+            user = User.query.filter_by(username=username).first()
             login_user(user, remember=True)
             flash("Account created!", category="success")
-            return redirect(url_for("home"), user=current_user)
+            return redirect(url_for("home"))
     return render_template("sign_up.html", user=current_user)
 
 

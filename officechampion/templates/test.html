@@ -4,6 +4,23 @@
 {% endblock %}
 {% block content %}
 <div class="center">
-   <h1>THIS IS THE 2ND PAGE</h1> 
+   <h1>Make a note here</h1> 
 </div> 
+<ul id="notes">
+   <!-- user.notes accesses all notes related to the user -->
+   {% for note in user.notes %}
+      <li>{{ note.data }}</li>
+   {% endfor %}
+</ul>
+<!-- Sends note data -->
+<form method="POST">
+   <textarea name="note" id="note" class="form-control">
+   </textarea>
+   <br>
+   <div class="center col spacer">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+         <i class="material-icons right">send</i>
+       </button>
+   </div>
+</form>
 {% endblock %}
