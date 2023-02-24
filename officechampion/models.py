@@ -21,9 +21,12 @@ class User(db.Model, UserMixin):
     # lazy finds all related notes while searching tables
     notes = db.relationship(
         "Note", backref="user", cascade="all, delete", lazy=True)
-    # relationship with leagues table
+    # relationship with League table
     leagues = db.relationship(
         "League", backref="user", cascade="all, delete", lazy=True)
+    # relationship with Title table
+    titles = db.relationship(
+        "Title", backref="user", cascade="all, delete", lazy=True)
 
     # represent itself as a string
     def __repr__(self):
@@ -56,13 +59,38 @@ class League(db.Model):
     # generated Id that will be used as the Primary Key
     id = db.Column(db.Integer, primary_key=True)
     # 50 character limit
-    league_name = db.Column(db.String(50))
-    # foreign key used to associate a note with the specific user object
-    # name is lowercase due to sql conventions
-    # CASCADE - if user is deleted, linked notes are also deleted
+    league_name = db.Column(db.String(50), nullable=False)
+    # foreign key used to associate a league with a specific user
     user_id = db.Column(db.Integer, db.ForeignKey(
         "user.id", ondelete="CASCADE"))
+    # relationship with Title table
+    titles = db.relationship(
+        "Title", backref="league", cascade="all, delete", lazy=True)
 
     # represent itself as a string
     def __repr__(self):
         return f"#{self.id} - League Name: {self.league_name}"
+
+
+# creates a table to store the titles
+class Title(db.Model):
+    # generated Id that will be used as the Primary Key
+    id = db.Column(db.Integer, primary_key=True)
+    # title name - 100 character limit
+    title_name = db.Column(db.String(100), nullable=False)
+    # title description
+    title_description = db.Column(db.Text, nullable=False)
+    # date won
+    champion_since = db.Column(db.Date, nullable=False)
+    # external_img_url (can't store images directly in db)
+    image_url = db.Column(db.String(500))
+    # foreign key used to associate a title with the specific user
+    user_id = db.Column(db.Integer, db.ForeignKey(
+        "user.id", ondelete="CASCADE"))
+    # foreign key used to associate a title with a specific league
+    league_id = db.Column(db.Integer, db.ForeignKey(
+        "league.id", ondelete="CASCADE"))
+
+    # represent itself as a string
+    def __repr__(self):
+        return self
