@@ -41,20 +41,18 @@
         </div>
         <!-- Member ID | Add later | Input field like below -->
         <!-- League ID | Assign it to a league -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                <div class="input-field col s12">
-                    <select id="user_id" name="user_id" class="validate" required>
-                        <option value="" disabled selected>Select League</option>
-                        {% for league in user.leagues|sort(attribute="name") %}
-                            <option value="{{ league.id }}">{{ league.league_name }}</option>
-                        {% endfor %}
-                    </select>
-                  </div>
-                <label for="user_id">League:</label>
-            </div>
+        <div class="input-field col s12">
+            <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+            <select id="user_id" name="user_id" class="validate" required>
+                <option value="" disabled selected>Select League</option>
+                {% for league in user.leagues|sort(attribute="name") %}
+                <option value="{{ league.id }}">{{ league.league_name }}</option>
+                {% endfor %}
+            </select>
+            <label for="user_id">League:</label>
         </div>
+
+
         <!-- Submit button -->
         <div class="row">
             <div class="col s12 center-align">
