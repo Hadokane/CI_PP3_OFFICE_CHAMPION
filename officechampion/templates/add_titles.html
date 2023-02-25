@@ -46,7 +46,7 @@
             <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
             <select id="league_id" name="league_id" class="validate" required>
                 <option value="" disabled selected>Select League</option>
-                {% for league in user.leagues|sort(attribute="name") %}
+                {% for league in user.leagues|sort(attribute="league_name") %}
                 <option value="{{ league.id }}">{{ league.league_name }}</option>
                 {% endfor %}
             </select>
