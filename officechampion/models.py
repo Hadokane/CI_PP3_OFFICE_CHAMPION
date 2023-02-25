@@ -86,10 +86,10 @@ class Title(db.Model):
     image_url = db.Column(db.String(500))
     # foreign key used to associate a title with the specific user
     user_id = db.Column(db.Integer, db.ForeignKey(
-        "user.id", ondelete="CASCADE"))
+        "user.id", ondelete="CASCADE"), nullable=False)
     # foreign key used to associate a title with a specific league
     league_id = db.Column(db.Integer, db.ForeignKey(
-        "league.id", ondelete="CASCADE"))
+        "league.id", ondelete="CASCADE"), nullable=False)
 
     # represent itself as a string
     def __repr__(self):

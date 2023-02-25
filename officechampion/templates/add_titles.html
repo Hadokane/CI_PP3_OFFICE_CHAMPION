@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="light-blue-text text-darken-4 center-align">Add Titles</h3>
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('add_titles') }}">
+        <!-- Title Name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <input id="title_name" name="title_name" minlength="3" maxlength="100" type="text" class="validate"
+                    required>
+                <label for="title_name">Title Name</label>
+            </div>
+        </div>
+        <!-- Title Description -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <textarea id="title_description" name="title_description" minlength="3" maxlength="200" type="text"
+                    class="validate materialize-textarea" required></textarea>
+                <label for="title_description">Title Description</label>
+            </div>
+        </div>
+        <!-- Date Won -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-calendar prefix light-blue-text text-darken-4"></i>
+                <input id="champion_since" name="champion_since" type="text" class="validate datepicker" required>
+                <label for="champion_since">Champion since:</label>
+            </div>
+        </div>
+        <!-- Image Url -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <input id="image_url" name="image_url" minlength="3" maxlength="500" type="text">
+                <label for="image_url">Image URL:</label>
+            </div>
+        </div>
+        <!-- Member ID | Add later | Input field like below -->
+        <!-- League ID | Assign it to a league -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <div class="input-field col s12">
+                    <select id="user_id" name="user_id" class="validate" required>
+                        <option value="" disabled selected>Select League</option>
+                        {% for league in user.leagues|sort(attribute="name") %}
+                            <option value="{{ league.id }}">{{ league.league_name }}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                <label for="user_id">League:</label>
+            </div>
+        </div>
+        <!-- Submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large">
+                    Add Title <i class="fas fa-plus-square right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -3,7 +3,7 @@ from flask import (
     redirect, session, flash)
 from officechampion import app, db
 # imports tables from models document
-from officechampion.models import User, Note, League
+from officechampion.models import User, Note, League, Title
 # stores the saved password as a secure hash
 from werkzeug.security import generate_password_hash, check_password_hash
 # flask user files to handle login/out requests and data
@@ -203,3 +203,36 @@ def delete_league(league_id):
     db.session.delete(league)
     db.session.commit()
     return redirect(url_for("league"))
+
+
+# Link to titles page
+@app.route("/titles")
+@login_required
+def titles():
+    return render_template("titles.html", user=current_user)
+
+
+# Add a title
+@app.route("/add_titles", methods=["GET", "POST"])
+@login_required
+def add_titles():
+    # Reads db and orders all data by league name values
+    user = list(User.query.order_by(User.username).all())
+    league = list(League.query.order_by(League.league_name).all())
+    if request.method == "POST":
+        new_title = Title(
+            title_name=request.form.get("title_name"),
+            title_description=request.form.get("title_description"),
+            champion_since=request.form.get("champion_since"),
+            image_url=request.form.get("image_url"),
+            league_id=request.form.get("league_id"),
+            user_id=current_user.id
+        )
+        # Add it to the table
+        db.session.add(new_title)
+        db.session.commit()
+        # Provide positive user feedback
+        flash("Title Added!", category="success")
+        # Redirect back to the league page
+        return redirect(url_for("titles"))
+    return render_template("add_titles.html", user=current_user, league=league)
