@@ -209,7 +209,9 @@ def delete_league(league_id):
 @app.route("/titles")
 @login_required
 def titles():
-    return render_template("titles.html", user=current_user)
+    # Reads db and orders all data by league name values
+    titles = list(Title.query.order_by(Title.title_name).all())
+    return render_template("titles.html", user=current_user, titles=titles)
 
 
 # Add a title

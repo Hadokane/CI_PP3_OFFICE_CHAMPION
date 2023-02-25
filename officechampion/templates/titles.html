@@ -13,4 +13,40 @@ Titles
         </a>
     </div>
 </div>
+
+<div class="row">
+    {% for title in user.titles|sort(attribute="name") %}
+    <div class="col s12 m6 l3">
+        <div class="card light-blue darken-4 center-align">
+            <div class="card-content white-text">
+                <img src="{{ title.image_url }}" width="250" height="250"></img>
+                <span class="card-title">{{ title.title_name }}</span>
+                <p>{{ title.title_description }}</p>
+                <!-- Usable for class association later | Hide on release -->
+                <p>ID: {{ title.league_id }}</p>
+                <p><small>{{ title.champion_since }}</small></p>
+            </div>
+            <div class="card-action">
+                <!-- Edit Title Name -->
+                <a href="#" class="btn green accent-4">Edit</a>
+                <!-- Call Delete Modal -->
+                <a href="#modal-{{ title.id }}" class="btn red modal-trigger">Delete</a>
+                <!-- Modal Structure -->
+                <div id="modal-{{ title.id }}" class="modal">
+                    <div class="modal-content">
+                        <h4>Delete Title?</h4>
+                        <p>Are you sure you want to delete?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col">
+                            <a class="btn-large red modal-close">No</a>
+                        </div>
+                        <a href="#" class="btn-large green accent-4">Yes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
