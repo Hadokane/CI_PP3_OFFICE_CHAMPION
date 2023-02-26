@@ -9,7 +9,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                <input id="title_name" name="title_name" minlength="3" maxlength="100" type="text" class="validate"
+                <input id="title_name" name="title_name" minlength="3" maxlength="100" data-length="100" type="text" class="validate"
                     required>
                 <label for="title_name">Title Name</label>
             </div>
@@ -18,7 +18,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                <textarea id="title_description" name="title_description" minlength="3" maxlength="200" type="text"
+                <textarea id="title_description" name="title_description" minlength="3" maxlength="200" data-length="200" type="text"
                     class="validate materialize-textarea" required></textarea>
                 <label for="title_description">Title Description</label>
             </div>
@@ -45,14 +45,13 @@
         <div class="input-field col s12">
             <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
             <select id="league_id" name="league_id" class="validate" required>
-                <option value="" disabled selected>Select League</option>
+                <option value="" disabled selected>Select League (Required)</option>
                 {% for league in user.leagues|sort(attribute="league_name") %}
                 <option value="{{ league.id }}">{{ league.league_name }}</option>
                 {% endfor %}
             </select>
             <label for="league_id">League:</label>
         </div>
-
 
         <!-- Submit button -->
         <div class="row">

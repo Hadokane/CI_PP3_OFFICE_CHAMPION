@@ -87,3 +87,5 @@ https://hackersandslackers.com/sqlalchemy-data-models/ - Explained how to refere
 https://strftime.org/ - strftime information
 
 https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png - Wikipedia creative commons No Image Thumbnail
+
+https://github.com/Dogfalo/materialize/issues/1861 - People discussing the materialize select form issue
