@@ -72,3 +72,14 @@ View a user in psql:
 (3) https://docs.sqlalchemy.org/en/14/errors.html#error-9h9h - Researching error messages within bugs 5 & 6
 
 (4) https://stackoverflow.com/questions/26040493/how-to-show-data-in-a-table-by-using-psql-command-line-interface - How to view contents of a table in SQL, needed "around my table name"
+
+(5) https://flask.palletsprojects.com/en/2.2.x/tutorial/ - Flask documentation
+(b) https://flask-login.readthedocs.io/en/latest/#flask_login.UserMixin - Login Management & UserMixin explained
+
+(6) https://jinja.palletsprojects.com/en/3.1.x/api/ - Jinja documentation
+
+(7) https://docs.python.org/3/index.html - Python documentation
+
+(8) https://materializecss.com/ - Materialize framework used throughout
+
+https://hackersandslackers.com/sqlalchemy-data-models/ - Explained how to reference another table's information within a table. 
