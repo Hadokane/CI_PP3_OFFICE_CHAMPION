@@ -263,3 +263,40 @@ def edit_title(title_id):
         return redirect(url_for("titles"))
     return render_template(
         "edit_title.html", user=current_user, league=league, title=title)
+
+
+# Delete a title
+@app.route("/delete_title/<int:title_id>")
+@login_required
+def delete_title(title_id):
+    title = Title.query.get_or_404(title_id)
+    db.session.delete(title)
+    db.session.commit()
+    flash("Title Deleted!", category="success")
+    return redirect(url_for("titles"))
+
+
+# Opens the League page to show members & titles
+@app.route("/open_league/<int:league_id>")
+@login_required
+def open_league(league_id):
+    # Reads db and gets league and title data
+    league = League.query.get_or_404(league_id)
+    # gets titles info
+    titles = list(Title.query.order_by(Title.title_name).all())
+
+    print("--------------")
+    for title in titles:
+        if league_id == title.league_id:
+            # prints the title data
+            print(
+                title.title_name,
+                "| Title ID:", title.id,
+                "| League ID:", title.league_id,
+                "| League Name:", title.league.league_name)
+        else:
+            # skips over irrelevant titles
+            pass
+    return render_template(
+        "open_league.html", user=current_user, league=league,
+        titles=titles)

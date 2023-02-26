@@ -1,18 +1,7 @@
 {% extends "base.html" %}
-{% block title %}
-Titles
-{% endblock %}
 {% block content %}
 
-<h1 class="center-align">Create your Titles here:</h1>
-
-<div class="row">
-    <div class="col s12 center-align">
-        <a href="{{ url_for('add_title') }}" class="btn-large">
-            Add Title <i class="fas fa-plus-square right"></i>
-        </a>
-    </div>
-</div>
+<h3 class="light-blue-text text-darken-4 center-align">LEAGUE SPECIFIC BELTS SHOW HERE</h3>
 
 <div class="row">
     {% for title in user.titles|sort(attribute="title_name") %}

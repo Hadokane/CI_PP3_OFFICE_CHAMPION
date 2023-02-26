@@ -22,6 +22,10 @@ Leagues
                 <span class="card-title">{{ league.league_name }}</span>
             </div>
             <div class="card-action">
+                <!-- Open League -->
+                <a href="{{ url_for('open_league', league_id=league.id) }}" class="btn orange accent-4">Open The League</a>
+                <br>
+                <br>
                 <!-- Edit League Name -->
                 <a href="{{ url_for('edit_league', league_id=league.id) }}" class="btn green accent-4">Edit</a>
                 <!-- Call Delete Modal -->
