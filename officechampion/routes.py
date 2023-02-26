@@ -215,9 +215,9 @@ def titles():
 
 
 # Add a title
-@app.route("/add_titles", methods=["GET", "POST"])
+@app.route("/add_title", methods=["GET", "POST"])
 @login_required
-def add_titles():
+def add_title():
     # Reads db and orders all data by league name values
     user = list(User.query.order_by(User.username).all())
     league = list(League.query.order_by(League.league_name).all())
@@ -235,6 +235,31 @@ def add_titles():
         db.session.commit()
         # Provide positive user feedback
         flash("Title Added!", category="success")
-        # Redirect back to the league page
+        # Redirect back to the title page
         return redirect(url_for("titles"))
-    return render_template("add_titles.html", user=current_user, league=league)
+    return render_template("add_title.html", user=current_user, league=league)
+
+
+# Edit a title
+@app.route("/edit_title<int:title_id>", methods=["GET", "POST"])
+@login_required
+def edit_title(title_id):
+    title = Title.query.get_or_404(title_id)
+    user = list(User.query.order_by(User.username).all())
+    league = list(League.query.order_by(League.league_name).all())
+    if request.method == "POST":
+        # Get the title information from the form
+        title.title_name = request.form.get("title_name"),
+        title.title_description = request.form.get("title_description"),
+        title.champion_since = request.form.get("champion_since"),
+        title.image_url = request.form.get("image_url"),
+        title.league_id = request.form.get("league_id"),
+        title.user_id = current_user.id
+        # Add it to the table
+        db.session.commit()
+        # Provide positive user feedback
+        flash("Title Updated!", category="success")
+        # Redirect back to the title page
+        return redirect(url_for("titles"))
+    return render_template(
+        "edit_title.html", user=current_user, league=league, title=title)

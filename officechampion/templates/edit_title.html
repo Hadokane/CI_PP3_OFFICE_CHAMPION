@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="light-blue-text text-darken-4 center-align">Edit Titles</h3>
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('edit_title', title_id=title.id) }}">
+        <!-- Title Name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <input id="title_name" name="title_name" value="{{ title.title_name }}" minlength="3" maxlength="100" type="text" class="validate"
+                    required>
+                <label for="title_name">Title Name</label>
+            </div>
+        </div>
+        <!-- Title Description -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <textarea id="title_description" name="title_description" minlength="3" maxlength="200" type="text"
+                    class="validate materialize-textarea" required>{{- title.title_description -}}</textarea>
+                <label for="title_description">Title Description</label>
+            </div>
+        </div>
+        <!-- Date Won -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-calendar prefix light-blue-text text-darken-4"></i>
+                <input id="champion_since" name="champion_since" value="{{ title.champion_since.strftime('%d %B %Y') }}" type="text" class="validate datepicker" required>
+                <label for="champion_since">Champion since:</label>
+            </div>
+        </div>
+        <!-- Image Url -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <input id="image_url" name="image_url" value="{{ title.image_url }}" minlength="3" maxlength="500" type="text">
+                <label for="image_url">Image URL:</label>
+                <p><small>Recommend Size: 250px*200px (or similar dimensions) | URL Example: "https://www.w3schools.com/images/img_girl.jpg"</small></p>
+            </div>
+        </div>
+        <!-- Member ID | Add later | Input field like below -->
+        <!-- League ID | Assign it to a league -->
+        <div class="input-field col s12">
+            <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+            <select id="league_id" name="league_id" class="validate" required>
+                <option value="" disabled>Select League</option>
+                {% for league in user.leagues|sort(attribute="league_name") %}
+                {% if league == title.league %}
+                <option value="{{ league.id }}" selected>{{ league.league_name }}</option>
+                {% else %}
+                <option value="{{ league.id }}">{{ league.league_name }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+            <label for="league_id">League:</label>
+        </div>
+
+
+        <!-- Submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large">
+                    Edit Title <i class="fas fa-plus-square right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
