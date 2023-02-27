@@ -347,3 +347,38 @@ def open_league_test(league_id):
     return render_template(
         "open_league_test.html", user=current_user, league=league,
         titles=titles, gary=gary, barry=barry)
+
+
+# View members
+@app.route("/members")
+@login_required
+def members():
+    # gets members info
+    members = list(Member.query.order_by(Member.member_name).all())
+    return render_template("members.html", user=current_user, members=members)
+
+
+# Add members
+@app.route("/add_members", methods=["GET", "POST"])
+@login_required
+def add_members():
+    # gets members info
+    members = list(Member.query.order_by(Member.member_name).all())
+    if request.method == "POST":
+        new_member = Member(
+            member_name=request.form.get("member_name"),
+            member_role=request.form.get("member_role"),
+            member_image=request.form.get("member_image"),
+            user_id=current_user.id,
+            league_id=request.form.get("league_id"),
+            title_id=request.form.get("title_id")
+        )
+        # Add it to the table
+        db.session.add(new_member)
+        db.session.commit()
+        # Provide positive user feedback
+        flash("Member Added!", category="success")
+        # Redirect back to the league page
+        return redirect(url_for("members"))
+    return render_template(
+        "add_members.html", user=current_user, members=members)

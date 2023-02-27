@@ -104,7 +104,7 @@ class Title(db.Model):
         "league.id", ondelete="CASCADE"), nullable=False)
     # relationship with Members table
     members = db.relationship(
-        "Member", backref="title", cascade="all, delete", lazy=True)
+        "Member", backref="title", lazy=True)
 
     # represent itself as a string
     def __repr__(self):
@@ -121,17 +121,15 @@ class Member(db.Model):
     member_role = db.Column(db.Text, nullable=False)
     # external_img_url (can't store images directly in db)
     member_image = db.Column(db.String(500))
-    # date title won
-    champion_for = db.Column(db.Date, nullable=False)
     # foreign key used to associate a member with the specific user
     user_id = db.Column(db.Integer, db.ForeignKey(
         "user.id", ondelete="CASCADE"), nullable=False)
     # foreign key used to associate a member with a specific league
     league_id = db.Column(db.Integer, db.ForeignKey(
-        "league.id", ondelete="CASCADE"), nullable=False)
+        "league.id", ondelete="CASCADE"))
     # foreign key used to associate a member with a specific title
     title_id = db.Column(db.Integer, db.ForeignKey(
-        "title.id", ondelete="CASCADE"), nullable=False)
+        "title.id"))
 
     # represent itself as a string
     def __repr__(self):
