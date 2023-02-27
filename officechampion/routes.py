@@ -323,30 +323,13 @@ def open_league_test(league_id):
     league = League.query.get_or_404(league_id)
     # displays the title data
     gary = Title.query.filter_by(league_id=league_id)
-    # displays the title data
+    # displays the note data
     barry = Note.query.filter_by(league_id=league_id)
-    print("Gary Data:", gary)
-    print("Bary Data:", barry)
-    # search the title db and find matching ids
-    for title in gary:
-        if league_id == title.league_id:
-            # prints the title data
-            print("--------------")
-            print(
-                "| Title ID:", title.id,
-                "| Title Name:", title.title_name,
-                "| Title Description:", title.title_description,
-                "| Title Date:", title.title_created,
-                "| Title Image:", title.image_url,
-                "| League ID:", title.league_id,
-                "| League Name:", title.league.league_name)
-            print("--------------")
-        else:
-            # skips over irrelevant titles
-            pass
+    # displays the member data
+    larry = Member.query.filter_by(league_id=league_id)
     return render_template(
         "open_league_test.html", user=current_user, league=league,
-        titles=titles, gary=gary, barry=barry)
+        titles=titles, gary=gary, barry=barry, larry=larry)
 
 
 # View members
@@ -382,3 +365,36 @@ def add_members():
         return redirect(url_for("members"))
     return render_template(
         "add_members.html", user=current_user, members=members)
+
+
+# Edit a member
+@app.route("/edit_members/<int:member_id>", methods=["GET", "POST"])
+@login_required
+def edit_members(member_id):
+    # gets members info
+    member = Member.query.get_or_404(member_id)
+    if request.method == "POST":
+        member.member_name = request.form.get("member_name"),
+        member.member_role = request.form.get("member_role"),
+        member.member_image = request.form.get("member_image"),
+        member.user_id = current_user.id,
+        member.league_id = request.form.get("league_id"),
+        member.title_id = request.form.get("title_id")
+        db.session.commit()
+        # Provide positive user feedback
+        flash("Member Updated!", category="success")
+        # Redirect back to the league page
+        return redirect(url_for("members"))
+    return render_template(
+        "edit_members.html", user=current_user, member=member)
+
+
+# Delete a member
+@app.route("/delete_member/<int:member_id>")
+@login_required
+def delete_member(member_id):
+    member = Member.query.get_or_404(member_id)
+    db.session.delete(member)
+    db.session.commit()
+    flash("Member Deleted!", category="success")
+    return redirect(url_for("members"))
