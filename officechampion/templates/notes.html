@@ -5,13 +5,25 @@ Notes
 {% block content %}
 <div class="center">
    <h2>Add Note:</h2>
+   <p>-Add a league to have them appear on the league pages!-</p>
 </div>
 <br>
 <!-- Sends note data -->
 <div class="row card-panel grey lighten-5">
    <form method="POST">
-      <textarea name="note" id="note" class="form-control materialize-textarea">
-   </textarea>
+      <textarea name="note" id="note" class="form-control materialize-textarea"></textarea>
+      <br>
+      <!-- League ID | Assign it to a league -->
+      <div class="input-field col s12">
+         <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+         <select id="league_id" name="league_id" class="validate" required>
+            <option value="" disabled selected>Select League (optional)</option>
+            {% for league in user.leagues|sort(attribute="league_name") %}
+            <option value="{{ league.id }}">{{ league.league_name }}</option>
+            {% endfor %}
+         </select>
+         <label for="league_id">League:</label>
+      </div>
       <br>
       <div class="center container">
          <button class="btn waves-effect waves-light" type="submit" name="action">Add New Note
@@ -37,6 +49,9 @@ Notes
          <a href="{{ url_for('edit_notes', note_id=note.id) }}" class="btn green accent-4 right right-spacer">Edit
             Note</a>
          <br><small>({{ note.date.strftime("%d %B, %Y") }})</small>
+         <!-- Usable for class association later | Hide on release -->
+         <p>ID: {{ note.league_id }}</p>
+         <p>League: {{ note.league.league_name }}</p>
       </li>
       <!-- Modal Structure -->
       <div id="modal-{{ note.id }}" class="modal center">

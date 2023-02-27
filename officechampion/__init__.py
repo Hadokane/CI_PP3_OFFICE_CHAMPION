@@ -17,7 +17,7 @@ db = SQLAlchemy(app)
 # reliant on the above Flask app & db already running
 # so placed at bottom of this document
 from officechampion import routes  # noqa
-from officechampion.models import User, Note, League, Title  # noqa
+from officechampion.models import User, Note, League, Title, Member  # noqa
 
 
 # tells flask login manager how to load a user

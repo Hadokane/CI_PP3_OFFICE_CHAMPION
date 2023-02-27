@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align">LEAGUE SPECIFIC BELTS SHOW HERE</h3>
+<h3 class="light-blue-text text-darken-4 center-align">(TEST) LEAGUE SPECIFIC BELTS SHOW HERE</h3>
 
 <div class="row">
-    {% if league_id == user.titles.league_id %}
-    {% for title in user.titles|sort(attribute="title_name") %}
+    {% for title in gary|sort(attribute="title_name") %}
     <div class="col s12 m6 l3">
         <div class="card light-blue darken-4 center-align">
             <div class="card-content white-text">
@@ -44,6 +43,6 @@
         </div>
     </div>
     {% endfor %}
-    {% endif %}
 </div>
+
 {% endblock %}

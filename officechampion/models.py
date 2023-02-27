@@ -27,6 +27,9 @@ class User(db.Model, UserMixin):
     # relationship with Title table
     titles = db.relationship(
         "Title", backref="user", cascade="all, delete", lazy=True)
+    # relationship with Members table
+    members = db.relationship(
+        "Member", backref="user", cascade="all, delete", lazy=True)
 
     # represent itself as a string
     def __repr__(self):
@@ -48,6 +51,9 @@ class Note(db.Model):
     # CASCADE - if user is deleted, linked notes are also deleted
     user_id = db.Column(db.Integer, db.ForeignKey(
         "user.id", ondelete="CASCADE"))
+    # foreign key used to associate a note with a specific league
+    league_id = db.Column(db.Integer, db.ForeignKey(
+        "league.id", ondelete="CASCADE"))
 
     # represent itself as a string
     def __repr__(self):
@@ -66,6 +72,12 @@ class League(db.Model):
     # relationship with Title table
     titles = db.relationship(
         "Title", backref="league", cascade="all, delete", lazy=True)
+    # relationship with Members table
+    members = db.relationship(
+        "Member", backref="league", cascade="all, delete", lazy=True)
+    # relationship with Notes table
+    notes = db.relationship(
+        "Note", backref="league", cascade="all, delete", lazy=True)
 
     # represent itself as a string
     def __repr__(self):
@@ -80,8 +92,8 @@ class Title(db.Model):
     title_name = db.Column(db.String(100), nullable=False)
     # title description
     title_description = db.Column(db.Text, nullable=False)
-    # date won
-    champion_since = db.Column(db.Date, nullable=False)
+    # date title created
+    title_created = db.Column(db.Date, nullable=False)
     # external_img_url (can't store images directly in db)
     image_url = db.Column(db.String(500))
     # foreign key used to associate a title with the specific user
@@ -90,6 +102,36 @@ class Title(db.Model):
     # foreign key used to associate a title with a specific league
     league_id = db.Column(db.Integer, db.ForeignKey(
         "league.id", ondelete="CASCADE"), nullable=False)
+    # relationship with Members table
+    members = db.relationship(
+        "Member", backref="title", cascade="all, delete", lazy=True)
+
+    # represent itself as a string
+    def __repr__(self):
+        return self
+
+
+# creates a table to store members
+class Member(db.Model):
+    # generated Id that will be used as the Primary Key
+    id = db.Column(db.Integer, primary_key=True)
+    # member name
+    member_name = db.Column(db.String(100), nullable=False)
+    # member role (in group, i.e. job, gaming role, sports position etc.)
+    member_role = db.Column(db.Text, nullable=False)
+    # external_img_url (can't store images directly in db)
+    member_image = db.Column(db.String(500))
+    # date title won
+    champion_for = db.Column(db.Date, nullable=False)
+    # foreign key used to associate a member with the specific user
+    user_id = db.Column(db.Integer, db.ForeignKey(
+        "user.id", ondelete="CASCADE"), nullable=False)
+    # foreign key used to associate a member with a specific league
+    league_id = db.Column(db.Integer, db.ForeignKey(
+        "league.id", ondelete="CASCADE"), nullable=False)
+    # foreign key used to associate a member with a specific title
+    title_id = db.Column(db.Integer, db.ForeignKey(
+        "title.id", ondelete="CASCADE"), nullable=False)
 
     # represent itself as a string
     def __repr__(self):

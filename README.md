@@ -61,7 +61,17 @@ View a user in psql:
 ---
 ## Academic Project Aims
 ---
-*-add-*
+
+officechampion=# \dt
+        List of relations
+ Schema |  Name  | Type  | Owner  
+--------+--------+-------+--------
+ public | league | table | gitpod
+ public | member | table | gitpod
+ public | note   | table | gitpod
+ public | title  | table | gitpod
+ public | user   | table | gitpod
+(5 rows)
 
 ## Reference
 
@@ -89,3 +99,7 @@ https://strftime.org/ - strftime information
 https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png - Wikipedia creative commons No Image Thumbnail
 
 https://github.com/Dogfalo/materialize/issues/1861 - People discussing the materialize select form issue
+
+https://www.draw.io/index.html - for constructing data schema
+
+(slack post here) - for help with displaying specific data using queries 

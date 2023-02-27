@@ -23,12 +23,12 @@
                 <label for="title_description">Title Description</label>
             </div>
         </div>
-        <!-- Date Won -->
+        <!-- Date Created -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-calendar prefix light-blue-text text-darken-4"></i>
-                <input id="champion_since" name="champion_since" value="{{ title.champion_since.strftime('%d %B %Y') }}" type="text" class="validate datepicker" required>
-                <label for="champion_since">Champion since:</label>
+                <input id="title_created" name="title_created" value="{{ title.title_created.strftime('%d %B %Y') }}" type="text" class="validate datepicker" required>
+                <label for="title_created">Champion since:</label>
             </div>
         </div>
         <!-- Image Url -->
@@ -40,7 +40,6 @@
                 <p><small>Recommend Size: 250px*200px (or similar dimensions) | URL Example: "https://www.w3schools.com/images/img_girl.jpg"</small></p>
             </div>
         </div>
-        <!-- Member ID | Add later | Input field like below -->
         <!-- League ID | Assign it to a league -->
         <div class="input-field col s12">
             <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>

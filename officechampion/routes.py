@@ -3,7 +3,7 @@ from flask import (
     redirect, session, flash)
 from officechampion import app, db
 # imports tables from models document
-from officechampion.models import User, Note, League, Title
+from officechampion.models import User, Note, League, Title, Member
 # stores the saved password as a secure hash
 from werkzeug.security import generate_password_hash, check_password_hash
 # flask user files to handle login/out requests and data
@@ -18,7 +18,7 @@ def home():
 
 
 # displays the notes page, requires login to view
-# giving it note functionality to see if user can store data
+# allows user to write notes and assign them to pages
 @app.route("/notes", methods=["GET", "POST"])
 @login_required
 def notes():
@@ -29,11 +29,16 @@ def notes():
             flash("Note is too short!", category="error")
         # checks user id & POSTs the note
         else:
-            new_note = Note(data=note, user_id=current_user.id)
+            new_note = Note(
+                data=note,
+                user_id=current_user.id,
+                league_id=request.form.get("league_id"))
             db.session.add(new_note)
             db.session.commit()
             flash("Note added!", category="success")
-    return render_template("notes.html", user=current_user)
+            # Redirect back to the title page
+            return redirect(url_for("notes"))
+    return render_template("notes.html", user=current_user, league=league)
 
 
 # Edit notes, use notes id to generate route
@@ -45,6 +50,7 @@ def edit_notes(note_id):
     if request.method == "POST":
         note.data = request.form.get("data")
         note.date = request.form.get("date")
+        note.league_id = request.form.get("league_id")
         db.session.commit()
         flash("Note updated!", category="success")
         return redirect(url_for("notes"))
@@ -225,7 +231,7 @@ def add_title():
         new_title = Title(
             title_name=request.form.get("title_name"),
             title_description=request.form.get("title_description"),
-            champion_since=request.form.get("champion_since"),
+            title_created=request.form.get("title_created"),
             image_url=request.form.get("image_url"),
             league_id=request.form.get("league_id"),
             user_id=current_user.id
@@ -251,7 +257,7 @@ def edit_title(title_id):
         # Get the title information from the form
         title.title_name = request.form.get("title_name"),
         title.title_description = request.form.get("title_description"),
-        title.champion_since = request.form.get("champion_since"),
+        title.title_created = request.form.get("title_created"),
         title.image_url = request.form.get("image_url"),
         title.league_id = request.form.get("league_id"),
         title.user_id = current_user.id
@@ -289,14 +295,50 @@ def open_league(league_id):
     for title in titles:
         if league_id == title.league_id:
             # prints the title data
+            print("--------------")
             print(
-                title.title_name,
                 "| Title ID:", title.id,
+                "| Title Name:", title.title_name,
+                "| Title Description:", title.title_description,
+                "| Title Date:", title.title_created,
+                "| Title Image:", title.image_url,
                 "| League ID:", title.league_id,
                 "| League Name:", title.league.league_name)
+            print("--------------")
         else:
             # skips over irrelevant titles
             pass
     return render_template(
         "open_league.html", user=current_user, league=league,
         titles=titles)
+
+
+# Display a League page to show members & titles
+@app.route("/open_league_test/<int:league_id>")
+@login_required
+def open_league_test(league_id):
+    # Reads db and gets league and title data
+    league = League.query.get_or_404(league_id)
+    # displays the title data
+    gary = Title.query.filter_by(league_id=league_id)
+    print("Gary Data:", gary)
+    # search the title db and find matching ids
+    for title in gary:
+        if league_id == title.league_id:
+            # prints the title data
+            print("--------------")
+            print(
+                "| Title ID:", title.id,
+                "| Title Name:", title.title_name,
+                "| Title Description:", title.title_description,
+                "| Title Date:", title.title_created,
+                "| Title Image:", title.image_url,
+                "| League ID:", title.league_id,
+                "| League Name:", title.league.league_name)
+            print("--------------")
+        else:
+            # skips over irrelevant titles
+            pass
+    return render_template(
+        "open_league_test.html", user=current_user, league=league,
+        titles=titles, gary=gary)

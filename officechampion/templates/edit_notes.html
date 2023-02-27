@@ -9,8 +9,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                <textarea id="data" name="data" minlength="3" type="text"
-                    class="materialize-textarea validate" required>
+                <textarea id="data" name="data" minlength="3" type="text" class="materialize-textarea validate"
+                    required>
                     {{- note.data -}}
                 </textarea>
                 <label for="data">Note Data</label>
@@ -24,6 +24,20 @@
                     class="datepicker validate" required>
                 <label for="due_date">Due Date</label>
             </div>
+        </div>
+        <!-- League ID | Assign it to a league -->
+        <div class="input-field col s12">
+            <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+            <select id="league_id" name="league_id" class="validate" required>
+                <option value="" disabled selected>Select League (optional)</option>
+                {% for league in user.leagues|sort(attribute="league_name") %}
+                {% if league == note.league %}
+                <option value="{{ league.id }}" selected>{{ league.league_name }}</option>
+                {% else %}
+                <option value="{{ league.id }}">{{ league.league_name }}</option>
+                {% endif %} {% endfor %}
+            </select>
+            <label for="league_id">League:</label>
         </div>
         <!-- submit button -->
         <div class="row">
