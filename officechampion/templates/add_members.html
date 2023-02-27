@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="light-blue-text text-darken-4 center-align">Add Members</h3>
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('add_members') }}">
+        <!-- Member Name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <input id="member_name" name="member_name" minlength="3" maxlength="100" data-length="100" type="text"
+                    class="validate" required>
+                <label for="member_name">Member Name</label>
+            </div>
+        </div>
+        <!-- Member Role -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <input id="member_role" name="member_role" minlength="3" maxlength="100" data-length="100" type="text"
+                    class="validate" required>
+                <label for="member_role">Member Role</label>
+            </div>
+        </div>
+        <!-- Member Image Url -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <input id="member_image" name="member_image" minlength="3" maxlength="500" type="text">
+                <label for="member_image">Image URL:</label>
+                <p><small>URL Example: "https://freesvg.org/storage/img/thumb/mustache-guy.png"</small></p>
+            </div>
+        </div>
+        <!-- League ID | Assign member to a league -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="league_id" name="league_id" class="validate">
+                    <option value="" disabled selected>Select League</option>
+                    {% for league in user.leagues|sort(attribute="league_name") %}
+                    <option value="{{ league.id }}">{{ league.league_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="league_id">League:</label>
+            </div>
+        </div>
+        <!-- Title ID | Assign a title to a member -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="title_id" name="title_id" class="validate">
+                    <option value="" disabled selected>Make champion</option>
+                    {% for title in user.titles|sort(attribute="title_name") %}
+                    <option value="{{ title.id }}">{{ title.title_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="title_id">Title:</label>
+            </div>
+        </div>
+        <!-- Submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large">
+                    Add Member <i class="fas fa-plus-square right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

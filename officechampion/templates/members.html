@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}
+Members
+{% endblock %}
+{% block content %}
+
+<h1 class="center-align">Add your Members here:</h1>
+
+<!-- Add Members Button -->
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_members') }}" class="btn-large">
+            Add Member <i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
+</div>
+
+<!-- View | Edit | Delete Members -->
+<div class="center">
+    <h2>View Members:</h2>
+</div>
+<br>
+
+<div class="row">
+    {% for member in user.members|sort(attribute="member_name") %}
+    <div class="col s12 m6 l3">
+        <div class="card light-blue darken-4 center-align">
+            <div class="card-content white-text">
+                <!-- Display Image if available -->
+                {% if member.member_image == None %}
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
+                </img>
+                {% else %}
+                <img src="{{ member.member_image }}"></img>
+                {% endif %}
+                <!-- Accesses all members related to the user -->
+                <span class="card-title">{{ member.member_name }}</span>
+                <p>Member Role: {{ member.member_role }}</p>
+                <p>User ID: {{ member.user_id }}</p>
+                <p>League ID: {{ member.league_id }}</p>
+                <p>Title ID: {{ member.title_id }}</p>
+                <p>League Name: <em>[{{ member.league.league_name }}]</em></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -9,8 +9,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                <input id="title_name" name="title_name" minlength="3" maxlength="100" data-length="100" type="text" class="validate"
-                    required>
+                <input id="title_name" name="title_name" minlength="3" maxlength="100" data-length="100" type="text"
+                    class="validate" required>
                 <label for="title_name">Title Name</label>
             </div>
         </div>
@@ -18,8 +18,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                <textarea id="title_description" name="title_description" minlength="3" maxlength="200" data-length="200" type="text"
-                    class="validate materialize-textarea" required></textarea>
+                <textarea id="title_description" name="title_description" minlength="3" maxlength="200"
+                    data-length="200" type="text" class="validate materialize-textarea" required></textarea>
                 <label for="title_description">Title Description</label>
             </div>
         </div>
@@ -28,7 +28,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-calendar prefix light-blue-text text-darken-4"></i>
                 <input id="title_created" name="title_created" type="text" class="validate datepicker" required>
-                <label for="title_created">Champion since:</label>
+                <label for="title_created">Title Created:</label>
             </div>
         </div>
         <!-- Image Url -->
@@ -37,20 +37,21 @@
                 <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
                 <input id="image_url" name="image_url" minlength="3" maxlength="500" type="text">
                 <label for="image_url">Image URL:</label>
-                <p><small>URL Example: "https://www.w3schools.com/images/img_girl.jpg"</small></p>
+                <p><small>URL Example: "https://freesvg.org/storage/img/thumb/mustache-guy.png"</small></p>
             </div>
         </div>
-        <!-- Member ID | Add later | Input field like below -->
         <!-- League ID | Assign it to a league -->
-        <div class="input-field col s12">
-            <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-            <select id="league_id" name="league_id" class="validate" required>
-                <option value="" disabled selected>Select League (Required)</option>
-                {% for league in user.leagues|sort(attribute="league_name") %}
-                <option value="{{ league.id }}">{{ league.league_name }}</option>
-                {% endfor %}
-            </select>
-            <label for="league_id">League:</label>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="league_id" name="league_id" class="validate" required>
+                    <option value="" disabled selected>Select League (Required)</option>
+                    {% for league in user.leagues|sort(attribute="league_name") %}
+                    <option value="{{ league.id }}">{{ league.league_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="league_id">League:</label>
+            </div>
         </div>
 
         <!-- Submit button -->
