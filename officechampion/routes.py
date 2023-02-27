@@ -24,6 +24,7 @@ def home():
 def notes():
     if request.method == "POST":
         note = request.form.get("note")
+        date = request.form.get("date")
         # ensure something is written in the note
         if len(note) < 3:
             flash("Note is too short!", category="error")
@@ -31,6 +32,7 @@ def notes():
         else:
             new_note = Note(
                 data=note,
+                date=date,
                 user_id=current_user.id,
                 league_id=request.form.get("league_id"))
             db.session.add(new_note)
@@ -321,7 +323,10 @@ def open_league_test(league_id):
     league = League.query.get_or_404(league_id)
     # displays the title data
     gary = Title.query.filter_by(league_id=league_id)
+    # displays the title data
+    barry = Note.query.filter_by(league_id=league_id)
     print("Gary Data:", gary)
+    print("Bary Data:", barry)
     # search the title db and find matching ids
     for title in gary:
         if league_id == title.league_id:
@@ -341,4 +346,4 @@ def open_league_test(league_id):
             pass
     return render_template(
         "open_league_test.html", user=current_user, league=league,
-        titles=titles, gary=gary)
+        titles=titles, gary=gary, barry=barry)

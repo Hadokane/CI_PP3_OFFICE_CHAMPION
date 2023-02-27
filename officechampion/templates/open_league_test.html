@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h3 class="light-blue-text text-darken-4 center-align">(TEST) LEAGUE SPECIFIC BELTS SHOW HERE</h3>
+{% block title %}
+<h2 class="light-blue-text text-darken-4 center-align"><strong><u>{{ league.league_name }}</u></strong></h2>
+{% endblock %}
 
 <div class="row">
     {% for title in gary|sort(attribute="title_name") %}
@@ -10,9 +11,9 @@
             <div class="card-content white-text">
                 <!-- If no image is provided, show the default placeholder image -->
                 {% if title.image_url == "" %}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png" width="250" height="200"></img>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"></img>
                 {% else %}
-                <img src="{{ title.image_url }}" width="250" height="200"></img>
+                <img src="{{ title.image_url }}"></img>
                 {% endif %}
                 <span class="card-title">{{ title.title_name }}</span>
                 <p>{{ title.title_description }}</p>
@@ -36,13 +37,42 @@
                         <div class="col">
                             <a class="btn-large red modal-close">No</a>
                         </div>
-                        <a href="{{ url_for('delete_title', title_id=title.id) }}" class="btn-large green accent-4">Yes</a>
+                        <a href="{{ url_for('delete_title', title_id=title.id) }}"
+                            class="btn-large green accent-4">Yes</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     {% endfor %}
+</div>
+
+<div class="row">
+    <ul id="notes" class="collection">
+        <!-- Accesses all relevant notes related to the league -->
+        {% for note in barry|sort(attribute="date") %}
+        <li class="collection-item grey lighten-5">{{ note.data }}
+            <!-- Call Delete Modal -->
+            <a href="#modal-{{ note.id }}" class="btn red accent-4 modal-trigger right">Delete Note</a>
+            <a href="{{ url_for('edit_notes', note_id=note.id) }}" class="btn green accent-4 right right-spacer">Edit
+                Note</a>
+            <br><small>({{ note.date.strftime("%d %B, %Y") }})</small>
+        </li>
+        <!-- Modal Structure -->
+        <div id="modal-{{ note.id }}" class="modal center">
+            <div class="modal-content">
+                <h4>Delete Note?</h4>
+                <p>Are you sure?</p>
+            </div>
+            <div class="modal-footer">
+                <div class="col">
+                    <a class="btn-large red modal-close">No</a>
+                </div>
+                <a href="{{ url_for('delete_note', note_id=note.id) }}" class="btn-large green accent-4">Yes</a>
+            </div>
+        </div>
+        {% endfor %}
+    </ul>
 </div>
 
 {% endblock %}

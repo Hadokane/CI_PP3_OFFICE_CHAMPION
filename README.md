@@ -73,6 +73,14 @@ officechampion=# \dt
  public | user   | table | gitpod
 (5 rows)
 
+--------------------
+LOGIN TEST ACCOUNT:
+
+USERNAME = TESTER
+PASSWORD = 12341234
+
+--------------------
+
 ## Reference
 
 (1) https://www.youtube.com/watch?v=dam0GPOAvVI - for creating the sign-up form and his course on Flask & Python in general. Additional knowledge and explanation at a helpful pace.
@@ -103,3 +111,9 @@ https://github.com/Dogfalo/materialize/issues/1861 - People discussing the mater
 https://www.draw.io/index.html - for constructing data schema
 
 (slack post here) - for help with displaying specific data using queries 
+
+https://stackoverflow.com/questions/74992148/how-to-write-a-commit-description-in-source-control-vscode - Add longer git commits
+
+Wikipedia & WWE.com for primary imagery
+Bungee for Halo imagery
+Red bubble for employee of the month imagery.
