@@ -13,27 +13,91 @@ img {
     width: 100%;
 }
 
-.nav-img{
+.nav-img {
     margin: 5px;
 }
 
-.spacer{
+.spacer {
     padding-top: 50px;
 }
 
-.right-spacer{
+.right-spacer {
     margin-right: 50px;
 }
 
 .card-content span {
-			font-weight: bold;
-			font-size: 1.1em;
-			margin-right:4px;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-right: 4px;
 }
 
 .card-content .material-icons {
-			font-size: 1.4em;
-			position: relative;
-			top: 5px;
-			margin-right: 0.5em;
-}	
+    font-size: 1.4em;
+    position: relative;
+    top: 5px;
+    margin-right: 0.5em;
+}
+
+.card-content img {
+    background-size: contain;
+}
+
+.page-footer {
+    z-index: 1;
+}
+
+/* The side navigation menu - Taken from W3Schools (https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp) */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+/* Sidebar links - set to match font colour */
+.sidebar a {
+    display: block;
+    color: #01579b;
+    padding: 16px;
+    text-decoration: none;
+}
+
+/* Links on mouse-over - set to match navbar colour */
+.sidebar a:hover:not(.active) {
+    background-color: #ff8f00;
+    color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+}
+
+/* Added my own media query to hide the element on smaller screens */
+@media screen and (max-width: 1439px) {
+    div.champ-nav {
+        display: none;
+    }
+}

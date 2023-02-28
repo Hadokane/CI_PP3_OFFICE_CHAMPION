@@ -290,46 +290,15 @@ def delete_title(title_id):
 def open_league(league_id):
     # Reads db and gets league and title data
     league = League.query.get_or_404(league_id)
-    # gets titles info
-    titles = list(Title.query.order_by(Title.title_name).all())
-
-    print("--------------")
-    for title in titles:
-        if league_id == title.league_id:
-            # prints the title data
-            print("--------------")
-            print(
-                "| Title ID:", title.id,
-                "| Title Name:", title.title_name,
-                "| Title Description:", title.title_description,
-                "| Title Date:", title.title_created,
-                "| Title Image:", title.image_url,
-                "| League ID:", title.league_id,
-                "| League Name:", title.league.league_name)
-            print("--------------")
-        else:
-            # skips over irrelevant titles
-            pass
+    # displays the title data
+    award = Title.query.filter_by(league_id=league_id)
+    # displays the note data
+    display = Note.query.filter_by(league_id=league_id)
+    # displays the member data
+    champions = Member.query.filter_by(league_id=league_id)
     return render_template(
         "open_league.html", user=current_user, league=league,
-        titles=titles)
-
-
-# Display a League page to show members & titles
-@app.route("/open_league_test/<int:league_id>")
-@login_required
-def open_league_test(league_id):
-    # Reads db and gets league and title data
-    league = League.query.get_or_404(league_id)
-    # displays the title data
-    gary = Title.query.filter_by(league_id=league_id)
-    # displays the note data
-    barry = Note.query.filter_by(league_id=league_id)
-    # displays the member data
-    larry = Member.query.filter_by(league_id=league_id)
-    return render_template(
-        "open_league_test.html", user=current_user, league=league,
-        titles=titles, gary=gary, barry=barry, larry=larry)
+        titles=titles, award=award, display=display, champions=champions)
 
 
 # View members

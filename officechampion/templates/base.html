@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link to Materialize 1.0.0 framework CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
@@ -17,17 +17,18 @@
 
 <body>
     <!-- Materialize Responsive Navbar -->
-    <nav>
-        <div class="nav-wrapper amber darken-3">
-            <!-- The main image acts as an anchor tag to the home page to meet user expectation -->
-            <a href="/" class="brand-logo center nav-img">
-                <img class="center" src="{{ url_for('static', filename='assets/images/docs/oc_logo.png') }}"
-                    alt="website logo" width="56" height="56"></img>
-            </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                {% if user.is_authenticated %}
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper amber darken-3">
+                <!-- The main image acts as an anchor tag to the home page to meet user expectation -->
+                <a href="/" class="brand-logo center nav-img">
+                    <img class="center" src="{{ url_for('static', filename='assets/images/docs/oc_logo.png') }}"
+                        alt="website logo" width="56" height="56"></img>
+                </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    {% if user.is_authenticated %}
                     <!-- Display username for testing & screenshot purposes -->
                     <li><a href="{{ url_for('league') }}">Leagues</a></li>
                     <li><a href="{{ url_for('titles') }}">Titles</a></li>
@@ -36,24 +37,26 @@
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
                     <li class="red">Hello "User [ {{ user.username }} ]"</li>
                     {% else %}
-                <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                {% endif %}
-            </ul>
-        </div>
-    </nav>
-    <ul class="sidenav amber darken-3" id="mobile-demo">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        {% if user.is_authenticated %}
-        <li><a href="{{ url_for('league') }}">Leagues</a></li>
-        <li><a href="{{ url_for('titles') }}">Titles</a></li>
-        <li><a href="{{ url_for('notes') }}">Notes</a></li>
-        <li><a href="{{ url_for('logout') }}">Logout</a></li>
-        {% else %}
-        <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
-        <li><a href="{{ url_for('login') }}">Login</a></li>
-        {% endif %}
-    </ul>
+                    <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav amber darken-3" id="mobile-demo">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{{ url_for('league') }}">Leagues</a></li>
+            <li><a href="{{ url_for('titles') }}">Titles</a></li>
+            <li><a href="{{ url_for('members') }}">Members</a></li>
+            <li><a href="{{ url_for('notes') }}">Notes</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+            <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
 
     <!-- Checks if there are flash messages to display and shows them to the user -->
     {% with messages = get_flashed_messages(with_categories=true) %}

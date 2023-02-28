@@ -1,9 +1,11 @@
+<!-- Loads base template content -->
 {% extends "base.html" %}
+<!-- Sets Title shown in web browser tabs -->
 {% block title %}
 Leagues
 {% endblock %}
-{% block content %}
 
+{% block content %}
 <h1 class="center-align">Create your League here:</h1>
 
 <div class="row">
@@ -23,11 +25,8 @@ Leagues
             </div>
             <div class="card-action">
                 <!-- Open League -->
-                <a href="{{ url_for('open_league', league_id=league.id) }}" class="btn orange accent-4">Open The League</a>
-                <br>
-                <br>
-                <!-- Open League Test -->
-                <a href="{{ url_for('open_league_test', league_id=league.id) }}" class="btn purple accent-4">Open The TEST</a>
+                <a href="{{ url_for('open_league', league_id=league.id) }}" class="btn orange accent-4">Open The
+                    League</a>
                 <br>
                 <br>
                 <!-- Edit League Name -->
@@ -43,8 +42,9 @@ Leagues
                     <div class="modal-footer">
                         <div class="col">
                             <a class="btn-large red modal-close">No</a>
-                        </div>                        
-                        <a href="{{ url_for('delete_league', league_id=league.id) }}" class="btn-large green accent-4">Yes</a>
+                        </div>
+                        <a href="{{ url_for('delete_league', league_id=league.id) }}"
+                            class="btn-large green accent-4">Yes</a>
                     </div>
                 </div>
             </div>
@@ -52,5 +52,4 @@ Leagues
     </div>
     {% endfor %}
 </div>
-
 {% endblock %}
