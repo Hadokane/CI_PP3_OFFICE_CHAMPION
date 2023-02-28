@@ -6,31 +6,48 @@ Leagues
 {% endblock %}
 
 {% block content %}
-<h1 class="center-align">Create your League here:</h1>
-
+<!-- Section Header -->
+<div class="center">
+    <h2><strong><u>Create League:</u></strong></h2>
+</div>
+<!-- Break -->
+<br>
+<!-- Add League Button -->
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_league') }}" class="btn-large">
+        <a href="{{ url_for('add_league') }}" class="btn-large green accent-4">
             Add League <i class="fas fa-plus-square right"></i>
         </a>
     </div>
 </div>
-
+<!-- Break -->
+<br>
+<!-- Section Header -->
+<div class="center">
+    <h2><strong><u>View Leagues:</u></strong></h2>
+</div>
+<!-- Break -->
+<br>
+<!-- Display Leagues (Read DB) -->
 <div class="row">
+    <!-- Find all Leagues associated with User) -->
     {% for league in user.leagues|sort(attribute="league_name") %}
-    <div class="col s12 m6 l3">
-        <div class="card light-blue darken-4 center-align">
+    <div class="col s12 m6 l4 xl3">
+        <div class="card small light-blue darken-4 center-align">
             <div class="card-content white-text">
-                <span class="card-title">{{ league.league_name }}</span>
+                <span class="card-title"><strong>{{ league.league_name }}</strong></span>
             </div>
-            <div class="card-action">
-                <!-- Open League -->
-                <a href="{{ url_for('open_league', league_id=league.id) }}" class="btn orange accent-4">Open The
+            <!-- Open this specific League's page -->
+            <div class="card-panel small light-blue darken-3 white-text">
+                <a href="{{ url_for('open_league', league_id=league.id) }}" class="btn-large orange accent-4">Open The
                     League</a>
-                <br>
-                <br>
+            </div>
+            <!-- Break -->
+            <br>
+            <div class="card-action">
                 <!-- Edit League Name -->
-                <a href="{{ url_for('edit_league', league_id=league.id) }}" class="btn green accent-4">Edit</a>
+                <a href="{{ url_for('edit_league', league_id=league.id) }}"
+                    class="btn green accent-4 right-spacer">Edit</a>
                 <!-- Call Delete Modal -->
                 <a href="#modal-{{ league.id }}" class="btn red modal-trigger">Delete</a>
                 <!-- Modal Structure -->
@@ -39,10 +56,13 @@ Leagues
                         <h4>Delete League?</h4>
                         <p>Are you sure you want to delete?</p>
                     </div>
+                    <!-- Modal Options -->
                     <div class="modal-footer">
                         <div class="col">
+                            <!-- Close Modal -->
                             <a class="btn-large red modal-close">No</a>
                         </div>
+                        <!-- Delete League -->
                         <a href="{{ url_for('delete_league', league_id=league.id) }}"
                             class="btn-large green accent-4">Yes</a>
                     </div>

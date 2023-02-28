@@ -4,37 +4,59 @@ Titles
 {% endblock %}
 {% block content %}
 
-<h1 class="center-align">Create your Titles here:</h1>
-
+<!-- Section Header -->
+<div class="center">
+    <h2><strong><u>Create Title:</u></strong></h2>
+</div>
+<!-- Break -->
+<br>
+<!-- Add Titles Button -->
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_title') }}" class="btn-large">
+        <a href="{{ url_for('add_title') }}" class="btn-large green accent-4">
             Add Title <i class="fas fa-plus-square right"></i>
         </a>
     </div>
 </div>
-
+<!-- Break -->
+<br>
+<!-- Section Header -->
+<div class="center">
+    <h2><strong><u>View Titles:</u></strong></h2>
+</div>
+<!-- Break -->
+<br>
+<!-- Display Titles -->
 <div class="row">
+    <!-- Display the users specific titles -->
     {% for title in user.titles|sort(attribute="title_name") %}
     <div class="col s12 m6 l3">
-        <div class="card light-blue darken-4 center-align">
+        <div class="card large light-blue darken-4 center-align">
             <div class="card-content white-text">
                 <!-- If no image is provided, show the default placeholder image -->
                 {% if title.image_url == "" %}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"></img>
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"></img>
                 {% else %}
+                <!-- Show the users input image -->
                 <img src="{{ title.image_url }}"></img>
                 {% endif %}
+                <!-- Show the Titles Name -->
                 <span class="card-title">{{ title.title_name }}</span>
+                <!-- Show the Titles Description -->
                 <p>{{ title.title_description }}</p>
-                <!-- Usable for class association later | Hide on release -->
-                <p>ID: {{ title.league_id }}</p>
+                <!-- Break -->
+                <br>
+                <!-- Show the League the Title belongs too -->
                 <p>League: {{ title.league.league_name }}</p>
+                <!-- Show the Title creation date -->
                 <p><small>[{{ title.title_created.strftime("%d %B %Y") }}]</small></p>
             </div>
+            <!-- Edit | Delete Buttons -->
             <div class="card-action">
                 <!-- Edit Title Name -->
-                <a href="{{ url_for('edit_title', title_id=title.id) }}" class="btn green accent-4">Edit</a>
+                <a href="{{ url_for('edit_title', title_id=title.id) }}"
+                    class="btn green accent-4 right-spacer">Edit</a>
                 <!-- Call Delete Modal -->
                 <a href="#modal-{{ title.id }}" class="btn red modal-trigger">Delete</a>
                 <!-- Modal Structure -->
@@ -43,11 +65,15 @@ Titles
                         <h4>Delete Title?</h4>
                         <p>Are you sure you want to delete?</p>
                     </div>
+                    <!-- Modal Options -->
                     <div class="modal-footer">
                         <div class="col">
+                            <!-- Close Modal -->
                             <a class="btn-large red modal-close">No</a>
                         </div>
-                        <a href="{{ url_for('delete_title', title_id=title.id) }}" class="btn-large green accent-4">Yes</a>
+                        <!-- Delete Title -->
+                        <a href="{{ url_for('delete_title', title_id=title.id) }}"
+                            class="btn-large green accent-4">Yes</a>
                     </div>
                 </div>
             </div>

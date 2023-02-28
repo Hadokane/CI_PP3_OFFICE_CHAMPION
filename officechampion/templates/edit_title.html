@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h3 class="light-blue-text text-darken-4 center-align">Edit Titles</h3>
-
+<!-- Page Header -->
+<h2 class="light-blue-text text-darken-4 center-align"><strong><u>Edit Title:</u></strong></h2>
+<!-- Break -->
+<br>
+<!-- Edit Title Form-->
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('edit_title', title_id=title.id) }}">
         <!-- Title Name -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                <input id="title_name" name="title_name" value="{{ title.title_name }}" minlength="3" maxlength="100" type="text" class="validate"
-                    required>
+                <input id="title_name" name="title_name" value="{{ title.title_name }}" minlength="3" maxlength="100"
+                    type="text" class="validate" required>
                 <label for="title_name">Title Name</label>
             </div>
         </div>
@@ -27,7 +29,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-calendar prefix light-blue-text text-darken-4"></i>
-                <input id="title_created" name="title_created" value="{{ title.title_created.strftime('%d %B %Y') }}" type="text" class="validate datepicker" required>
+                <input id="title_created" name="title_created" value="{{ title.title_created.strftime('%d %B %Y') }}"
+                    type="text" class="validate datepicker" required>
                 <label for="title_created">Champion since:</label>
             </div>
         </div>
@@ -35,7 +38,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                <input id="image_url" name="image_url" value="{{ title.image_url }}" minlength="3" maxlength="500" type="text">
+                <input id="image_url" name="image_url" value="{{ title.image_url }}" minlength="3" maxlength="500"
+                    type="text">
                 <label for="image_url">Image URL:</label>
                 <p><small>URL Example: "https://freesvg.org/storage/img/thumb/mustache-guy.png"</small></p>
             </div>
@@ -58,7 +62,7 @@
         <!-- Submit button -->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large">
+                <button type="submit" class="btn-large green accent-4">
                     Edit Title <i class="fas fa-plus-square right"></i>
                 </button>
             </div>

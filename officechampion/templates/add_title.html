@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h3 class="light-blue-text text-darken-4 center-align">Add Titles</h3>
-
+<!-- Page Header -->
+<h2 class="light-blue-text text-darken-4 center-align"><strong><u>Add Title:</u></strong></h2>
+<!-- Break -->
+<br>
+<!-- Add Title Form -->
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_title') }}">
         <!-- Title Name -->
@@ -57,7 +59,7 @@
         <!-- Submit button -->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large">
+                <button type="submit" class="btn-large green accent-4">
                     Add Title <i class="fas fa-plus-square right"></i>
                 </button>
             </div>

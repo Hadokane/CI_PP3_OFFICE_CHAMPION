@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 {% block title %}
-    Sign Up
+Sign Up
 {% endblock %}
 {% block content %}
-
+<!-- Page Header -->
+<header class="center">
+    <h1><strong><u>Sign Up!</u></strong></h1>
+</header>
+<!-- Break -->
+<br>
+<br>
 <!-- Form sends post request to backend on submission -->
 <div class="row">
     <form class="col s12" action="#" method="POST">
         <div class="row">
-            <!-- Title -->
-            <div class="div center">
-                <h3>Sign Up</h3>
-            </div>
             <!-- Name Input -->
             <div class="input-field">
                 <i class="material-icons col prefix">email</i>
@@ -32,8 +34,10 @@
                 <label for="password2">Password Confirm</label>
             </div>
         </div>
-        <div class="div center">
-            <button type="submit" value="submit">Submit</button>
+        <!-- Submit Button -->
+        <div class="col s12 center-align">
+            <button class="btn waves-effect waves-light green accent-4 btn-large" type="submit"
+                value="submit">Submit</button>
         </div>
     </form>
 </div>

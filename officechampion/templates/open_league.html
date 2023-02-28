@@ -45,7 +45,6 @@
                 <p><strong>{{ member.title.title_name }}</strong></p>
                 <p>{{ member.league.league_name }}</p>
             </div>
-            <!-- Style cards by adding a coloured footer-->
             <br>
         </div>
     </div>
@@ -67,7 +66,7 @@
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
                 </img>
                 {% else %}
-                <img src="{{ member.member_image }}" scale="10%"></img>
+                <img src="{{ member.member_image }}"></img>
                 {% endif %}
                 <!-- Member Name -->
                 <h4 class="card-title">{{ member.member_name }}</h4>
@@ -93,7 +92,7 @@
             <a href="#modal-{{ note.id }}" class="btn red accent-4 modal-trigger right">Delete Note</a>
             <a href="{{ url_for('edit_notes', note_id=note.id) }}" class="btn green accent-4 right right-spacer">Edit
                 Note</a>
-                <!-- Display Note Date -->
+            <!-- Display Note Date -->
             <br><small>({{ note.date.strftime("%d %B, %Y") }})</small>
         </li>
         <!-- Modal Structure -->

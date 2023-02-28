@@ -1,27 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h3 class="light-blue-text text-darken-4 center-align">Edit League</h3>
-
+<!-- Page Header -->
+<h2 class="light-blue-text text-darken-4 center-align"><strong><u>Edit League:</u></strong></h2>
+<!-- Break -->
+<br>
+<!-- Edit League Form -->
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('edit_league', league_id=league.id) }}">
-        <!-- category name -->
+        <!-- Edit League Name -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                <input id="league_name" name="league_name" value="{{ league.league_name }}" minlength="3" maxlength="50" type="text" class="validate" required>
+                <input id="league_name" name="league_name" value="{{ league.league_name }}" minlength="3" maxlength="50"
+                    type="text" class="validate" required>
                 <label for="league_name">League Name</label>
             </div>
         </div>
-        <!-- submit button -->
+        <!-- Submit Button -->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large">
+                <button type="submit" class="btn-large green accent-4">
                     Edit League <i class="fas fa-edit right"></i>
                 </button>
             </div>
         </div>
     </form>
 </div>
-
 {% endblock %}

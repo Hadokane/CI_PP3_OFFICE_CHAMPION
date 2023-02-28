@@ -1,3 +1,4 @@
+/* General body settings */
 body {
     display: flex;
     min-height: 100vh;
@@ -9,22 +10,26 @@ main {
     flex: 1 0 auto;
 }
 
+/* Keep images at correct resolution */
 img {
     width: 100%;
 }
 
+/* Provide margins for the Nav Bar Logo */
 .nav-img {
     margin: 5px;
 }
 
-.spacer {
-    padding-top: 50px;
-}
-
+/* Provide horizontal margins to page elements */
 .right-spacer {
     margin-right: 50px;
 }
 
+.left-spacer {
+    margin-left: 50px;
+}
+
+/* Materialize Card Settings */
 .card-content span {
     font-weight: bold;
     font-size: 1.1em;
@@ -38,10 +43,16 @@ img {
     margin-right: 0.5em;
 }
 
+/* Settings for Card Images */
 .card-content img {
-    background-size: contain;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    margin: auto;
 }
 
+/* Show above side-nav on League Pages at Larger Resolutions */
 .page-footer {
     z-index: 1;
 }
@@ -76,23 +87,6 @@ div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
-}
-
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .sidebar a {
-        float: left;
-    }
-
-    div.content {
-        margin-left: 0;
-    }
 }
 
 /* Added my own media query to hide the element on smaller screens */

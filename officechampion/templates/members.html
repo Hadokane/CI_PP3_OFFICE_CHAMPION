@@ -4,27 +4,35 @@ Members
 {% endblock %}
 {% block content %}
 
-<h1 class="center-align">Add your Members here:</h1>
-
+<!-- Section Header -->
+<div class="center">
+    <h2><strong><u>Create Members:</u></strong></h2>
+</div>
+<!-- Break -->
+<br>
 <!-- Add Members Button -->
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_members') }}" class="btn-large">
+        <a href="{{ url_for('add_members') }}" class="btn-large green accent-4">
             Add Member <i class="fas fa-plus-square right"></i>
         </a>
     </div>
 </div>
-
-<!-- View | Edit | Delete Members -->
-<div class="center">
-    <h2>View Members:</h2>
-</div>
+<!-- Break -->
 <br>
-
+<!-- Section Header -->
+<div class="center">
+    <h2><strong><u>View Members:</u></strong></h2>
+</div>
+<!-- Break -->
+<br>
+<!-- View | Edit | Delete Members -->
+<!-- Title Holders Displayed -->
 <div class="row">
     {% for member in user.members|sort(attribute="member_name") %}
+    {% if member.title_id != None %}
     <div class="col s12 m6 l3">
-        <div class="card light-blue darken-4 center-align">
+        <div class="card hoverable light-blue darken-4 center-align z-depth-2">
             <div class="card-content white-text">
                 <!-- Display Image if available -->
                 {% if member.member_image == None %}
@@ -34,19 +42,27 @@ Members
                 {% else %}
                 <img src="{{ member.member_image }}"></img>
                 {% endif %}
-                <!-- Accesses all members related to the user -->
                 <span class="card-title">{{ member.member_name }}</span>
-                <p>Member Role: {{ member.member_role }}</p>
-                <p>User ID: {{ member.user_id }}</p>
-                <p>League ID: {{ member.league_id }}</p>
-                <p>Title ID: {{ member.title_id }}</p>
-                <p>Title Name: {{ member.title.title_name }}</p>
-                <p>League Name: <em>[{{ member.league.league_name }}]</em></p>
-                <p>Image URL: {{ member.member_image }}</p>
+                <p>ROLE:<br>{{ member.member_role }}</p>
+                <p>LEAGUE:<br>{{ member.league.league_name }}</p>
             </div>
+            <!-- Display Title Image -->
+            <div class="card-panel light-blue darken-3 white-text">
+                <!-- If no image is provided, show the default placeholder image -->
+                {% if member.title.image_url == "" %}
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"></img>
+                {% else %}
+                <img style="max-height: fit-content;" src="{{ member.title.image_url }}"></img>
+                {% endif %}
+                <p><strong>{{ member.title.title_name }}</strong></p>
+            </div>
+            <br>
+            <!-- Edit | Delete Buttons -->
             <div class="card-action">
                 <!-- Edit Title Name -->
-                <a href="{{ url_for('edit_members', member_id=member.id) }}" class="btn green accent-4">Edit</a>
+                <a href="{{ url_for('edit_members', member_id=member.id) }}"
+                    class="btn green accent-4 right-spacer">Edit</a>
                 <!-- Call Delete Modal -->
                 <a href="#modal-{{ member.id }}" class="btn red modal-trigger">Delete</a>
                 <!-- Modal Structure -->
@@ -55,10 +71,13 @@ Members
                         <h4>Delete Member?</h4>
                         <p>Are you sure you want to delete this member?</p>
                     </div>
+                    <!-- Modal Options -->
                     <div class="modal-footer">
                         <div class="col">
+                            <!-- Close Modal -->
                             <a class="btn-large red modal-close">No</a>
                         </div>
+                        <!-- Delete Title -->
                         <a href="{{ url_for('delete_member', member_id=member.id) }}"
                             class="btn-large green accent-4">Yes</a>
                     </div>
@@ -66,6 +85,66 @@ Members
             </div>
         </div>
     </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<!-- Break -->
+<br>
+<br>
+<br>
+<!-- Other Members Displayed -->
+<div class="row grey lighten-3" id="members">
+    <!-- Loop through champions | Display non-champions -->
+    {% for member in user.members|sort(attribute="member_name") %}
+    {% if member.title_id == None %}
+    <div class="col s12 m6 l3">
+        <div class="card large hoverable light-blue darken-4 center-align z-depth-2">
+            <div class="card-content white-text">
+                <!-- Display Image if available -->
+                {% if member.member_image == None %}
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
+                </img>
+                {% else %}
+                <img src="{{ member.member_image }}"></img>
+                {% endif %}
+                <!-- Member Name -->
+                <h4 class="card-title">{{ member.member_name }}</h4>
+                <p>ROLE:<br>{{ member.member_role }}</p>
+                <p>LEAGUE:<br>{{ member.league.league_name }}</p>
+            </div>
+            <!-- Included to style cards -->
+            <div class="card-panel light-blue darken-3 white-text">
+            </div>
+            <br>
+            <!-- Edit | Delete Buttons -->
+            <div class="card-action">
+                <!-- Edit Title Name -->
+                <a href="{{ url_for('edit_members', member_id=member.id) }}"
+                    class="btn green accent-4 right-spacer">Edit</a>
+                <!-- Call Delete Modal -->
+                <a href="#modal-{{ member.id }}" class="btn red modal-trigger">Delete</a>
+                <!-- Modal Structure -->
+                <div id="modal-{{ member.id }}" class="modal">
+                    <div class="modal-content">
+                        <h4>Delete Member?</h4>
+                        <p>Are you sure you want to delete this member?</p>
+                    </div>
+                    <!-- Modal Options -->
+                    <div class="modal-footer">
+                        <div class="col">
+                            <!-- Close Modal -->
+                            <a class="btn-large red modal-close">No</a>
+                        </div>
+                        <!-- Delete Title -->
+                        <a href="{{ url_for('delete_member', member_id=member.id) }}"
+                            class="btn-large green accent-4">Yes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
     {% endfor %}
 </div>
 {% endblock %}

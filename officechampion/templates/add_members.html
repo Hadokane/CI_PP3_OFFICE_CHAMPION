@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align">Add Members</h3>
-
+<!-- Page Header -->
+<header class="center">
+    <h2><strong><u>Add Members:</u></strong></h2>
+</header>
+<!-- Break -->
+<br>
+<!-- Add Members Form -->
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_members') }}">
         <!-- Member Name -->
@@ -61,7 +66,7 @@
         <!-- Submit button -->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large">
+                <button type="submit" class="btn-large green accent-4">
                     Add Member <i class="fas fa-plus-square right"></i>
                 </button>
             </div>
