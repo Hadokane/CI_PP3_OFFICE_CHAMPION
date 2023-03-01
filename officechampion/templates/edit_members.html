@@ -13,7 +13,7 @@
         <!-- Member Name -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pen prefix light-blue-text text-darken-4"></i>
                 <input id="member_name" name="member_name" value="{{ member.member_name }}" minlength="3" maxlength="100" data-length="100" type="text"
                     class="validate" required>
                 <label for="member_name">Member Name</label>
@@ -22,7 +22,7 @@
         <!-- Member Role -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-briefcase prefix light-blue-text text-darken-4"></i>
                 <input id="member_role" name="member_role" value="{{ member.member_role }}" minlength="3" maxlength="100" data-length="100" type="text"
                     class="validate" required>
                 <label for="member_role">Member Role</label>
@@ -31,7 +31,7 @@
         <!-- Member Image Url -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
                 <!-- Only show URL if URL is present, otherwise no value is provided -->
                 {% if member.member_image != none %}
                 <input id="member_image" name="member_image" value="{{ member.member_image }}" minlength="3" maxlength="500" type="text">
@@ -46,7 +46,7 @@
         <!-- League ID | Assign member to a league | Left blank on edit to stop users being forced to assign a League -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-people-group prefix light-blue-text text-darken-4"></i>
                 <select id="league_id" name="league_id" class="validate">
                   <option value="" disabled selected>Select League</option>
                 {% for league in user.leagues|sort(attribute="league_name") %}
@@ -59,7 +59,7 @@
         <!-- Title ID | Assign a title to a member | Left blank on edit to stop users being forced to assign a Title -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-medal prefix light-blue-text text-darken-4"></i>
                 <select id="title_id" name="title_id" class="validate">
                     <option value="" disabled selected>Make champion</option>
                     {% for title in user.titles|sort(attribute="title_name") %}

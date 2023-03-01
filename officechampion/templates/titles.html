@@ -27,11 +27,11 @@ Titles
 <!-- Break -->
 <br>
 <!-- Display Titles -->
-<div class="row">
+<div class="row equal-col">
     <!-- Display the users specific titles -->
     {% for title in user.titles|sort(attribute="title_name") %}
-    <div class="col s12 m6 l3">
-        <div class="card large light-blue darken-4 center-align">
+    <div class="col s12 m6">
+        <div class="card medium light-blue darken-4 center-align">
             <div class="card-content white-text">
                 <!-- If no image is provided, show the default placeholder image -->
                 {% if title.image_url == "" %}
@@ -52,6 +52,10 @@ Titles
                 <!-- Show the Title creation date -->
                 <p><small>[{{ title.title_created.strftime("%d %B %Y") }}]</small></p>
             </div>
+            <!-- Included to style cards -->
+            <div class="card-panel light-blue darken-3 white-text">
+            </div>
+            <br>
             <!-- Edit | Delete Buttons -->
             <div class="card-action">
                 <!-- Edit Title Name -->

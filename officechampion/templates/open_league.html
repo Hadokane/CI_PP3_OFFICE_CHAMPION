@@ -19,7 +19,7 @@
 <div class="row">
     {% for member in champions|sort(attribute="title_name") %}
     {% if member.title_id != None %}
-    <div class="col s12 m6 l3">
+    <div class="col s12 m6">
         <div class="card hoverable light-blue darken-4 center-align z-depth-2">
             <div class="card-content white-text">
                 <!-- Display Image if available -->
@@ -43,7 +43,6 @@
                 <img src="{{ member.title.image_url }}"></img>
                 {% endif %}
                 <p><strong>{{ member.title.title_name }}</strong></p>
-                <p>{{ member.league.league_name }}</p>
             </div>
             <br>
         </div>
@@ -57,7 +56,7 @@
     <!-- Loop through champions | Display non-champions -->
     {% for member in champions|sort(attribute="member_name") %}
     {% if member.title_id == None %}
-    <div class="col s12 m6 l3">
+    <div class="col s12 m4 l3">
         <div class="card medium hoverable light-blue darken-4 center-align z-depth-2">
             <div class="card-content white-text">
                 <!-- Display Image if available -->

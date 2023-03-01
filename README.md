@@ -74,9 +74,12 @@ officechampion=# \dt
 (5 rows)
 
 --------------------
-LOGIN TEST ACCOUNT:
+LOGIN INFORMATION 
+
+TEST ACCOUNT:
 
 USERNAME = TESTER
+
 PASSWORD = 12341234
 
 --------------------
@@ -108,7 +111,7 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.s
 
 https://github.com/Dogfalo/materialize/issues/1861 - People discussing the materialize select form issue
 
-https://www.draw.io/index.html - for constructing data schema
+https://www.draw.io - for constructing data schema
 
 (slack post here) - for help with displaying specific data using queries 
 
@@ -117,3 +120,8 @@ https://stackoverflow.com/questions/74992148/how-to-write-a-commit-description-i
 Wikipedia & WWE.com for primary imagery
 Bungee for Halo imagery
 Red bubble for employee of the month imagery.
+https://freesvg.org/ - Royalty Free Imagery.
+
+https://fontawesome.com/ - icons
+
+Adobe Illustrator - Used to draw the website logo.

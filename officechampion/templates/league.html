@@ -32,15 +32,15 @@ Leagues
 <div class="row">
     <!-- Find all Leagues associated with User) -->
     {% for league in user.leagues|sort(attribute="league_name") %}
-    <div class="col s12 m6 l4 xl3">
+    <div class="col s12 m6">
         <div class="card small light-blue darken-4 center-align">
             <div class="card-content white-text">
                 <span class="card-title"><strong>{{ league.league_name }}</strong></span>
             </div>
             <!-- Open this specific League's page -->
-            <div class="card-panel small light-blue darken-3 white-text">
-                <a href="{{ url_for('open_league', league_id=league.id) }}" class="btn-large orange accent-4">Open The
-                    League</a>
+            <div class="card-panel light-blue darken-3 white-text">
+                <p><a href="{{ url_for('open_league', league_id=league.id) }}" class="btn-large orange accent-4">Open The
+                    League</a></p>
             </div>
             <!-- Break -->
             <br>

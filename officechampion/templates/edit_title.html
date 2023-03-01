@@ -10,7 +10,7 @@
         <!-- Title Name -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pen prefix light-blue-text text-darken-4"></i>
                 <input id="title_name" name="title_name" value="{{ title.title_name }}" minlength="3" maxlength="100"
                     type="text" class="validate" required>
                 <label for="title_name">Title Name</label>
@@ -37,7 +37,7 @@
         <!-- Image Url -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
                 <input id="image_url" name="image_url" value="{{ title.image_url }}" minlength="3" maxlength="500"
                     type="text">
                 <label for="image_url">Image URL:</label>
@@ -45,8 +45,9 @@
             </div>
         </div>
         <!-- League ID | Assign it to a league -->
+        <div class="row">
         <div class="input-field col s12">
-            <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+            <i class="fas fa-people-group prefix light-blue-text text-darken-4"></i>
             <select id="league_id" name="league_id" class="validate" required>
                 <option value="" disabled>Select League</option>
                 {% for league in user.leagues|sort(attribute="league_name") %}
@@ -58,6 +59,7 @@
                 {% endfor %}
             </select>
             <label for="league_id">League:</label>
+        </div>
         </div>
         <!-- Submit button -->
         <div class="row">

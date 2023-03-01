@@ -65,12 +65,15 @@ Home
 <!-- Break -->
 <br>
 <!-- Sign Up Button | Displays for new users only -->
+{% if user.is_authenticated %}
+{% else %}
 <!-- Sign Up Button Link -->
 <div class="row">
     <div class="col s12 center-align">
         <a href="/sign_up" class="btn waves-effect waves-light green accent-4 btn-large">Sign Up Now</a>
     </div>
 </div>
+{% endif %}
 <!-- Break -->
 <br>
 <br>

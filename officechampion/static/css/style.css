@@ -22,7 +22,7 @@ img {
 
 /* Provide horizontal margins to page elements */
 .right-spacer {
-    margin-right: 50px;
+    margin-right: 15px;
 }
 
 .left-spacer {
@@ -42,6 +42,31 @@ img {
     top: 5px;
     margin-right: 0.5em;
 }
+
+/* Fixing cards hiding content on resizing issues - Materialize has well known issues with cards */
+
+.card.small,
+.card.medium {
+    height: fit-content;
+}
+
+.card.small .card-content,
+.card.medium .card-content,
+.card.large .card-content {
+    height: auto;
+}
+
+.card.small .card-action,
+.card.medium .card-action,
+.card.large .card-action {
+    position: relative;
+}
+
+/* Ensures cards display under the left-most card */
+.equal-col {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
 /* Settings for Card Images */
 .card-content img {

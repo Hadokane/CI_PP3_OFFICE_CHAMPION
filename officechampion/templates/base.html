@@ -39,25 +39,25 @@
                     <li><a href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
                 </ul>
-                <!-- Display username greeting! -->
-                <span class="left-spacer">Hello "{{ user.username }}!"</span>
+                <!-- Display username greeting on larger screens -->
+                <span class="left-spacer hide-on-small-only">Hello "{{ user.username }}!"</span>
             </div>
-        </nav>
-        <!-- Sidenav Burger Icon Menu for smaller devices -->
-        <ul class="sidenav amber darken-3" id="mobile-demo">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            {% if user.is_authenticated %}
-            <li><a href="{{ url_for('league') }}">Leagues</a></li>
-            <li><a href="{{ url_for('titles') }}">Titles</a></li>
-            <li><a href="{{ url_for('members') }}">Members</a></li>
-            <li><a href="{{ url_for('notes') }}">Notes</a></li>
-            <li><a href="{{ url_for('logout') }}">Logout</a></li>
-            {% else %}
-            <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            {% endif %}
-        </ul>
     </div>
+    </nav>
+    <!-- Sidenav Burger Icon Menu for smaller devices -->
+    <ul class="sidenav amber darken-3" id="mobile-demo">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{{ url_for('league') }}">Leagues</a></li>
+        <li><a href="{{ url_for('titles') }}">Titles</a></li>
+        <li><a href="{{ url_for('members') }}">Members</a></li>
+        <li><a href="{{ url_for('notes') }}">Notes</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+        <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+    </ul>
 
     <!-- Checks if there are flash messages to display and shows them to the user -->
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -101,7 +101,7 @@
         </div>
     </footer>
 
-    <!-- Link to Materialize 1.0.0 framework JS -->
+    <!-- Link to Materialize 1.0.0 Framework JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Link to Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/67e7e0c15f.js" crossorigin="anonymous"></script>
