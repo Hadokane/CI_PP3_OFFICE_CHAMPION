@@ -9,7 +9,14 @@ if os.path.exists("env.py"):
 app = Flask(__name__)
 # allows us to read encrypted data (eg - sessions)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")  # local
+
+if os.environ.get("DEVELOPMENT") == "True":  # local
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
+else:  # elephantSQL
+    uri = os.environ.get("DATABASE_URL")
+    if uri.startswith("postgres://"):
+        uri = uri.replace("postgres://", "postgresql://", 1)
+    app.config["SQLALCHEMY_DATABASE_URI"] = uri
 
 db = SQLAlchemy(app)
 
