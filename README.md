@@ -82,7 +82,115 @@ USERNAME = TESTER
 
 PASSWORD = 12341234
 
---------------------
+---
+
+## Testing
+
+---
+
+Please refer to the separate Testing document located - [here](TESTING.md)
+
+This contains information on the following sections:
+- Validation 
+- Manual & Automated Testing of the website 
+- Testing of established user stories.
+
+[Back to top ↑](#office-champion)
+
+---
+
+## Deployment
+
+---
+
+### Creating the Gitpod Workspace
+
+---
+
+The project uses the Code Institute Gitpod Template as its foundation. 
+
+This can be accessed by doing the following:
+
+1. Log in to GitHub 
+2. Head to the [Code Institute student template](https://github.com/Code-Institute-Org/gitpod-full-template)
+2. Click 'Use this Template' next to the Green Gitpod button.
+3. Click the "Use this template" button.
+4. In the dropdown menu select "Create a new repository".
+5. You will be presented with the example screen below.
+6. Enter your details & press "Create repository from template"
+
+<details><summary>Example Screen</summary><img src="officechampion/static/assets/images/docs/github1.png" alt="GitHub Example Screen"></details>
+
+---
+
+### Forking the GitHub Repository
+
+---
+
+If you would like to fork this GitHub Repository - make a copy of the original on your GitHub account - for viewing or making changes do the following:
+
+1. Log in to GitHub
+2. Head to the [Office Champion GitHub Repository](https://github.com/Hadokane/CI_PP3_OFFICE_CHAMPION)
+3. Select the "Fork" tab on the right-hand side of the navigation menu.
+4. Choose a destination to save your newly forked repository.
+
+<details><summary>Example Screen</summary><img src="officechampion/static/assets/images/docs/github2.png" alt="GitHub Example Screen"></details>
+
+For further information on making a local clone of this project, I recommend reading GitHub Docs guide on forking located [here.](https://docs.github.com/en/github-ae@latest/get-started/quickstart/fork-a-repo)
+
+---
+
+### Deploying with Heroku
+
+---
+
+The application was then deployed with Heroku using the following steps:
+
+1. Create an account/Log in to [Heroku](https://dashboard.heroku.com/apps).
+2. On the main page select the "New" button and chose "Create new app".
+3. Enter a unique name for your project (with no spaces or capitalisation) and select your region (Europe in my case). 
+4. Select 'Create App'.
+5. Install Heroku into the project by entering ```npm install -g heroku``` into the terminal.
+6. Enter ```heroku login -i``` into the terminal and enter your heroku credentials. Due to two-factor authentication being active in my case, I used my Heroku API key instead of my password when connecting. This can be found on your Heroku "manage account" page.
+7. Enter ```heroku apps``` in the GitHub Terminal to see a list of your created apps & confirm your created app exists.s
+8. Head to the Heroku dashboard "settings" tab for your created project and find the "Heroku git URL" shown there.
+9. Copy that URL and paste the following into the GitHub CLI Terminal: ```git remote add heroku your_url``` (replacing your_url with the "Heroku git URL" mentioned above.)
+10. Create a "requirements.txt" file by typing ``` pip3 freeze --local > requirements.txt ``` into the Gitpod Command Line Interface Terminal & commit it to GitHub.
+11. Create a "Procfile" by typing ```echo web: python run.py > Procfile```. (Ensure the document is a single line & begins with a capital "P" to avoid potential errors.)
+12. Use ```git push -u heroku main``` to push the main branch of the project to heroku. (Will fail if the "Procfile" or "requirements.txt" are missing from your project.)
+13. Finally enter the following into the "Config Vars" section found on the Heroku Dashboards "Setting" tab. Select the "Reveal Config Vars" button and enter the following:
+- ("IP", "0.0.0.0")
+- ("PORT", "5000")
+- ("SECRET_KEY", "whatever_you_chose_to_enter_here") (*not the actual project secret_key that was used)
+14. Press "Open app" on Heroku. 
+15. Breathe a sigh of relief, the app is deployed and usable!
+
+<details><summary>Heroku Example Screen</summary><img src="officechampion/static/assets/images/docs/heroku.png" alt="Heroku Example Screen"></details>
+
+---
+
+### Deploying with ElephantSQL
+
+---
+
+Due to changes in Heroku the PostgreSQL databases created during this project need to be hosted externally.
+
+For this I've used ElephantSQL and will detail the process of deploying the databases here:
+
+1. Navigate to [ElephantSQL](ElephantSQL.com) and click “Get a managed database today”
+2. Create an account by connecting to GitHub.
+3. Once signed in click the "Create New Instance" button.
+4. Name your project, select your region & "Create Instance"
+5. Select your project and copy the provided URL.
+6. Head to the Heroku Dashboard "Settings" Tab and add the above URL into your "Config Vars"
+7. Select the "More" Button next to "Open App" and select "Run Console" in Heroku.
+8. Type ```Python3``` into the console and run
+9. Finally enter the following:
+```from officechampion import db```
+```db.create_all()```
+10. New empty database have now been created.
+
+[Back to top ↑](#office-champion)
 
 ## Reference
 
