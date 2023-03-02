@@ -233,3 +233,7 @@ https://freesvg.org/ - Royalty Free Imagery.
 https://fontawesome.com/ - icons
 
 Adobe Illustrator - Used to draw the website logo.
+
+https://fonts.google.com/specimen/Golos+Text - font used
+
+https://api.elephantsql.com/console/10e0f005-6f3d-41b8-af7a-b01d07d30e04/details - database hosting
