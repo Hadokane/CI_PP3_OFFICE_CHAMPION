@@ -36,10 +36,10 @@ Titles
                 <!-- If no image is provided, show the default placeholder image -->
                 {% if title.image_url == "" %}
                 <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"></img>
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
                 {% else %}
                 <!-- Show the users input image -->
-                <img src="{{ title.image_url }}"></img>
+                <img src="{{ title.image_url }}">
                 {% endif %}
                 <!-- Show the Titles Name -->
                 <span class="card-title">{{ title.title_name }}</span>

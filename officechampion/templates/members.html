@@ -33,9 +33,8 @@ Members
                 {% if member.member_image == None %}
                 <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
-                </img>
                 {% else %}
-                <img src="{{ member.member_image }}"></img>
+                <img src="{{ member.member_image }}">
                 {% endif %}
                 <span class="card-title">{{ member.member_name }}</span>
                 <p>ROLE:<br>{{ member.member_role }}</p>
@@ -46,9 +45,9 @@ Members
                 <!-- If no image is provided, show the default placeholder image -->
                 {% if member.title.image_url == "" %}
                 <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"></img>
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
                 {% else %}
-                <img style="max-height: fit-content;" src="{{ member.title.image_url }}"></img>
+                <img style="max-height: fit-content;" src="{{ member.title.image_url }}">
                 {% endif %}
                 <p><strong>{{ member.title.title_name }}</strong></p>
             </div>
@@ -99,9 +98,8 @@ Members
                 {% if member.member_image == None %}
                 <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
-                </img>
                 {% else %}
-                <img src="{{ member.member_image }}"></img>
+                <img src="{{ member.member_image }}">
                 {% endif %}
                 <!-- Member Name -->
                 <h4 class="card-title">{{ member.member_name }}</h4>

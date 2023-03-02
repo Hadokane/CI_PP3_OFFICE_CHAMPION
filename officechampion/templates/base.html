@@ -23,7 +23,7 @@
                 <!-- The main image acts as an anchor tag to the home page to meet user expectation -->
                 <a href="/" class="brand-logo center nav-img">
                     <img class="center" src="{{ url_for('static', filename='assets/images/docs/oc_logo.png') }}"
-                        alt="website logo" width="56" height="56"></img>
+                        alt="website logo" width="56" height="56">
                 </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
@@ -42,8 +42,8 @@
                 <!-- Display username greeting on larger screens -->
                 <span class="left-spacer hide-on-small-only">Hello "{{ user.username }}!"</span>
             </div>
+        </nav>
     </div>
-    </nav>
     <!-- Sidenav Burger Icon Menu for smaller devices -->
     <ul class="sidenav amber darken-3" id="mobile-demo">
         <li><a class="black-text" href="{{ url_for('home') }}">Home</a></li>

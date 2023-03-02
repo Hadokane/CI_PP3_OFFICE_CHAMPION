@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // select input initialization
     let select = document.querySelectorAll('select');
     M.FormSelect.init(select, options);
-    M.FormSelect.getInstance(select)
+    M.FormSelect.getInstance(select);
 });
 
 // function to remove alerts onclick
@@ -17,4 +17,4 @@ function removeNode() {
     const myDiv = document.getElementById("alertCard");
     const parent = myDiv.parentNode;
     parent.removeChild(myDiv);
-};
+}
