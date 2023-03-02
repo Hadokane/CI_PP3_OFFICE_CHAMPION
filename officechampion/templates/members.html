@@ -5,26 +5,21 @@ Members
 {% block content %}
 
 <!-- Section Header -->
-<div class="center">
-    <h2><strong><u>Create Members:</u></strong></h2>
-</div>
+<header class="center">
+    <h1>Members:</h1>
+</header>
 <!-- Break -->
 <br>
 <!-- Add Members Button -->
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_members') }}" class="btn-large green accent-4">
+        <a href="{{ url_for('add_members') }}" class="btn-large green accent-4 black-text">
             Add Member <i class="fas fa-plus-square right"></i>
         </a>
     </div>
 </div>
 <!-- Break -->
 <br>
-<!-- Section Header -->
-<div class="center">
-    <h2><strong><u>View Members:</u></strong></h2>
-</div>
-<!-- Break -->
 <br>
 <!-- View | Edit | Delete Members -->
 <!-- Title Holders Displayed -->
@@ -62,9 +57,9 @@ Members
             <div class="card-action">
                 <!-- Edit Title Name -->
                 <a href="{{ url_for('edit_members', member_id=member.id) }}"
-                    class="btn green accent-4 right-spacer">Edit</a>
+                    class="btn green accent-4 right-spacer black-text">Edit</a>
                 <!-- Call Delete Modal -->
-                <a href="#modal-{{ member.id }}" class="btn red modal-trigger">Delete</a>
+                <a href="#modal-{{ member.id }}" class="btn red modal-trigger black-text">Delete</a>
                 <!-- Modal Structure -->
                 <div id="modal-{{ member.id }}" class="modal">
                     <div class="modal-content">
@@ -75,11 +70,11 @@ Members
                     <div class="modal-footer">
                         <div class="col">
                             <!-- Close Modal -->
-                            <a class="btn-large red modal-close">No</a>
+                            <a class="btn-large red modal-close black-text">No</a>
                         </div>
                         <!-- Delete Title -->
                         <a href="{{ url_for('delete_member', member_id=member.id) }}"
-                            class="btn-large green accent-4">Yes</a>
+                            class="btn-large green accent-4 black-text">Yes</a>
                     </div>
                 </div>
             </div>
@@ -121,9 +116,9 @@ Members
             <div class="card-action">
                 <!-- Edit Title Name -->
                 <a href="{{ url_for('edit_members', member_id=member.id) }}"
-                    class="btn green accent-4 right-spacer">Edit</a>
+                    class="btn green accent-4 black-text right-spacer">Edit</a>
                 <!-- Call Delete Modal -->
-                <a href="#modal-{{ member.id }}" class="btn red modal-trigger">Delete</a>
+                <a href="#modal-{{ member.id }}" class="btn red modal-trigger black-text">Delete</a>
                 <!-- Modal Structure -->
                 <div id="modal-{{ member.id }}" class="modal">
                     <div class="modal-content">
@@ -134,11 +129,11 @@ Members
                     <div class="modal-footer">
                         <div class="col">
                             <!-- Close Modal -->
-                            <a class="btn-large red modal-close">No</a>
+                            <a class="btn-large red black-text modal-close">No</a>
                         </div>
                         <!-- Delete Title -->
                         <a href="{{ url_for('delete_member', member_id=member.id) }}"
-                            class="btn-large green accent-4">Yes</a>
+                            class="btn-large green accent-4 black-text">Yes</a>
                     </div>
                 </div>
             </div>

@@ -6,14 +6,14 @@ Titles
 
 <!-- Section Header -->
 <div class="center">
-    <h2><strong><u>Create Title:</u></strong></h2>
+    <h1>Create Title:</h1>
 </div>
 <!-- Break -->
 <br>
 <!-- Add Titles Button -->
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_title') }}" class="btn-large green accent-4">
+        <a href="{{ url_for('add_title') }}" class="btn-large green accent-4 black-text">
             Add Title <i class="fas fa-plus-square right"></i>
         </a>
     </div>
@@ -22,7 +22,7 @@ Titles
 <br>
 <!-- Section Header -->
 <div class="center">
-    <h2><strong><u>View Titles:</u></strong></h2>
+    <h1>View Titles:</h1>
 </div>
 <!-- Break -->
 <br>
@@ -60,9 +60,9 @@ Titles
             <div class="card-action">
                 <!-- Edit Title Name -->
                 <a href="{{ url_for('edit_title', title_id=title.id) }}"
-                    class="btn green accent-4 right-spacer">Edit</a>
+                    class="btn green accent-4 right-spacer black-text">Edit</a>
                 <!-- Call Delete Modal -->
-                <a href="#modal-{{ title.id }}" class="btn red modal-trigger">Delete</a>
+                <a href="#modal-{{ title.id }}" class="btn red modal-trigger black-text">Delete</a>
                 <!-- Modal Structure -->
                 <div id="modal-{{ title.id }}" class="modal">
                     <div class="modal-content">
@@ -73,11 +73,11 @@ Titles
                     <div class="modal-footer">
                         <div class="col">
                             <!-- Close Modal -->
-                            <a class="btn-large red modal-close">No</a>
+                            <a class="btn-large red modal-close black-text">No</a>
                         </div>
                         <!-- Delete Title -->
                         <a href="{{ url_for('delete_title', title_id=title.id) }}"
-                            class="btn-large green accent-4">Yes</a>
+                            class="btn-large green accent-4 black-text">Yes</a>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@
     <!-- Materialize Responsive Navbar -->
     <div class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper amber darken-3">
+            <div class="nav-wrapper amber darken-3 black-text">
                 <!-- The main image acts as an anchor tag to the home page to meet user expectation -->
                 <a href="/" class="brand-logo center nav-img">
                     <img class="center" src="{{ url_for('static', filename='assets/images/docs/oc_logo.png') }}"
@@ -27,16 +27,16 @@
                 </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a class="black-text" href="{{ url_for('home') }}">Home</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{{ url_for('league') }}">Leagues</a></li>
-                    <li><a href="{{ url_for('titles') }}">Titles</a></li>
-                    <li><a href="{{ url_for('members') }}">Members</a></li>
-                    <li><a href="{{ url_for('notes') }}">Notes</a></li>
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a class="black-text" href="{{ url_for('league') }}">Leagues</a></li>
+                    <li><a class="black-text" href="{{ url_for('titles') }}">Titles</a></li>
+                    <li><a class="black-text" href="{{ url_for('members') }}">Members</a></li>
+                    <li><a class="black-text" href="{{ url_for('notes') }}">Notes</a></li>
+                    <li><a class="black-text" href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a class="black-text" href="{{ url_for('sign_up') }}">Sign Up</a></li>
+                    <li><a class="black-text" href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
                 </ul>
                 <!-- Display username greeting on larger screens -->
@@ -46,16 +46,16 @@
     </nav>
     <!-- Sidenav Burger Icon Menu for smaller devices -->
     <ul class="sidenav amber darken-3" id="mobile-demo">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a class="black-text" href="{{ url_for('home') }}">Home</a></li>
         {% if user.is_authenticated %}
-        <li><a href="{{ url_for('league') }}">Leagues</a></li>
-        <li><a href="{{ url_for('titles') }}">Titles</a></li>
-        <li><a href="{{ url_for('members') }}">Members</a></li>
-        <li><a href="{{ url_for('notes') }}">Notes</a></li>
-        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        <li><a class="black-text" href="{{ url_for('league') }}">Leagues</a></li>
+        <li><a class="black-text" href="{{ url_for('titles') }}">Titles</a></li>
+        <li><a class="black-text" href="{{ url_for('members') }}">Members</a></li>
+        <li><a class="black-text" href="{{ url_for('notes') }}">Notes</a></li>
+        <li><a class="black-text" href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
-        <li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
-        <li><a href="{{ url_for('login') }}">Login</a></li>
+        <li><a class="black-text" href="{{ url_for('sign_up') }}">Sign Up</a></li>
+        <li><a class="black-text" href="{{ url_for('login') }}">Login</a></li>
         {% endif %}
     </ul>
 
@@ -94,9 +94,9 @@
     <!-- Materialize Sticky Footer -->
     <footer class="page-footer amber darken-3">
         <div class="footer-copyright">
-            <div class="container">
+            <div class="container black-text">
                 Any Copyrighted materials are used for educational purposes only.
-                <a class="white-text right" href="https://github.com/Hadokane" target="_blank">&copy; HK_Dev</a>
+                <a class="black-text right" href="https://github.com/Hadokane" target="_blank">&copy; HK_Dev</a>
             </div>
         </div>
     </footer>

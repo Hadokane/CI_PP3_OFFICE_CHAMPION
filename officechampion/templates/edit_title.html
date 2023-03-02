@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- Page Header -->
-<h2 class="light-blue-text text-darken-4 center-align"><strong><u>Edit Title:</u></strong></h2>
+<header class="center">
+    <h1>Edit Title:</h1>
+</header>
 <!-- Break -->
 <br>
 <!-- Edit Title Form-->
@@ -46,25 +48,25 @@
         </div>
         <!-- League ID | Assign it to a league -->
         <div class="row">
-        <div class="input-field col s12">
-            <i class="fas fa-people-group prefix light-blue-text text-darken-4"></i>
-            <select id="league_id" name="league_id" class="validate" required>
-                <option value="" disabled>Select League</option>
-                {% for league in user.leagues|sort(attribute="league_name") %}
-                {% if league == title.league %}
-                <option value="{{ league.id }}" selected>{{ league.league_name }}</option>
-                {% else %}
-                <option value="{{ league.id }}">{{ league.league_name }}</option>
-                {% endif %}
-                {% endfor %}
-            </select>
-            <label for="league_id">League:</label>
-        </div>
+            <div class="input-field col s12">
+                <i class="fas fa-people-group prefix light-blue-text text-darken-4"></i>
+                <select id="league_id" name="league_id" class="validate" required>
+                    <option value="" disabled>Select League</option>
+                    {% for league in user.leagues|sort(attribute="league_name") %}
+                    {% if league == title.league %}
+                    <option value="{{ league.id }}" selected>{{ league.league_name }}</option>
+                    {% else %}
+                    <option value="{{ league.id }}">{{ league.league_name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="league_id">League:</label>
+            </div>
         </div>
         <!-- Submit button -->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large green accent-4">
+                <button type="submit" class="btn-large green accent-4 black-text">
                     Edit Title <i class="fas fa-plus-square right"></i>
                 </button>
             </div>

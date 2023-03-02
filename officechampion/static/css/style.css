@@ -1,13 +1,29 @@
+/* Import Golos Text from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap');
+
 /* General body settings */
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    color: #01579b;
+    color: #0d47a1;
+    background-color: #fff8e1;
+    font-family: 'Golos Text', sans-serif;
+    font-weight: 400;
 }
 
 main {
     flex: 1 0 auto;
+}
+
+/* Font Settings */
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 2.2em
 }
 
 /* Keep images at correct resolution */

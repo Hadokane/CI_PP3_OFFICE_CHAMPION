@@ -4,18 +4,17 @@
 {% block title %}
 Leagues
 {% endblock %}
-
 {% block content %}
 <!-- Section Header -->
-<div class="center">
-    <h2><strong><u>Create League:</u></strong></h2>
-</div>
+<header class="center">
+    <h1>Create League:</h1>
+</header>
 <!-- Break -->
 <br>
 <!-- Add League Button -->
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_league') }}" class="btn-large green accent-4">
+        <a href="{{ url_for('add_league') }}" class="btn-large green accent-4 black-text">
             Add League <i class="fas fa-plus-square right"></i>
         </a>
     </div>
@@ -24,7 +23,7 @@ Leagues
 <br>
 <!-- Section Header -->
 <div class="center">
-    <h2><strong><u>View Leagues:</u></strong></h2>
+    <h1>View Leagues:</h1>
 </div>
 <!-- Break -->
 <br>
@@ -39,17 +38,18 @@ Leagues
             </div>
             <!-- Open this specific League's page -->
             <div class="card-panel light-blue darken-3 white-text">
-                <p><a href="{{ url_for('open_league', league_id=league.id) }}" class="btn-large orange accent-4">Open The
-                    League</a></p>
+                <p><a href="{{ url_for('open_league', league_id=league.id) }}" class="btn-large orange accent-4">Open
+                        The
+                        League</a></p>
             </div>
             <!-- Break -->
             <br>
             <div class="card-action">
                 <!-- Edit League Name -->
                 <a href="{{ url_for('edit_league', league_id=league.id) }}"
-                    class="btn green accent-4 right-spacer">Edit</a>
+                    class="btn green accent-4 black-text right-spacer">Edit</a>
                 <!-- Call Delete Modal -->
-                <a href="#modal-{{ league.id }}" class="btn red modal-trigger">Delete</a>
+                <a href="#modal-{{ league.id }}" class="btn red black-text modal-trigger">Delete</a>
                 <!-- Modal Structure -->
                 <div id="modal-{{ league.id }}" class="modal">
                     <div class="modal-content">
@@ -60,11 +60,11 @@ Leagues
                     <div class="modal-footer">
                         <div class="col">
                             <!-- Close Modal -->
-                            <a class="btn-large red modal-close">No</a>
+                            <a class="btn-large red black-text modal-close">No</a>
                         </div>
                         <!-- Delete League -->
                         <a href="{{ url_for('delete_league', league_id=league.id) }}"
-                            class="btn-large green accent-4">Yes</a>
+                            class="btn-large green accent-4 black-text">Yes</a>
                     </div>
                 </div>
             </div>

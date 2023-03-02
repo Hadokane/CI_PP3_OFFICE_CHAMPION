@@ -1,5 +1,5 @@
 <!-- Same Page Nav | Outside of the base template so it's not contained within a column -->
-<div class="sidebar hide-on-med champ-nav">
+<div class="sidebar grey lighten-5 hide-on-med champ-nav">
     <br>
     <br>
     <br>
@@ -12,8 +12,7 @@
 <!-- Sets Title shown in web browser tabs -->
 {% block title %}{{ league.league_name }}{% endblock %}
 {% block content %}
-<h1 class="light-blue-text text-darken-4 center-align" id="champions"><strong><u>{{ league.league_name }}</u></strong>
-</h1>
+<h1 class="center" id="champions">{{ league.league_name }}</h1>
 
 <!-- Title Holders Displayed -->
 <div class="row">
@@ -88,8 +87,9 @@
         {% for note in display|sort(attribute="date") %}
         <li class="collection-item grey lighten-5">{{ note.data }}
             <!-- Call Delete Modal -->
-            <a href="#modal-{{ note.id }}" class="btn red accent-4 modal-trigger right">Delete Note</a>
-            <a href="{{ url_for('edit_notes', note_id=note.id) }}" class="btn green accent-4 right right-spacer">Edit
+            <a href="#modal-{{ note.id }}" class="btn red accent-4 modal-trigger right black-text">Delete Note</a>
+            <a href="{{ url_for('edit_notes', note_id=note.id) }}"
+                class="btn green accent-4 right right-spacer black-text">Edit
                 Note</a>
             <!-- Display Note Date -->
             <br><small>({{ note.date.strftime("%d %B, %Y") }})</small>
@@ -102,9 +102,10 @@
             </div>
             <div class="modal-footer">
                 <div class="col">
-                    <a class="btn-large red modal-close">No</a>
+                    <a class="btn-large red modal-close black-text">No</a>
                 </div>
-                <a href="{{ url_for('delete_note', note_id=note.id) }}" class="btn-large green accent-4">Yes</a>
+                <a href="{{ url_for('delete_note', note_id=note.id) }}"
+                    class="btn-large green accent-4 black-text">Yes</a>
             </div>
         </div>
         {% endfor %}
