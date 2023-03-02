@@ -4,15 +4,23 @@ Home
 {% endblock %}
 {% block content %}
 <!-- Page Header -->
-<header class="center">
-    <h1>BECOME LEGENDARY!</h1>
-</header>
+<div class="row">
+    <div class="col center-align">
+        <header>
+            <h1>BECOME LEGENDARY!</h1>
+        </header>
+    </div>
+</div>
 <!-- Break -->
 <br>
 <br>
 <!-- Main Website Logo/Hero Image -->
-<div class="center">
-    <img src="{{ url_for('static', filename='assets/images/docs/oc_logo.png') }}" alt="website logo">
+<div class="row">
+    <div class="col">
+        <div class="center">
+            <img src="{{ url_for('static', filename='assets/images/docs/oc_logo.png') }}" alt="website logo">
+        </div>
+    </div>
 </div>
 <!-- Break -->
 <br>
