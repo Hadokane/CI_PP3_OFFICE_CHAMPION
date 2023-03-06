@@ -288,7 +288,6 @@ def delete_title(title_id):
 
 # Opens the League page to show members & titles
 @app.route("/open_league/<int:league_id>")
-@login_required
 def open_league(league_id):
     # Reads db and gets league and title data
     league = League.query.get_or_404(league_id)
