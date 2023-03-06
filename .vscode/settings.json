@@ -31,6 +31,7 @@
       "jsonify",
       "officechampion",
       "ondelete",
+      "Webaim",
       "werkzeug"
    ]
 }
