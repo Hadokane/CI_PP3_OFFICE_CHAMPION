@@ -197,6 +197,7 @@ def edit_league(league_id):
     if request.method == "POST":
         league.league_name = request.form.get("league_name")
         db.session.commit()
+        flash("League updated!", category="success")
         return redirect(url_for("league"))
     return render_template(
         "edit_league.html", user=current_user, league=league)
@@ -210,6 +211,7 @@ def delete_league(league_id):
     league = League.query.get_or_404(league_id)
     db.session.delete(league)
     db.session.commit()
+    flash("League Deleted!", category="success")
     return redirect(url_for("league"))
 
 
