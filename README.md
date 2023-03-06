@@ -40,11 +40,12 @@ The last update to this file was: **07 March 2023**
 
 **PROVIDED TEST ACCOUNT**
 
-[Provided Test Account](#provided-test-account) - Sign in using this and view an example of an active user profile.
+[Provided Test Account](#provided-test-account) - Sign in using these provided details and view an example of an active user profile.
 
 *(Provided for review/examination purposes)*
 
 ---
+
 # Academic Project Aims
 
 I am currently pursuing my **Diploma in Web App Development** from [Code Institute](https://codeinstitute.net/ "Code Institute").
@@ -61,13 +62,15 @@ Great care has been taken, to ensure that the website is designed to meet best p
 
 The website has been tested on a variety of devices and screen resolutions: from mobiles; to tablets; and 4k monitors. It also has proven compatibility with all popular web browsers.
 
-
 ---
+
 # Table of Contents
 
 1. [User Experience (UX)](#user-experience---ux)
     - [Strategy Plane](#strategy-plane)
     - [Scope Plane](#scope-plane)
+        - [Features Required](#features-required)
+        - [Road Map](#road-map)
     - [Structure Plane](#structure-plane)
     - [Skeleton Plane](#skeleton-plane)
         - [Wireframes](#wireframes)
@@ -91,8 +94,319 @@ The website has been tested on a variety of devices and screen resolutions: from
     - [Acknowledgements](#acknowledgements)
 
 ---
-## AlchemySQL
+
+# User Experience - UX
+
+As with my previous projects I have chosen to arrange my UX analysis following the framework of Jesse James Garrett's philosophy of the "5 Planes," as discussed in his book [The Elements of User Experience](https://www.amazon.co.uk/Elements-User-Experience-User-Centered-Design/dp/0321683684/ref=asc_df_0321683684/?tag=googshopuk-21&linkCode=df0&hvadid=311000051962&hvpos=&hvnetw=g&hvrand=10376246921916888236&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007448&hvtargid=pla-432330338546&psc=1&th=1&psc=1).
+
+I decided to utilise this methodology in order to establish a clear and achievable list goals for my project to follow. 
+
+These goals will be divided between meeting the needs of the user - both first-time and returning - along with meeting the needs of the site owner.
+
+I will maintain a clear, justified development path, and establish a defined priority of tasks and elements for integration. Ensuring the project avoids "feature creep," at this early development stage and maintains a clear initial scope.
+
 ---
+
+# Strategy Plane
+
+In this section, I will define clear goals that will be represented by a list of both users and website owner stories. These will serve as a definitive reference point for defining the necessary features and functions of the website.
+
+In a later section, I will revisit these stories and see if/how the project has addressed each goal, justifying my explanations with imagery and proof cases.
+
+Each subheading below provides these initial goal lists, with added explanations on where/how I expect to meet these goals throughout the development of the project.
+
+---
+## User Stories:
+
+### **As a First-Time user, I want to:**
+---
+
+1. Be able to sign up for an account.
+    
+    1. Does it prompt me if my username is already taken?
+    
+    2. Does it let me know if my password is okay?
+        
+        - Do both password boxes match?
+        
+        - Is there a character limit?
+    
+    3. Can I press the submit button with empty input boxes?
+
+2. Have confirmation I've signed in to the website.
+    
+    1. Welcome in the top-left of the nav bar. (Positive visual user feedback.)
+    
+    2. Navbar icons change - "Sign up" and "Login" are replaced with the websites pages.
+
+3. Easily understand what each webpage does.
+    
+    1. Clearly named website pages in the navbar.
+    
+    2. Provide clear explanations throughout the website where action is required.
+
+4. Be able to view the website on any device.
+
+    1. Does it display correctly on different screen sizes?
+
+---
+### **As a Returning user, I want to:**
+---
+
+5. Be able to log in to my account.
+  
+    1. Are my username & password recognised?
+
+    2. Are there alerts for when I enter incorrect data?
+
+    3. Is there feedback when i've successfully signed in?
+
+6. Be able to Create, Read, Update & Delete my data.
+
+    1. Can I create new objects in each section of the website?
+
+    2. Are there "Edit" & "Delete" options present for my created data?
+
+    3. Can I see the data i've created easily?
+
+7. Be able to access and use the website on any device.
+
+    1. If I create my account on a computer will it work on my phone?
+
+    2. Is my created data still present?
+
+8. See my created league displayed on one page and share it with friends.
+
+---
+### **As a site owner, I want to:**
+---
+
+9. Ensure the user can interact with all elements to reach a logical and desired result.
+
+    1. Manual testing of the site's features will be crucial to achieving this goal. If all user goals are met, then this goal will also be met.
+
+10. Ensure the app and its elements display correctly on any device.
+
+    1. Check the website on multiple devices and screen sizes.
+
+    2. Can all elements be interacted with by mouse and touch devices?
+
+11. Have admin privileges on the website. Ensuring I can edit/delete user data.
+
+12. Gamify the "employee of the month" concept to encourage users to compete and be more motivated.
+
+13. Provide a multi-use case platform for the user. 
+
+    1. The website can be used for numerous groups - such as: the office, sports team, gaming groups, etc. - with it's current core features.
+
+
+---
+
+## **Grid of Opportunities:**
+
+With the above goals in mind, I have assembled the following "grid of opportunities" to showcase the prioritised features heading into the next stage of development.
+
+| Opportunity                        | IMPORTANCE | VIABILITY |
+|------------------------------------|------------|-----------|
+| All website elements function correctly    | 5          | 5         |
+| Sign up & Login functions work correctly on any device     | 5          | 5         |
+| The user has full C.R.U.D. functionality     | 5          | 5         |
+| Provide an overview page for the users finished League | 5          | 4        |
+| Provide positive feedback to all user action | 4          | 4        |
+| Provide admin functionality to the site owner         | 3          | 3         |
+
+[Back to top ↑](#office-champion)
+
+---
+
+# Scope Plane 
+
+In the above Strategy Plane section, I laid out the websites goals, user stories & addressed ways in which the project could meet those defined stories.
+
+To set a clear scope for development and avoid any "feature creep", I will further elaborate on the required features for this website in this section, in doing so we will maintain an agile approach.
+
+---
+
+## Features Required:
+
+
+The following are written with respect to the above user/site-owner stories and directly reference how they can solve the stated goals.
+
+1. A Users table in within the Database to store each users login information.
+    
+    - Allows the user to sign up, login and have their created data stored, ready for when they login.
+
+    - Should be accessible from any device.
+
+2. Create a positive user experience by including visual, colour-coded "Alerts" (Python "Flash Messages") that: 
+    
+    - Notify the user of any issues with their sign up/login efforts.
+    
+    - Provide the user with feedback upon carrying out any C.R.U.D. functions or when signing into the website successfully.
+    
+    - Provides positive feedback to the player upon completion of the game.
+
+3. Individual named pages for each area the user can interact with.
+
+    - Required pages (All require C.R.U.D. functionality): Leagues, Titles, Members & Notes.
+
+    - Sign Up & Login only displayed to non-signed in users.
+
+4. Ensure only the correct user has CRUD functionality.
+
+5. Ensure the main League page is sharable and viewable by non-signed in users.
+
+[Back to top ↑](#the-hug-protocol)
+
+---
+
+## Road Map
+
+By establishing our current goals in the above section, I am now able to create a Road-Map for future updates that will improve the overall user experience of the website. 
+
+These have been deemed non-essential for an initial "proof-of-concept" build and would simply serve to enhance the core website that is being prioritised.
+
+---
+### Future goals:
+---
+
+In a theoretical "next update", I would aim to add additional functionality to the website as I feel the core user experience is developed and functioning as intended.
+
+**To improve the experience for the user, the following could be implemented:**
+
+1. Add a "Make Unique" feature to force a title to only have one holder at a time. 
+    - Alternatively make titles "unique" as the default setting and add a "Many Holders" option to allow a title to have more than one holder. 
+    - This wasn't a pressing feature to include in an initial launch version of the website and users are currently capable of managing their own settings, making titles unique or held by many as they choose.
+
+2. Migrate the websites CSS from Materialize to Bootstrap to allow for more consistent card implementation & avoid the known issues with cards & the input form function not alerting users when left blank.
+
+3. Allow multiple user accounts to edit the same leagues and have access to certain features allowed by that leagues admin.
+
+4. Add a feature to track title-reigns, so users can see the history of each title including dates when new champions were crowned.
+
+**To improve the experience for the site owner, the following could be implemented:**
+
+1. Implement sponsored/ad placement on the website in order to generate revenue for the site owner.
+    - would make thematic sense to establish a partnership/affiliation with a belt/title maker, trophy making company or similar. 
+    - Partnering with a print company could allow users to purchase related certificates.
+
+
+[Back to top ↑](#office-champion)
+
+---
+
+# Structure Plane:
+
+
+Here we will discuss the priority of necessary features required to correctly utilise this website.
+
+---
+
+## Feature Priority
+
+Utilising the Jinja templating language and features of Flask, a `base` template page will be created containing the following important features, that will be displayed on all pages throughout the website:
+
+- A minimal navigation menu with logged in pages hidden to new users, providing access to only the `sign up` and `login` pages.
+    
+    - Logged in users will have access to `Leagues, Titles, Members, Notes` pages, along with a `log out button`.
+
+    - It will be responsive and collapse on smaller devices into a "burger icon" menu.
+
+    - Contain a greeting to logged in users. Providing positive feedback and a reminder that they are indeed signed in.
+
+- A clean footer containing a link to the website developers GitHub & a copyright disclaimer.
+
+- The ability to display Alerts (Flash Messages) to the user directly under the header. So that user expectations on their placement are met and maintained no matter what page they're on.
+
+
+The first thing the user should be greeted by is an appealing `home page` (index) containing the following:
+
+- A clutter-free minimal design.
+
+- A large hero image of the website's logo.
+
+- A row of promo-cards, explaining how to use the website in a fun, provocative manner, that is culturally appropriate for the websites intended purpose - gamifying the "Employee of the Month" experience.
+
+- A button to send new users to the "Sign Up" page
+
+
+Next, the user will be introduced to the `Sign Up` page, where they are presented with a form allowing them to create an account.
+
+The form will do the following:
+
+- Provide a `username text input` to let users enter their chosen `username`.
+
+- Provide a `password text input` to let users enter their chosen `password`.
+
+    - This will be stored in the database as hashed data for security reasons, using the `method="sha256"` meaning the admin cannot see this information, keeping the user's password hidden and secure. 
+
+- Alert the user via "Flash Messages" if there are any issues during sign up:
+    - Username in use.
+    - Passwords do not match.
+    - Input is to short.
+    - Field left blank.
+
+- Alert the user positively on sign up success & log them in.
+
+---
+
+## The interaction design (IXD)
+
+**Buttons**
+
+1. Will be colour-coded to match user expectations.
+    
+    - Green for "Edit, Sign up or Submit" buttons. Green is seen as a positive colour and is a standard colour across the internet when submitting a form or editing data.
+
+    - Red for "Delete" buttons. Following the same idea, Red is seen as a negative colour often associated with deleting an item or cancelling an event. 
+
+    - Orange for the bold "Open League" buttons. This is to differentiate it from other buttons on the website and help the user distinguish it from the surrounding "Edit" & "Delete" buttons. This will open the main League page which will be the summary of the users work, so making it unique feels important in providing a good user experience.
+
+2. Will use "Materialize's" built-in `waves-effect waves-light` classes, to provide positive feedback to user interaction.
+
+**Promo Cards**
+
+1. Simple grey background with blue text. Help it stand out from the rest of the website and draw user attention.
+
+**Feature Cards**
+
+1. Display the relevant user information based on section of the website - i.e. Member displays `Name: | Role: | Title (if title holder):`
+
+2. Dark Blue background, bold white text. Draw the users eye and contrast the websites Amber coloured theme. Stylised to include lighter Blue strips to separate information and improve readability for users.
+
+**Alerts**
+
+1. Will be colour-coded to set user expectations.
+    
+    - Blue will be used for successes and to provide information. It is a positive colour used to display information and matches the websites blue/orange design.
+
+    - Red will be used to draw the users attention. Providing a warning that there is an issue with their intended task.
+
+2. `onClick` these elements will (as necessary):
+    - Removes the alert from the screen.
+
+
+**Overall this website will:**
+
+- Be consistent in design, branding and colours used.
+
+- Provide constant visual feedback to user actions - positive and negative.
+
+- Allow the user to create an account and sign in/log out with ease.
+
+- Allow the user to Create/Read/Update/Delete their created data.
+
+- Allow the user to curate a competitive "Employee of the Month" style experience for their friend/work group.
+
+- Be readable on all devices.
+
+- Utilise a Relational Database Management System to store and retrieve user data.
+
+[Back to top ↑](#office-champion)
+
+---
+
+## AlchemySQL
 
 Discuss AlchemySQL and the type of system it is and why I used it.
 
@@ -134,8 +448,6 @@ officechampion=# \dt
 
 ## Provided Test Account
 
----
-
 The following account is pre-loaded with examples of different case-uses for the Office Champion website.
 
 Examiners are welcome to login using the following information and be greeted by with an example of an active user account, with multiple leagues, titles and members.
@@ -156,11 +468,8 @@ Password = 12341234
 
 # Deployment
 
----
 
 ## Creating the Gitpod Workspace
-
----
 
 The project uses the Code Institute Gitpod Template as its foundation. 
 
@@ -180,8 +489,6 @@ This can be accessed by doing the following:
 
 ## Forking the GitHub Repository
 
----
-
 If you would like to fork this GitHub Repository - make a copy of the original on your GitHub account - for viewing or making changes do the following:
 
 1. Log in to GitHub
@@ -196,8 +503,6 @@ For further information on making a local clone of this project, I recommend rea
 ---
 
 ## Deploying with Heroku
-
----
 
 The application was then deployed with Heroku using the following steps:
 
@@ -226,8 +531,6 @@ The application was then deployed with Heroku using the following steps:
 
 ## Deploying with ElephantSQL
 
----
-
 Due to changes in Heroku the PostgreSQL databases created during this project need to be hosted externally.
 
 For this I've used ElephantSQL and will detail the process of deploying the databases here:
@@ -249,8 +552,6 @@ For this I've used ElephantSQL and will detail the process of deploying the data
 
 ## Gitpod CLI Terminal Inputs
 
----
-
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
 `python3 -m http.server`
@@ -266,8 +567,6 @@ Install necessary plugins/framework for this project:
 ---
 
 ## PostgreSQL Inputs
-
----
 
 **Initialise Postgresql (psql) in the terminal:**
 ```
@@ -301,7 +600,6 @@ db.create_all()
 # Credits 
 
 ## Languages Used:
----
 
 - HTML 5
 - CSS 3
@@ -310,7 +608,6 @@ db.create_all()
 
 --- 
 ## Frameworks Libraries and Programs Used:
----
 
 - [Heroku](https://heroku.com/)
   - Heroku is used for the deployment & hosting of this project.
@@ -367,7 +664,6 @@ db.create_all()
 
 ---
 ## Validators Used:
----
 
 - [W3C HTML Validator](https://validator.w3.org/) - Validation of HTML.
 - [W3C JigSaw Validator](https://jigsaw.w3.org/css-validator/) - Validation of CSS.
@@ -379,7 +675,6 @@ db.create_all()
 
 ---
 ## Technologies Used:
----
 
 1. [Markdown Guide](https://www.markdownguide.org/cheat-sheet/) - For their "Markdown Cheat Sheet" and assistive documents on writing a README.md file.
 
@@ -411,7 +706,6 @@ db.create_all()
 
 ---
 ## Imagery Used:
----
 
 1. [WikiCommons - No Image Placeholder](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png) - Wikipedia Creative Commons "No Image" Thumbnail. Used as a placeholder when no image is provided to "Members" or "Titles" during creation or editing.
 
@@ -423,7 +717,6 @@ db.create_all()
 
 ---
 ## Acknowledgements
----
 
 With thanks to:
 - My family and friends - For providing some great feedback and user-testing across multiple devices and browsers.
