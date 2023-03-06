@@ -1,14 +1,12 @@
 ![UI](officechampion/static/assets/images/docs/oc_logo.png)
 
-# Testing
+# **Testing Document**
 
 The Office Champion app has undergone numerous tests - both automated and manual - along with numerous validation methods in order to ensure it functions as intended and provides a positive user experience throughout.
 
 ---
 
-## Contents
-
----
+# Contents
 
 - [Code Validation](#code-validation)
     - [W3C HTML Validator](#w3c-html-validation) 
@@ -24,7 +22,6 @@ The Office Champion app has undergone numerous tests - both automated and manual
     - [First Time User](#first-time-user)
     - [Returning User](#returning-user)
     - [Website Owner](#website-owner)
-
 - [Bugs](#bugs)
 
 Return to [README.md ↑](/README.md#testing)
@@ -34,8 +31,6 @@ Return to [README.md ↑](/README.md#testing)
 # Code Validation
 
 ## W3C HTML Validation
-
----
 
 -  [W3C HTML Validator](https://validator.w3.org/)
 
@@ -56,8 +51,6 @@ After fixing the above issues & resubmitting the website for validation, I recei
 
 ## W3C CSS Validation
 
----
-
 - [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator/)
 
 Next, I carried out validation of the CSS file by running the page through W3C CSS Validation Service - Jigsaw.
@@ -69,8 +62,6 @@ The results came back successfully.
 ---
 
 ## JSHINT Validation
-
----
 
 - [JSHint Validator](https://jshint.com/)
 
@@ -86,8 +77,6 @@ I utilised JSHint as a validation tool to help detect if there were any errors o
 
 ## CI Python Linter
 
----
-
 - [Code Institute Python Linter - Pep8 Validator](https://pep8ci.herokuapp.com/)
 
 I used Code Institute's Python Linter to check the validity of my code based on Pep 8 styling standards.
@@ -102,8 +91,6 @@ I ran each Python page individually through the linter. With each returning a re
 ---
 
 ## Wave Validator
-
----
 
 - [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/)
 
@@ -132,8 +119,6 @@ After carrying out the above steps, Office Champion passed Wave validation.
 
 ## A11y Contrast Validator
 
----
-
 - [A11y Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/)
 
 This was used to ensure the websites colour contrast met WCAG 2.1 Guidelines.
@@ -145,8 +130,6 @@ An initial check showed that the burger menu icon on the side-nav bar was a cont
 ---
 
 ## Lighthouse
-
----
 
 - [Google Chrome Lighthouse Validator](https://developer.chrome.com/docs/lighthouse/overview/)
 
@@ -196,7 +179,6 @@ Return to [Top ↑](/TESTING.md#testing)
 
 # Manual Testing
 
-
 sgsdgsgd
 
 Return to [Top ↑](/TESTING.md#testing)
@@ -205,30 +187,23 @@ Return to [Top ↑](/TESTING.md#testing)
 
 # Testing User Stories
 
-
 Here we will test our previously defined user stories.
 
 ---
 
-### First-time User
-
----
+## First-time User
 
 dgdsgdsg
 
 ---
 
-### Returning User
-
----
+## Returning User
 
 dgsdgds
 
 ---
 
-### Website Owner
-
----
+## Website Owner
 
 dgsgds
 
@@ -244,3 +219,5 @@ gdgdsgds
 Return to [Top ↑](/TESTING.md#testing)
 
 Return to [README.md ↑](/README.md#testing)
+
+---
