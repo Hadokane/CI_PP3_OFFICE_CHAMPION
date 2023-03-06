@@ -13,7 +13,7 @@ Members
 <!-- Add Members Button -->
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_members') }}" class="btn-large green accent-4 black-text">
+        <a href="{{ url_for('add_members') }}" class="btn-large green accent-4 black-text waves-effect waves-light">
             Add Member <i class="fas fa-plus-square right"></i>
         </a>
     </div>
@@ -114,9 +114,9 @@ Members
             <div class="card-action">
                 <!-- Edit Title Name -->
                 <a href="{{ url_for('edit_members', member_id=member.id) }}"
-                    class="btn green accent-4 black-text right-spacer">Edit</a>
+                    class="btn green accent-4 black-text right-spacer waves-effect waves-light">Edit</a>
                 <!-- Call Delete Modal -->
-                <a href="#modal-{{ member.id }}" class="btn red modal-trigger black-text">Delete</a>
+                <a href="#modal-{{ member.id }}" class="btn red modal-trigger black-text waves-effect waves-light">Delete</a>
                 <!-- Modal Structure -->
                 <div id="modal-{{ member.id }}" class="modal">
                     <div class="modal-content">
@@ -127,11 +127,11 @@ Members
                     <div class="modal-footer">
                         <div class="col">
                             <!-- Close Modal -->
-                            <a class="btn-large red black-text modal-close">No</a>
+                            <a class="btn-large red black-text modal-close waves-effect waves-light">No</a>
                         </div>
                         <!-- Delete Title -->
                         <a href="{{ url_for('delete_member', member_id=member.id) }}"
-                            class="btn-large green accent-4 black-text">Yes</a>
+                            class="btn-large green accent-4 black-text waves-effect waves-light">Yes</a>
                     </div>
                 </div>
             </div>
