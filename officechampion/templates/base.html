@@ -42,8 +42,10 @@
                     <li><a class="black-text" href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
                 </ul>
+                {% if user.is_authenticated %}
                 <!-- Display username greeting on larger screens -->
                 <span class="left-spacer hide-on-small-only">Hello "{{ user.username }}!"</span>
+                {% endif %}
             </div>
         </nav>
     </div>
