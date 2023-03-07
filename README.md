@@ -202,7 +202,7 @@ Each subheading below provides these initial goal lists, with added explanations
 
 ---
 
-## **Grid of Opportunities:**
+## Grid of Opportunities:
 
 With the above goals in mind, I have assembled the following "grid of opportunities" to showcase the prioritised features heading into the next stage of development.
 
@@ -232,11 +232,11 @@ To set a clear scope for development and avoid any "feature creep", I will furth
 
 The following are written with respect to the above user/site-owner stories and directly reference how they can solve the stated goals.
 
-1. A Users table in within the Database to store each users login information.
+1. A Users table within the Database to store each users login information & a relevant table for each C.R.U.D. section the user can interact with.
     
     - Allows the user to sign up, login and have their created data stored, ready for when they login.
 
-    - Should be accessible from any device.
+    - Will be accessible from any device.
 
 2. Create a positive user experience by including visual, colour-coded "Alerts" (Python "Flash Messages") that: 
     
@@ -252,7 +252,7 @@ The following are written with respect to the above user/site-owner stories and 
 
     - Sign Up & Login only displayed to non-signed in users.
 
-4. Ensure only the correct user has CRUD functionality.
+4. Ensure only the correct user has CRUD functionality over their created data.
 
 5. Ensure the main League page is sharable and viewable by non-signed in users.
 
@@ -304,6 +304,9 @@ Here we will discuss the priority of necessary features required to correctly ut
 
 ## Feature Priority
 
+### Base Template
+---
+
 Utilising the Jinja templating language and features of Flask, a `base` template page will be created containing the following important features, that will be displayed on all pages throughout the website:
 
 - A minimal navigation menu with logged in pages hidden to new users, providing access to only the `sign up` and `login` pages.
@@ -318,8 +321,11 @@ Utilising the Jinja templating language and features of Flask, a `base` template
 
 - The ability to display Alerts (Flash Messages) to the user directly under the header. So that user expectations on their placement are met and maintained no matter what page they're on.
 
+---
+### Home Page
+---
 
-The first thing the user should be greeted by is an appealing `home page` (index) containing the following:
+The first thing the user should be greeted by is an appealing `Home Page/Index` containing the following:
 
 - A clutter-free minimal design.
 
@@ -329,6 +335,9 @@ The first thing the user should be greeted by is an appealing `home page` (index
 
 - A button to send new users to the "Sign Up" page
 
+---
+### Sign Up & Login Pages
+---
 
 Next, the user will be introduced to the `Sign Up` page, where they are presented with a form allowing them to create an account.
 
@@ -340,6 +349,8 @@ The form will do the following:
 
     - This will be stored in the database as hashed data for security reasons, using the `method="sha256"` meaning the admin cannot see this information, keeping the user's password hidden and secure. 
 
+- Provide a `password confirmation input` to ensure users have entered the correct password and improve their experience by providing user assurance and further chances for alerts and feedback.
+
 - Alert the user via "Flash Messages" if there are any issues during sign up:
     - Username in use.
     - Passwords do not match.
@@ -347,6 +358,43 @@ The form will do the following:
     - Field left blank.
 
 - Alert the user positively on sign up success & log them in.
+
+This page will be replaced by the `Login Page` once a user has successfully signed into the website. This will include all of the above sections and features with the exception of a `password confirmation input` and it's related Alerts as that isn't necessary for a returning user.
+
+---
+### Feature pages - *League, Titles, Members & Notes*
+---
+
+Once signed in the user will have access to the websites main feature pages.
+These will all follow a similar theme and as such include similar functions and features, with a focus on provide the user with C.R.U.D. functionality through it's layout and options:
+
+- Section headers to instruct the user on whether they are **Adding a new element** or **Viewing their created elements**.
+
+- Large colour-coded buttons to allow the user to access form pages to **Create a new element** or **Edit an existing element**.
+
+- A Large Red button to open a **Delete specific element modals** with confirmation and cancel buttons for the user.
+
+- Element specific cards to allow the user to **View their created element** and it's information.
+
+---
+### Open League Page
+---
+
+This will be the final page the user views. Each created league will feature a large button, allowing the user to open the `Open League` page. Within this page a user can:
+
+- View their league name, relevant titles, notes and members.
+
+- Members with a championship will be displayed at the top of the league.
+
+- Other members will be displayed underneath.
+
+- Notes will be displayed at the bottom.
+
+- This will be a view only page that users are encouraged to share with their friends.
+
+- No edit/delete buttons will be present to prevent clutter, along with new users clicking them and being redirected to sign up pages unnecessarily.
+
+- Allows non-members to see the leagues they're involved in and compete to be "Champion of the Office!" - successfully gamifying the "Employee of the month" experience, while keeping user steps to a minimum. Allowing only one user in a group to create an account and be in charge of managing their groups.
 
 ---
 
@@ -368,11 +416,15 @@ The form will do the following:
 
 1. Simple grey background with blue text. Help it stand out from the rest of the website and draw user attention.
 
+2. Slight drop shadow on mouse hover, to show the user is focused on the card.
+
 **Feature Cards**
 
 1. Display the relevant user information based on section of the website - i.e. Member displays `Name: | Role: | Title (if title holder):`
 
 2. Dark Blue background, bold white text. Draw the users eye and contrast the websites Amber coloured theme. Stylised to include lighter Blue strips to separate information and improve readability for users.
+
+3. Same drop shadow as above.
 
 **Alerts**
 
@@ -406,11 +458,23 @@ The form will do the following:
 
 ---
 
-## AlchemySQL
+# Skeleton Plane
 
-Discuss AlchemySQL and the type of system it is and why I used it.
 
-The following tables were created using AlchemySQL and the Github CLI Terminal to store the necessary information for this project.
+This website will be created entirely with the HTML, CSS, Javascript & Python languages.
+
+The website will dynamically present the users created data and elements for them to Create, Read, Edit & Delete as they see fit.
+
+This created user data will all be housed within the [PostgreSQL](https://www.postgresql.org/) `Relational Database System`, which will be used  to store the created user data in organised tables. Utilising one-to-many relationships and Foreign Keys, these tables will communicate with each other and as such we will be able to associate relevant data with the user who created it.
+
+[SQLAlchemy](https://docs.sqlalchemy.org/en/20/) allows me to use Python as a language to populate and manage my Relational Databases.
+
+This will then be hosted externally using [ElephantSQL](ElephantSQL.com) so that they can be accessed by [Heroku](https://dashboard.heroku.com/apps), our hosting platform of choice for this project.
+
+---
+## PostgreSQL Database
+
+The following tables were created using SQLAlchemy and the Github CLI Terminal to create and read the necessary tables for this project.
 
  Schema |  Name  | Type  | Owner  
 --------|--------|-------|--------
@@ -420,13 +484,211 @@ The following tables were created using AlchemySQL and the Github CLI Terminal t
  public | title  | table | gitpod
  public | user   | table | gitpod
 
-This information is viewable by inputting the following into the Github CLI Terminal when connected to the officechampion database:
 
-```
-officechampion=# \dt
-```
+To provide user value:
+
+- The website will be kept clean and clutter-free, providing provocative and descriptive text that makes the user want to engage.
+
+- Navigation links & buttons will have easy to understand titles and will take the user to logical destinations.
+
+- The user will be able to Create, Read, Update & Delete objects with ease, through simple button and form interactions.
+
+- Forms will be labelled correctly and provide examples and icons where necessary to improve the user experience.
+
+- Helpful Flash Message Alerts will provide positive/negative feedback where necessary.
+
+- The Open League page will be sharable with non-signed in users so that players can motivate each other to compete for viewable titles, gamifying the "Employee of the Month" experience as stated.
+
+---
+
+## Wireframes
+
+Included below are the projects wireframes, created with [Draw io](https://www.draw.io).
+
+The purpose of these wireframes is to demonstrate the positions of features and elements that will make up the pages of this website. 
+
+Providing a simplified demonstration of the project's architecture and design choices.
+
+Included below are wireframe examples of the website in two different states:
+
+- when a user is **new** or **signed out**.
+    -<details><summary>Wireframe #1 - New User/Signed Out</summary><img src="officechampion/static/assets/images/docs/wireframe1.jpg" alt="Wireframe 1 - Signed Out"></details>
+
+
+- when a user is **returning** or **signed in**.
+    -<details><summary>Wireframe #2 - Returning User/Signed In</summary><img src="officechampion/static/assets/images/docs/wireframe1.jpg" alt="Wireframe 2 - Signed In"></details>
+
+---
+
+## Database Schema
+
+Also created was a database schema, providing a visual example of the necessary table and key pairs needed for this project and showing how they link together via `Foreign Keys`.
+
+This was used to construct the above PostgreSQL Database.
+
+<details><summary>Database Schema - Tables & Key pairs</summary><img src="officechampion/static/assets/images/docs/schema.jpg" alt="Database Schema Image"></details>
+
+The "General Layout" shown at the bottom of the diagram gives an overview of the "Open League" pages functionality and how that would make use of the Foreign Key pairings in order to display the correct *Titles, Members & Notes* for each independent user *League*.
 
 [Back to top ↑](#office-champion)
+
+---
+
+# Surface Plane
+
+In this final UX section, I will describe how the website creates a positive experience for users through its use of hover effects, predictable navigation, descriptive alerts, clear content and overall design choices and philosophies.
+
+---
+
+## Design Philosophies
+
+
+### Responsive Design
+
+---
+
+Responsive design is an important factor in the creation of any website or application.
+
+As a developer I am fully aware this will be viewed on a number of different browsers, screen sizes and devices. Manual testing will also be implemented to ensure elements display as expected. 
+
+Materialize containers and custom CSS was utilised to ensure all images and text would fit their containers and be readable across all devices. This is to ensure a consistent user experience for both mobile and desktop.
+
+Changes implemented between the mobile and desktop experience of this website are as follows:
+
+- Differing rows of cards depending on screen size.
+    -<details><summary>Database Schema - Tables & Key pairs</summary><img src="officechampion/static/assets/images/docs/schema.jpg" alt="Database Schema Image"></details>
+
+- The main navigation bar collapses into a "burger menu" side navbar on smaller devices to ensure all page links are accessible to the user.
+    -<details><summary>Database Schema - Tables & Key pairs</summary><img src="officechampion/static/assets/images/docs/schema.jpg" alt="Database Schema Image"></details>
+
+- A side navbar is visible on the "Open League" screen on larger screen sizes only. This allows the user to skip to a specific section as an added method of navigation through larger leagues.
+    -<details><summary>Database Schema - Tables & Key pairs</summary><img src="officechampion/static/assets/images/docs/schema.jpg" alt="Database Schema Image"></details>
+
+
+
+
+
+
+
+---
+
+During the Skeleton Plane, I explained how the user experience would be improved by the interaction design of the card and button elements.
+
+I have documented images below to provide visual examples of each and confirmation that they have been implemented into the final design:
+
+<details><summary>Card Hover</summary><img src="assets/images/docs/play_session/card_focus.png" alt="Card Hover"></details>
+
+
+---
+
+For the button I added a subtle text underline and drop shadow, along with lifting the button slightly upwards, providing player feedback upon interaction without impacting the intentionally limited colour palette.
+
+```
+.btn: hover {
+    text-decoration: underline;
+    box-shadow: 5px 5px 5px;
+    transform: translateY(-0.05em);
+}
+```
+<details><summary>Standard Button Hover</summary><img src="assets/images/docs/play_session/button3.png" alt="Button Hover"></details>
+
+---
+
+The quit button at the bottom of the screen required a failsafe to prevent the user from accidentally clicking it and restarting the entire game (as happened to me early during manual testing), as such I implemented an `onClick` function that displayed two additional buttons in its place. Improving the user's experience by preventing this disheartening action from happening and providing an additional check to confirm their action.
+
+- One to confirm the Quit action.
+- One to cancel the Quit action.
+
+Feedback was provided by using default bootstrap classes to change the `: hover` colour of these buttons to Green and Red (`success` and `warning`).
+
+<details><summary>Button Return</summary><img src="assets/images/docs/play_session/button1.png" alt="Button Return"></details>
+
+<details><summary>Button Quit</summary><img src="assets/images/docs/play_session/button2.png" alt="Button Quit"></details>
+
+---
+
+## Visual Separation
+
+Visual separation is achieved between sections of the game through the use of Bootstrap containers. 
+
+The player's area is always displayed below the "Computer-Players" text box, sticking to an ordered hierarchy. At the bottom is a `Sticky Footer` which will maintain its position responsively across all device screen sizes.
+
+This simple layout intuitively conveys the structure of the game to the user from the beginning.
+
+Drop shadows were added to the top of the footer to provide a sleek sense of visual separation. This improves visual clarity between elements of the game and is crucial for the ending card section, where the second row of cards will be overlapped by the footer.
+
+---
+
+## Colour Palette
+
+
+The following colour palette was utilised throughout the game.
+
+<details><summary>Colour Palette</summary><img src="assets/images/docs/ui/colour_palette.png" alt="Colour Palette"></details>
+
+It was taken from [Lospec: AYY4 PALETTE](https://lospec.com/palette-list/ayy4).
+
+The reason I selected this palette was as a tribute to the simple text-based and Gameboy games of the past. These would often use highly limited, 4-colour palettes for their entire games. 
+
+I wanted to emulate this limited style for a number of reasons:
+
+- To provide a sense of familiarity to the user. Who may have experienced a similar game in the past.
+- To achieve a feeling of consistent, branded design throughout the project's many elements.
+- To complement the game's narrative of navigating a Computer-hosted simulation environment.
+- The colours compliment a simplistic design philosophy.
+- They provide clean, distinct colours that pass best practice guidelines.
+
+---
+
+## Image Choices
+
+
+The game is devoid of imagery apart from the Avatar images that are used to populate the `members cards`.
+
+[Personas](https://personas.draftbit.com/) was utilised to create many avatar images.
+
+The generator was user-friendly and varied enough that I was able to generate 24 individual images for inclusion in this version of the game. In the future, this can be increased to allow for even more variety.
+
+This art style was selected as it was simplistic and complimented the overall design choices already made.
+
+The layout of each card is as follows:
+- First Name + Last Names (Create more unique combinations than just one name alone.)
+- Special Skill (Included to add interest, humour and personality to each member.)
+- A tag at the bottom of the card that reads `"Replace?"` to reinforce the action the user is about to take, providing further feedback on their interactions.
+
+Below I have included a selection of "VICTORY" cards from my playtesters.
+
+<details><summary>User #1</summary><img src="assets/images/docs/play_session/user_1.png" alt="User #1"></details>
+
+<details><summary>User #2</summary><img src="assets/images/docs/play_session/user_2.png" alt="User #2"></details>
+
+<details><summary>User #3</summary><img src="assets/images/docs/play_session/user_3.png" alt="User #3"></details>
+
+---
+
+## Font / Typography
+
+It was important to me that the font was readable on all screen sizes while also representing the fact that it would be mainly used as the onscreen "voice" of the "Computer-Player". 
+
+As such, I stuck to [ROBOTO](https://fonts.google.com/specimen/Roboto) for the majority of the onscreen text. Roboto is a faimilar, dependable, well known font, used across the internet. This ensures readability throughout the game will be maintained.
+
+In order to make the players `username` stand out from the text, I made use of the [VT323](https://fonts.google.com/specimen/VT323?query=vt) font by Peter Hull, which serves to visually emulate the classic computer monitor fonts of days passed. Visually this seemed like a natural choice to reinforce the "Computer-Player's" personality and visually highlight whenever the `username` was used by the player, improving their overall unique experience and connection to the elements of the game.
+
+The selection of these fonts and the previous colour palette also helped in conforming to the expected culture of an old-school "text-based" adventure game. Many of these would have originally run on older gaming systems like MS-DOS or Commodore. 
+
+---
+
+## Dependencies
+
+Bootstrap and Jquery Javascript dependencies are placed at the bottom of the body tags. CSS dependencies are kept at the top. 
+
+As this game is on a webpage it will be loaded "Top-Bottom" from the HTML file. 
+
+This structure should ensure that the page is loaded quickly and that the user doesn't see an unstyled page or wait for the initial elements to load. 
+
+
+
+
 
 ---
 
