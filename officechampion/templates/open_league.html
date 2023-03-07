@@ -84,13 +84,13 @@
         <!-- Accesses all relevant notes related to the league -->
         {% for note in display|sort(attribute="date") %}
         <li class="collection-item grey lighten-5">{{ note.data }}
+            <!-- Display Note Date -->
+            <br><small>({{ note.date.strftime("%d %B, %Y") }})</small>
             <!-- Call Delete Modal -->
             <a href="#modal-{{ note.id }}" class="btn red accent-4 modal-trigger right black-text">Delete Note</a>
             <a href="{{ url_for('edit_notes', note_id=note.id) }}"
                 class="btn green accent-4 right right-spacer black-text">Edit
                 Note</a>
-            <!-- Display Note Date -->
-            <br><small>({{ note.date.strftime("%d %B, %Y") }})</small>
         </li>
         <!-- Modal Structure -->
         <div id="modal-{{ note.id }}" class="modal center">

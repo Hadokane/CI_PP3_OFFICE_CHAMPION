@@ -94,6 +94,10 @@ img {
     margin: auto;
 }
 
+.card-panel{
+    margin: 0;
+}
+
 /* Show above side-nav on League Pages at Larger Resolutions */
 .page-footer {
     z-index: 1;

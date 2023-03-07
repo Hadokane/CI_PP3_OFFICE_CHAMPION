@@ -67,14 +67,14 @@ Notes
          <li class="collection-item grey lighten-5">{{ note.data }}
             <!-- Display Note Date -->
             <br><small>({{ note.date.strftime("%d %B, %Y") }})</small>
+            <!-- Usable for League association -->
+            <p><em>[{{ note.league.league_name }}]</em></p>
             <!-- Call Delete Modal -->
             <a href="#modal-{{ note.id }}" class="btn red accent-4 modal-trigger right black-text">Delete Note</a>
             <!-- Edit the Note -->
             <a href="{{ url_for('edit_notes', note_id=note.id) }}"
                class="btn green accent-4 black-text right right-spacer">Edit
                Note</a>
-            <!-- Usable for class association later | Hide on release -->
-            <p><em>[{{ note.league.league_name }}]</em></p>
          </li>
          <!-- Modal Structure -->
          <div id="modal-{{ note.id }}" class="modal center">
