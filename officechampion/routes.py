@@ -147,7 +147,7 @@ def login():
                 flash("Incorrect password, try again.", category="error")
         else:
             flash("Username does not exists.", category="success")
-    # flash("Login Successful!", category="success")
+    flash("Login Successful!", category="success")
     return render_template("login.html", user=current_user)
 
 
@@ -156,6 +156,7 @@ def login():
 @login_required
 def logout():
     logout_user()
+    flash("You have logged out!", category="success")
     return redirect(url_for("login"))
 
 
