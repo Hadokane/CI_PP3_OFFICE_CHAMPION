@@ -28,6 +28,7 @@
       "backref",
       "buildpack",
       "Golos",
+      "Interactable",
       "jsonify",
       "officechampion",
       "ondelete",
