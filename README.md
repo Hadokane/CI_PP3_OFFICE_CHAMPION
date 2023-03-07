@@ -50,13 +50,13 @@ The last update to this file was: **07 March 2023**
 
 I am currently pursuing my **Diploma in Web App Development** from [Code Institute](https://codeinstitute.net/ "Code Institute").
 
-The academic aim of this project is to demonstrate my newly developed skills and knowledge of Python by developing a full-stack website with a backend capable of providing full C.R.U.D. functionality to it's user.
+The academic aim of this project is to demonstrate my newly developed skills and knowledge of Python by developing a full-stack website with a backend capable of providing full C.R.U.D. functionality to its user.
 
-As the site owner, I will achieve this goal by providing a database project that "gamifies" the concept of "Employee of the Month," allowing users to Create, Read, Update and Delete their own data in a straightforward manner, that directly meets user-expectations.
+As the site owner, I will achieve this goal by providing a database project that "gamifies" the concept of "Employee of the Month," allowing users to straightforwardly Create, Read, Update and Delete their data in a manner that directly meets user expectations.
 
-I intend to display the above throughout the project via my: coding, comments, commits, and the explanation provided by this README and it's accompanying TESTING document.
+I intend to display the above throughout the project via my: coding, comments, commits, and the explanation provided by this README and its accompanying TESTING document.
 
-Additional functionality has been provided by the framework [Materialize 1.0.0](https://materializecss.com/) for CSS styling & [Flask](https://flask.palletsprojects.com/en/2.2.x/) for it's templating functionality while utilising [Jinja](https://jinja.palletsprojects.com/en/3.0.x/).
+Additional functionality has been provided by the framework [Materialize 1.0.0](https://materializecss.com/) for CSS styling & [Flask](https://flask.palletsprojects.com/en/2.2.x/) for its templating functionality while utilising [Jinja](https://jinja.palletsprojects.com/en/3.0.x/).
 
 Great care has been taken, to ensure that the website is designed to meet best practice standards, and is responsive on all screen resolutions.
 
@@ -77,7 +77,7 @@ The website has been tested on a variety of devices and screen resolutions: from
         - [Database Schema](#database-schema)
     - [Surface Plane](#surface-plane)
 1. [Testing](#testing)
-        - [Provided Test Account](#provided-test-account)
+    - [Provided Test Account](#provided-test-account)
 1. [Deployment](#deployment)
     - [Creating The Gitpod-Workspace](#creating-the-gitpod-workspace)
     - [Forking The Github Repository](#forking-the-github-repository)
@@ -99,7 +99,7 @@ The website has been tested on a variety of devices and screen resolutions: from
 
 As with my previous projects I have chosen to arrange my UX analysis following the framework of Jesse James Garrett's philosophy of the "5 Planes," as discussed in his book [The Elements of User Experience](https://www.amazon.co.uk/Elements-User-Experience-User-Centered-Design/dp/0321683684/ref=asc_df_0321683684/?tag=googshopuk-21&linkCode=df0&hvadid=311000051962&hvpos=&hvnetw=g&hvrand=10376246921916888236&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007448&hvtargid=pla-432330338546&psc=1&th=1&psc=1).
 
-I decided to utilise this methodology in order to establish a clear and achievable list goals for my project to follow. 
+I decided to utilise this methodology to establish a clear and achievable list of goals for my project to follow. 
 
 These goals will be divided between meeting the needs of the user - both first-time and returning - along with meeting the needs of the site owner.
 
@@ -109,7 +109,7 @@ I will maintain a clear, justified development path, and establish a defined pri
 
 # Strategy Plane
 
-In this section, I will define clear goals that will be represented by a list of both users and website owner stories. These will serve as a definitive reference point for defining the necessary features and functions of the website.
+In this section, I will define clear goals that will be represented by a list of both user and website owner stories. These will serve as a definitive reference point for defining the necessary features and functions of the website.
 
 In a later section, I will revisit these stories and see if/how the project has addressed each goal, justifying my explanations with imagery and proof cases.
 
@@ -137,7 +137,7 @@ Each subheading below provides these initial goal lists, with added explanations
     
     1. Welcome in the top-left of the nav bar. (Positive visual user feedback.)
     
-    2. Navbar icons change - "Sign up" and "Login" are replaced with the websites pages.
+    2. Navbar icons change - "Sign up" and "Login" are replaced with the website's pages.
 
 3. Easily understand what each webpage does.
     
@@ -157,9 +157,9 @@ Each subheading below provides these initial goal lists, with added explanations
   
     1. Are my username & password recognised?
 
-    2. Are there alerts for when I enter incorrect data?
+    2. Are there alerts when I enter incorrect data?
 
-    3. Is there feedback when i've successfully signed in?
+    3. Is there feedback when I've successfully signed in?
 
 6. Be able to Create, Read, Update & Delete my data.
 
@@ -167,7 +167,7 @@ Each subheading below provides these initial goal lists, with added explanations
 
     2. Are there "Edit" & "Delete" options present for my created data?
 
-    3. Can I see the data i've created easily?
+    3. Can I see the data I've created easily?
 
 7. Be able to access and use the website on any device.
 
@@ -197,7 +197,7 @@ Each subheading below provides these initial goal lists, with added explanations
 
 13. Provide a multi-use case platform for the user. 
 
-    1. The website can be used for numerous groups - such as: the office, sports team, gaming groups, etc. - with it's current core features.
+    1. The website can be used for numerous groups - such as the office, sports teams, gaming groups, etc. - with its current core features.
 
 
 ---
@@ -211,7 +211,7 @@ With the above goals in mind, I have assembled the following "grid of opportunit
 | All website elements function correctly    | 5          | 5         |
 | Sign up & Login functions work correctly on any device     | 5          | 5         |
 | The user has full C.R.U.D. functionality     | 5          | 5         |
-| Provide an overview page for the users finished League | 5          | 4        |
+| Provide an overview page for the users League | 5          | 4        |
 | Provide positive feedback to all user action | 4          | 4        |
 | Provide admin functionality to the site owner         | 3          | 3         |
 
@@ -221,7 +221,7 @@ With the above goals in mind, I have assembled the following "grid of opportunit
 
 # Scope Plane 
 
-In the above Strategy Plane section, I laid out the websites goals, user stories & addressed ways in which the project could meet those defined stories.
+In the above Strategy Plane section, I laid out the website's goals, developed user stories & addressed ways in which the project could meet those defined stories.
 
 To set a clear scope for development and avoid any "feature creep", I will further elaborate on the required features for this website in this section, in doing so we will maintain an agile approach.
 
@@ -230,17 +230,17 @@ To set a clear scope for development and avoid any "feature creep", I will furth
 ## Features Required:
 
 
-The following are written with respect to the above user/site-owner stories and directly reference how they can solve the stated goals.
+The following are written concerning the above user/site-owner stories and directly reference how they can solve the stated goals.
 
-1. A Users table within the Database to store each users login information & a relevant table for each C.R.U.D. section the user can interact with.
+1. A Users table within the Database to store each user's login information & a relevant table for each C.R.U.D. section the user can interact with.
     
-    - Allows the user to sign up, login and have their created data stored, ready for when they login.
+    - Allows the user to sign up, log in and have their created data stored, ready for when they log in.
 
     - Will be accessible from any device.
 
 2. Create a positive user experience by including visual, colour-coded "Alerts" (Python "Flash Messages") that: 
     
-    - Notify the user of any issues with their sign up/login efforts.
+    - Notify the user of any issues with their sign-up/login efforts.
     
     - Provide the user with feedback upon carrying out any C.R.U.D. functions or when signing into the website successfully.
     
@@ -250,13 +250,13 @@ The following are written with respect to the above user/site-owner stories and 
 
     - Required pages (All require C.R.U.D. functionality): Leagues, Titles, Members & Notes.
 
-    - Sign Up & Login only displayed to non-signed in users.
+    - Sign Up & Login only displayed to non-signed-in users.
 
 4. Ensure only the correct user has CRUD functionality over their created data.
 
-5. Ensure the main League page is sharable and viewable by non-signed in users.
+5. Ensure the main League page is sharable and viewable by non-signed-in users.
 
-[Back to top ↑](#the-hug-protocol)
+[Back to top ↑](#office-champion)
 
 ---
 
@@ -276,18 +276,18 @@ In a theoretical "next update", I would aim to add additional functionality to t
 
 1. Add a "Make Unique" feature to force a title to only have one holder at a time. 
     - Alternatively make titles "unique" as the default setting and add a "Many Holders" option to allow a title to have more than one holder. 
-    - This wasn't a pressing feature to include in an initial launch version of the website and users are currently capable of managing their own settings, making titles unique or held by many as they choose.
+    - This wasn't a pressing feature to include in an initial launch version of the website and users are currently capable of managing their settings, making titles unique or held by many as they choose.
 
-2. Migrate the websites CSS from Materialize to Bootstrap to allow for more consistent card implementation & avoid the known issues with cards & the input form function not alerting users when left blank.
+2. Migrate the website's CSS from Materialize to Bootstrap to allow for more consistent card implementation & avoid the known issues with cards & the input form function not alerting users when left blank.
 
-3. Allow multiple user accounts to edit the same leagues and have access to certain features allowed by that leagues admin.
+3. Allow multiple user accounts to edit the same leagues and have access to certain features allowed by that league's admin.
 
-4. Add a feature to track title-reigns, so users can see the history of each title including dates when new champions were crowned.
+4. Add a feature to track title reigns, so users can see the history of each title including dates when new champions were crowned.
 
 **To improve the experience for the site owner, the following could be implemented:**
 
-1. Implement sponsored/ad placement on the website in order to generate revenue for the site owner.
-    - would make thematic sense to establish a partnership/affiliation with a belt/title maker, trophy making company or similar. 
+1. Implement sponsored/ad placement on the website to generate revenue for the site owner.
+    - would make thematic sense to establish a partnership/affiliation with a belt/title maker, trophy-making company or similar. 
     - Partnering with a print company could allow users to purchase related certificates.
 
 
@@ -309,15 +309,15 @@ Here we will discuss the priority of necessary features required to correctly ut
 
 Utilising the Jinja templating language and features of Flask, a `base` template page will be created containing the following important features, that will be displayed on all pages throughout the website:
 
-- A minimal navigation menu with logged in pages hidden to new users, providing access to only the `sign up` and `login` pages.
+- A minimal navigation menu with logged-in pages hidden from new users, providing access to only the `sign up` and `login` pages.
     
-    - Logged in users will have access to `Leagues, Titles, Members, Notes` pages, along with a `log out button`.
+    - Logged-in users will have access to the `Leagues, Titles, Members & Notes` pages, along with a `log out button`.
 
     - It will be responsive and collapse on smaller devices into a "burger icon" menu.
 
-    - Contain a greeting to logged in users. Providing positive feedback and a reminder that they are indeed signed in.
+    - Contain a greeting to logged-in users. Providing positive feedback and a reminder that they are indeed signed in.
 
-- A clean footer containing a link to the website developers GitHub & a copyright disclaimer.
+- A clean footer containing a link to the website developer's GitHub & a copyright disclaimer.
 
 - The ability to display Alerts (Flash Messages) to the user directly under the header. So that user expectations on their placement are met and maintained no matter what page they're on.
 
@@ -331,7 +331,7 @@ The first thing the user should be greeted by is an appealing `Home Page/Index` 
 
 - A large hero image of the website's logo.
 
-- A row of promo-cards, explaining how to use the website in a fun, provocative manner, that is culturally appropriate for the websites intended purpose - gamifying the "Employee of the Month" experience.
+- A row of promo cards, explaining how to use the website in a fun, provocative manner, that is culturally appropriate for the website's intended purpose - gamifying the "Employee of the Month" experience.
 
 - A button to send new users to the "Sign Up" page
 
@@ -351,30 +351,30 @@ The form will do the following:
 
 - Provide a `password confirmation input` to ensure users have entered the correct password and improve their experience by providing user assurance and further chances for alerts and feedback.
 
-- Alert the user via "Flash Messages" if there are any issues during sign up:
+- Alert the user via "Flash Messages" if there are any issues during sign-up:
     - Username in use.
     - Passwords do not match.
-    - Input is to short.
+    - Input is too short.
     - Field left blank.
 
-- Alert the user positively on sign up success & log them in.
+- Alert the user positively on sign-up success & log them in.
 
-This page will be replaced by the `Login Page` once a user has successfully signed into the website. This will include all of the above sections and features with the exception of a `password confirmation input` and it's related Alerts as that isn't necessary for a returning user.
+This page will be replaced by the `Login Page` once a user has successfully signed into the website. This will include all of the above sections and features except a `password confirmation input` and its related Alerts as that isn't necessary for a returning user.
 
 ---
 ### Feature pages - *League, Titles, Members & Notes*
 ---
 
-Once signed in the user will have access to the websites main feature pages.
-These will all follow a similar theme and as such include similar functions and features, with a focus on provide the user with C.R.U.D. functionality through it's layout and options:
+Once signed in the user will have access to the website's main feature pages.
+These will all follow a similar theme and as such include similar functions and features, with a focus on providing the user with C.R.U.D. functionality through its layout and options:
 
 - Section headers to instruct the user on whether they are **Adding a new element** or **Viewing their created elements**.
 
 - Large colour-coded buttons to allow the user to access form pages to **Create a new element** or **Edit an existing element**.
 
-- A Large Red button to open a **Delete specific element modals** with confirmation and cancel buttons for the user.
+- A Large Red button to open a **Delete specific element modal** with confirmation and cancel buttons for the user.
 
-- Element specific cards to allow the user to **View their created element** and it's information.
+- Element-specific cards to allow the user to **View their created element** and its information.
 
 ---
 ### Open League Page
@@ -390,9 +390,9 @@ This will be the final page the user views. Each created league will feature a l
 
 - Notes will be displayed at the bottom.
 
-- This will be a view only page that users are encouraged to share with their friends.
+- This will be a view-only page that users are encouraged to share with their friends.
 
-- No edit/delete buttons will be present to prevent clutter, along with new users clicking them and being redirected to sign up pages unnecessarily.
+- No edit/delete buttons will be present to prevent clutter, along with new users clicking them and being redirected to sign-up pages unnecessarily.
 
 - Allows non-members to see the leagues they're involved in and compete to be "Champion of the Office!" - successfully gamifying the "Employee of the month" experience, while keeping user steps to a minimum. Allowing only one user in a group to create an account and be in charge of managing their groups.
 
@@ -404,11 +404,11 @@ This will be the final page the user views. Each created league will feature a l
 
 1. Will be colour-coded to match user expectations.
     
-    - Green for "Edit, Sign up or Submit" buttons. Green is seen as a positive colour and is a standard colour across the internet when submitting a form or editing data.
+    - Green for the "Edit, Sign up or Submit" buttons. Green is seen as a positive colour and is a standard colour across the internet when submitting a form or editing data.
 
     - Red for "Delete" buttons. Following the same idea, Red is seen as a negative colour often associated with deleting an item or cancelling an event. 
 
-    - Orange for the bold "Open League" buttons. This is to differentiate it from other buttons on the website and help the user distinguish it from the surrounding "Edit" & "Delete" buttons. This will open the main League page which will be the summary of the users work, so making it unique feels important in providing a good user experience.
+    - Orange for the bold "Open League" buttons. This is to differentiate it from other buttons on the website and help the user distinguish it from the surrounding "Edit" & "Delete" buttons. This will open the main League page which will be the summary of the user's work, so making it unique feels important in providing a good user experience.
 
 2. Will use "Materialize's" built-in `waves-effect waves-light` classes, to provide positive feedback to user interaction.
 
@@ -420,9 +420,9 @@ This will be the final page the user views. Each created league will feature a l
 
 **Feature Cards**
 
-1. Display the relevant user information based on section of the website - i.e. Member displays `Name: | Role: | Title (if title holder):`
+1. Display the relevant user information based on a section of the website - i.e. Member displays `Name: | Role: | Title (if title holder):`
 
-2. Dark Blue background, bold white text. Draw the users eye and contrast the websites Amber coloured theme. Stylised to include lighter Blue strips to separate information and improve readability for users.
+2. Dark Blue background, bold white text. Draw the user's eye and contrast the websites Amber coloured theme. Stylised to include lighter Blue strips to separate information and improve readability for users.
 
 3. Same drop shadow as above.
 
@@ -430,9 +430,9 @@ This will be the final page the user views. Each created league will feature a l
 
 1. Will be colour-coded to set user expectations.
     
-    - Blue will be used for successes and to provide information. It is a positive colour used to display information and matches the websites blue/orange design.
+    - Blue will be used for successes and to provide information. It is a positive colour used to display information and matches the website's blue/orange design.
 
-    - Red will be used to draw the users attention. Providing a warning that there is an issue with their intended task.
+    - Red will be used to draw the user's attention. Providing a warning that there is an issue with their intended task.
 
 2. `onClick` these elements will (as necessary):
     - Removes the alert from the screen.
@@ -461,20 +461,20 @@ This will be the final page the user views. Each created league will feature a l
 # Skeleton Plane
 
 
-This website will be created entirely with the HTML, CSS, Javascript & Python languages.
+This website will be created entirely with HTML, CSS, Javascript & Python languages.
 
-The website will dynamically present the users created data and elements for them to Create, Read, Edit & Delete as they see fit.
+The website will dynamically present the user's created data and elements for them to Create, Read, Edit & Delete as they see fit.
 
-This created user data will all be housed within the [PostgreSQL](https://www.postgresql.org/) `Relational Database System`, which will be used  to store the created user data in organised tables. Utilising one-to-many relationships and Foreign Keys, these tables will communicate with each other and as such we will be able to associate relevant data with the user who created it.
+This created user data will all be housed within the [PostgreSQL](https://www.postgresql.org/) `Relational Database System`, which will be used to store the created user data in organised tables. Utilising one-to-many relationships and Foreign Keys, these tables will communicate with each other and as such we will be able to associate relevant data with the user who created it.
 
 [SQLAlchemy](https://docs.sqlalchemy.org/en/20/) allows me to use Python as a language to populate and manage my Relational Databases.
 
-This will then be hosted externally using [ElephantSQL](ElephantSQL.com) so that they can be accessed by [Heroku](https://dashboard.heroku.com/apps), our hosting platform of choice for this project.
+This will then be hosted externally using [ElephantSQL](ElephantSQL.com) so that it can be accessed by [Heroku](https://dashboard.heroku.com/apps), our hosting platform of choice for this project.
 
 ---
 ## PostgreSQL Database
 
-The following tables were created using SQLAlchemy and the Github CLI Terminal to create and read the necessary tables for this project.
+The following tables were created using SQLAlchemy and the GitHub CLI Terminal to create and read the necessary tables for this project.
 
  Schema |  Name  | Type  | Owner  
 --------|--------|-------|--------
@@ -489,21 +489,21 @@ To provide user value:
 
 - The website will be kept clean and clutter-free, providing provocative and descriptive text that makes the user want to engage.
 
-- Navigation links & buttons will have easy to understand titles and will take the user to logical destinations.
+- Navigation links & buttons will have easy-to-understand titles and will take the user to logical destinations.
 
-- The user will be able to Create, Read, Update & Delete objects with ease, through simple button and form interactions.
+- The user will be able to Create, Read, Update & Delete objects with ease, through a simple button and form interactions.
 
 - Forms will be labelled correctly and provide examples and icons where necessary to improve the user experience.
 
 - Helpful Flash Message Alerts will provide positive/negative feedback where necessary.
 
-- The Open League page will be sharable with non-signed in users so that players can motivate each other to compete for viewable titles, gamifying the "Employee of the Month" experience as stated.
+- The Open League page will be sharable with non-signed-in users so that players can motivate each other to compete for viewable titles, gamifying the "Employee of the Month" experience as stated.
 
 ---
 
 ## Wireframes
 
-Included below are the projects wireframes, created with [Draw io](https://www.draw.io).
+Included below are the project's wireframes, created with [Draw io](https://www.draw.io).
 
 The purpose of these wireframes is to demonstrate the positions of features and elements that will make up the pages of this website. 
 
@@ -528,7 +528,7 @@ This was used to construct the above PostgreSQL Database.
 
 <details><summary>Database Schema - Tables & Key pairs</summary><img src="officechampion/static/assets/images/docs/schema.jpg" alt="Database Schema Image"></details>
 
-The "General Layout" shown at the bottom of the diagram gives an overview of the "Open League" pages functionality and how that would make use of the Foreign Key pairings in order to display the correct *Titles, Members & Notes* for each independent user *League*.
+The "General Layout" shown at the bottom of the diagram gives an overview of the "Open League" pages functionality and how that would make use of the Foreign Key pairings to display the correct *Titles, Members & Notes* for each independent user *League*.
 
 [Back to top ↑](#office-champion)
 
@@ -549,146 +549,140 @@ In this final UX section, I will describe how the website creates a positive exp
 
 Responsive design is an important factor in the creation of any website or application.
 
-As a developer I am fully aware this will be viewed on a number of different browsers, screen sizes and devices. Manual testing will also be implemented to ensure elements display as expected. 
+As a developer, I am fully aware this will be viewed on several different browsers, screen sizes and devices. Manual testing will also be implemented to ensure elements display as expected. 
 
 Materialize containers and custom CSS was utilised to ensure all images and text would fit their containers and be readable across all devices. This is to ensure a consistent user experience for both mobile and desktop.
 
 Changes implemented between the mobile and desktop experience of this website are as follows:
 
 - Differing rows of cards depending on screen size.
-    -<details><summary>Database Schema - Tables & Key pairs</summary><img src="officechampion/static/assets/images/docs/schema.jpg" alt="Database Schema Image"></details>
+
+    <details><summary>Cards #1</summary><img src="officechampion/static/assets/images/docs/surface/cards1.png" alt="Cards Example Image 1"></details>
+    -<details><summary>Cards #2</summary><img src="officechampion/static/assets/images/docs/surface/cards2.png" alt="Cards Example Image 2"></details>
+    -<details><summary>Cards #3</summary><img src="officechampion/static/assets/images/docs/surface/cards3.png" alt="Cards Example Image 3"></details>
+    -<details><summary>Cards #4</summary><img src="officechampion/static/assets/images/docs/surface/cards4.png" alt="Cards Example Image 4"></details>
+    -<details><summary>Cards #5</summary><img src="officechampion/static/assets/images/docs/surface/cards5.png" alt="Cards Example Image 5"></details>
+    -
 
 - The main navigation bar collapses into a "burger menu" side navbar on smaller devices to ensure all page links are accessible to the user.
-    -<details><summary>Database Schema - Tables & Key pairs</summary><img src="officechampion/static/assets/images/docs/schema.jpg" alt="Database Schema Image"></details>
+    
+    <details><summary>Large Screen Navigation Bar</summary><img src="officechampion/static/assets/images/docs/surface/nav.png" alt="Large Screen Navigation Bar"></details>
+    -<details><summary>Side Navigation Bar - Closed</summary><img src="officechampion/static/assets/images/docs/surface/sidenav1.png" alt="Side Navigation Bar - Closed"></details>
+    -<details><summary>Side Navigation Bar - Open</summary><img src="officechampion/static/assets/images/docs/surface/sidenav2.png" alt="Side Navigation Bar - Open"></details>
+    -
 
 - A side navbar is visible on the "Open League" screen on larger screen sizes only. This allows the user to skip to a specific section as an added method of navigation through larger leagues.
-    -<details><summary>Database Schema - Tables & Key pairs</summary><img src="officechampion/static/assets/images/docs/schema.jpg" alt="Database Schema Image"></details>
-
-
-
-
-
-
+    
+    <details><summary>Open League Navigation Bar</summary><img src="officechampion/static/assets/images/docs/surface/league_sidenav.png" alt="Open League Navigation Bar"></details>
 
 ---
-
-During the Skeleton Plane, I explained how the user experience would be improved by the interaction design of the card and button elements.
-
-I have documented images below to provide visual examples of each and confirmation that they have been implemented into the final design:
-
-<details><summary>Card Hover</summary><img src="assets/images/docs/play_session/card_focus.png" alt="Card Hover"></details>
-
-
+### IXD - Interaction Design
 ---
 
-For the button I added a subtle text underline and drop shadow, along with lifting the button slightly upwards, providing player feedback upon interaction without impacting the intentionally limited colour palette.
+During the Skeleton Plane, I explained how the user experience would be improved by the interaction design of certain elements.
 
-```
-.btn: hover {
-    text-decoration: underline;
-    box-shadow: 5px 5px 5px;
-    transform: translateY(-0.05em);
-}
-```
-<details><summary>Standard Button Hover</summary><img src="assets/images/docs/play_session/button3.png" alt="Button Hover"></details>
+I have included images below to provide visual examples of each point and to serve as confirmation that these decisions have been implemented into the final design:
 
----
+**Buttons**
 
-The quit button at the bottom of the screen required a failsafe to prevent the user from accidentally clicking it and restarting the entire game (as happened to me early during manual testing), as such I implemented an `onClick` function that displayed two additional buttons in its place. Improving the user's experience by preventing this disheartening action from happening and providing an additional check to confirm their action.
+<details><summary>Colour-coded for user expectations</summary><img src="officechampion/static/assets/images/docs/surface/btn_colour.png" alt="Colour-coded Buttons"></details>
+-
+<details><summary>Materialize's waves-effect provides positive feedback on interaction</summary><img src="officechampion/static/assets/images/docs/surface/btn_wave.png" alt="Wave Effect Buttons"></details>
+-
 
-- One to confirm the Quit action.
-- One to cancel the Quit action.
+**Cards**
 
-Feedback was provided by using default bootstrap classes to change the `: hover` colour of these buttons to Green and Red (`success` and `warning`).
+<details><summary>Promo card design</summary><img src="officechampion/static/assets/images/docs/surface/card_promo.png" alt="Promo card design"></details>
+-
+<details><summary>Feature card design</summary><img src="officechampion/static/assets/images/docs/surface/card_feature.png" alt="Feature card design"></details>
+-
+<details><summary>Card Hover - Subtle drop shadow</summary><img src="officechampion/static/assets/images/docs/surface/card_hover.png" alt="Card Hover"></details>
+-
 
-<details><summary>Button Return</summary><img src="assets/images/docs/play_session/button1.png" alt="Button Return"></details>
+**Alerts**
 
-<details><summary>Button Quit</summary><img src="assets/images/docs/play_session/button2.png" alt="Button Quit"></details>
+<details><summary>Blue Confirmation Alert</summary><img src="officechampion/static/assets/images/docs/surface/alert1.png" alt="Blue Confirmation Alert"></details>
+-
+<details><summary>Red Warning Alert</summary><img src="officechampion/static/assets/images/docs/surface/alert_signup2.png" alt="Red Warning Alert"></details>
+-
 
----
+The Alerts also have a Javascript `onClick` event to remove them from the DOM when a user interacts. This allows a user to close a Flash Message Alert at their convenience. A small "X" icon is present on the right-hand side of these Alerts to notify the user that they are closable.
 
-## Visual Separation
+**Defensive Design**
 
-Visual separation is achieved between sections of the game through the use of Bootstrap containers. 
+The delete button required a failsafe to prevent the user from accidentally clicking it and removing their data. Improving the user's experience is accomplished by providing an additional check to confirm their delete action.
 
-The player's area is always displayed below the "Computer-Players" text box, sticking to an ordered hierarchy. At the bottom is a `Sticky Footer` which will maintain its position responsively across all device screen sizes.
+On-click a modal will open containing two buttons which either:
+- Confirm the Delete action and reload the page.
+- Cancel the Delete action and remain on the page.
 
-This simple layout intuitively conveys the structure of the game to the user from the beginning.
+<details><summary>Delete Modal</summary><img src="officechampion/static/assets/images/docs/surface/dlt_modal.png" alt="Delete Modal"></details>
+-
 
-Drop shadows were added to the top of the footer to provide a sleek sense of visual separation. This improves visual clarity between elements of the game and is crucial for the ending card section, where the second row of cards will be overlapped by the footer.
+**Visual Separation**
+
+Visual separation is achieved across the website through the use of Materialize `Row and Columns`. 
+
+The website follows a traditionally ordered hierarchy. 
+
+At the top, there is a `Sticky Header` which will maintain its position responsively across all device screen sizes. This contains a responsive navbar that shows the user relevant pages based on their login state.
+
+Alerts display underneath this when called and are closable.
+
+The page content is then displayed here. Generally consisting of buttons to load forms or take C.R.U.D.-related actions, or a series of viewable cards relating to the current feature page and information saved to the database by the user.
+
+At the bottom is a simple `Footer` with a link to the developer's page and a copyright disclaimer.
+
+This simple layout allows a user to intuitively navigate the pages with no learning curve, as it will be an experience ingrained into the muscle memory already by other websites that utilise these same standard conventions.
 
 ---
 
 ## Colour Palette
 
+The following colour palette was utilised throughout the website.
 
-The following colour palette was utilised throughout the game.
+<details><summary>Colour Palette</summary><img src="officechampion/static/assets/images/docs/surface/colours.png" alt="Colour Palette"></details>
 
-<details><summary>Colour Palette</summary><img src="assets/images/docs/ui/colour_palette.png" alt="Colour Palette"></details>
+It was adapted from Materialize's readily available colour classes and implemented mainly through inline HTML code using pre-defined classes. [Materialize Palettes](https://materializecss.com/color.html).
 
-It was taken from [Lospec: AYY4 PALETTE](https://lospec.com/palette-list/ayy4).
+Orange & Blue were selected as the defining brand colours for this project.
 
-The reason I selected this palette was as a tribute to the simple text-based and Gameboy games of the past. These would often use highly limited, 4-colour palettes for their entire games. 
+Orange is an eye-catching colour, conveying feelings of energy and emotion. I see this as a representation of the gamified experience on offer here, the concept of motivating friends or colleagues to compete for a title or award feels summarised by this. Also, a golden-toned shade was used (amber) as gold is the colour of trophies and money - often being linked with feelings of success.
 
-I wanted to emulate this limited style for a number of reasons:
-
-- To provide a sense of familiarity to the user. Who may have experienced a similar game in the past.
-- To achieve a feeling of consistent, branded design throughout the project's many elements.
-- To complement the game's narrative of navigating a Computer-hosted simulation environment.
-- The colours compliment a simplistic design philosophy.
-- They provide clean, distinct colours that pass best practice guidelines.
+Blue alternatively is a contrasting colour to orange, ensuring they both visually complement each other and draw attention from the user. Blue is often considered a professional, safe colour which also provides a strong representation of the office setting and traditional environment of that culture.
 
 ---
 
 ## Image Choices
 
 
-The game is devoid of imagery apart from the Avatar images that are used to populate the `members cards`.
+The website relies upon the user providing their HTML links to populate the imagery for members and titles. This is to allow users to have a personalised experience. Our database then only has to store the link as a simple `string` and it can be recalled and shown as long as its origin remains intact.
 
-[Personas](https://personas.draftbit.com/) was utilised to create many avatar images.
+I created the website's logo using [Adobe Illustrator](https://www.adobe.com/). It was inspired by the design of Pro Wrestling & Boxing title belts and was used as a homage to these sports that provide tangible title belts and rewards to their participants. This imagery is intentionally used to convey the idea of a more tangible reward to the user. It used a pixel-styled font in its centre to show the user that this can be perceived as a "game", encouraging them to gamify their "employee of the month" or "fantasy league" experiences with Office Champion.
 
-The generator was user-friendly and varied enough that I was able to generate 24 individual images for inclusion in this version of the game. In the future, this can be increased to allow for even more variety.
-
-This art style was selected as it was simplistic and complimented the overall design choices already made.
-
-The layout of each card is as follows:
-- First Name + Last Names (Create more unique combinations than just one name alone.)
-- Special Skill (Included to add interest, humour and personality to each member.)
-- A tag at the bottom of the card that reads `"Replace?"` to reinforce the action the user is about to take, providing further feedback on their interactions.
-
-Below I have included a selection of "VICTORY" cards from my playtesters.
-
-<details><summary>User #1</summary><img src="assets/images/docs/play_session/user_1.png" alt="User #1"></details>
-
-<details><summary>User #2</summary><img src="assets/images/docs/play_session/user_2.png" alt="User #2"></details>
-
-<details><summary>User #3</summary><img src="assets/images/docs/play_session/user_3.png" alt="User #3"></details>
+<details><summary>Website Logo</summary><img src="officechampion/static/assets/images/oc_logo.png" alt="Colour Palette"></details>
 
 ---
 
 ## Font / Typography
 
-It was important to me that the font was readable on all screen sizes while also representing the fact that it would be mainly used as the onscreen "voice" of the "Computer-Player". 
+I utilised Google Fonts to acquire [Golos Text](https://fonts.google.com/specimen/Golos+Text?query=golos) which was used for the entirety of the website.
 
-As such, I stuck to [ROBOTO](https://fonts.google.com/specimen/Roboto) for the majority of the onscreen text. Roboto is a faimilar, dependable, well known font, used across the internet. This ensures readability throughout the game will be maintained.
+Heavier font weights were used to emphasize headers and standard font weights were used for the body text of documents and cards to ensure easy readability for the user.
 
-In order to make the players `username` stand out from the text, I made use of the [VT323](https://fonts.google.com/specimen/VT323?query=vt) font by Peter Hull, which serves to visually emulate the classic computer monitor fonts of days passed. Visually this seemed like a natural choice to reinforce the "Computer-Player's" personality and visually highlight whenever the `username` was used by the player, improving their overall unique experience and connection to the elements of the game.
+Golos is a versatile closed sans-serif often used on state and social service websites and as such was created by Alexandra Korolkova and Vitaly Kuzmin for continuous on-screen reading.
 
-The selection of these fonts and the previous colour palette also helped in conforming to the expected culture of an old-school "text-based" adventure game. Many of these would have originally run on older gaming systems like MS-DOS or Commodore. 
+I found its bold nature and easy readability to be a perfect match for Office Champion.
 
 ---
 
 ## Dependencies
 
-Bootstrap and Jquery Javascript dependencies are placed at the bottom of the body tags. CSS dependencies are kept at the top. 
+Web pages are loaded "Top-Bottom" from HTML files.
 
-As this game is on a webpage it will be loaded "Top-Bottom" from the HTML file. 
+With this in mind, I kept smaller CSS dependencies such as "Materialize CSS Framework", "Google Icons" & my own custom CSS in the head of the pages and larger Javascript dependencies like "Materialize JS Framework", "FontAwesome Icons" & my own custom JavaScript in the bottom of the body.
 
 This structure should ensure that the page is loaded quickly and that the user doesn't see an unstyled page or wait for the initial elements to load. 
-
-
-
-
 
 ---
 
@@ -710,9 +704,9 @@ This structure should ensure that the page is loaded quickly and that the user d
 
 ## Provided Test Account
 
-The following account is pre-loaded with examples of different case-uses for the Office Champion website.
+The following account is pre-loaded with examples of different use cases for the Office Champion website.
 
-Examiners are welcome to login using the following information and be greeted by with an example of an active user account, with multiple leagues, titles and members.
+Examiners are welcome to log in using the following information and be greeted by an example of an active user account, with multiple leagues, titles and members.
 
 **TEST ACCOUNT LOGIN INFORMATION**
 
@@ -722,7 +716,7 @@ Username = Tester
 Password = 12341234
 ```
 
-*Alternatively feel free to make your own account and populate it as you see fit. I'm confident the website will meet your expectations and provide a user-friendly experience.*
+*Alternatively feel free to make your account and populate it as you see fit. I'm confident the website will meet your expectations and provide a user-friendly experience.*
 
 [Back to top ↑](#office-champion)
 
@@ -760,7 +754,7 @@ If you would like to fork this GitHub Repository - make a copy of the original o
 
 <details><summary>Example Screen</summary><img src="officechampion/static/assets/images/docs/github2.png" alt="GitHub Example Screen"></details>
 
-For further information on making a local clone of this project, I recommend reading GitHub Docs guide on forking located [here.](https://docs.github.com/en/github-ae@latest/get-started/quickstart/fork-a-repo)
+For further information on making a local clone of this project, I recommend reading the GitHub Docs guide on forking located [here.](https://docs.github.com/en/github-ae@latest/get-started/quickstart/fork-a-repo)
 
 ---
 
@@ -793,7 +787,7 @@ The application was then deployed with Heroku using the following steps:
 
 ## Deploying with ElephantSQL
 
-Due to changes in Heroku the PostgreSQL databases created during this project need to be hosted externally.
+Due to changes in Heroku, the PostgreSQL databases created during this project need to be hosted externally.
 
 For this I've used ElephantSQL and will detail the process of deploying the databases here:
 
@@ -802,13 +796,13 @@ For this I've used ElephantSQL and will detail the process of deploying the data
 3. Once signed in click the "Create New Instance" button.
 4. Name your project, select your region & "Create Instance"
 5. Select your project and copy the provided URL.
-6. Head to the Heroku Dashboard "Settings" Tab and add the above URL into your "Config Vars"
+6. Head to the Heroku Dashboard "Settings" Tab and add the above URL to your "Config Vars"
 7. Select the "More" Button next to "Open App" and select "Run Console" in Heroku.
 8. Type ```Python3``` into the console and run
 9. Finally enter the following:
 ```from officechampion import db```
 ```db.create_all()```
-10. New empty database have now been created.
+10. A new empty database has now been created.
 
 ---
 
@@ -885,13 +879,13 @@ db.create_all()
     - Allows use of PostgreSQL.
 
 - [Flask](https://flask.palletsprojects.com/en/2.2.x/)
-  - Python library used with the Jinja language in order to create HTML template files & run python code within HTML.
+  - Python library used with the Jinja language to create HTML template files & run python code within HTML.
 
 - [Jinja](https://jinja.palletsprojects.com/en/3.1.x/api/)
   - Required for Flask functionality. The templating language used within the HTML template files.
 
 - [Materialize 1.0.0](https://materializecss.com/)
-  - Front-end library utilised for it's useful CSS functionality. Used throughout the website on elements such as: forms, cards, nav bars and colour pallette selection.
+  - Front-end library utilised for its useful CSS functionality. Used throughout the website on elements such as forms, cards, nav bars and colour palette selection.
 
 - [Google Fonts](https://fonts.google.com/)
   - Used to import the "Golos Text" font.
@@ -901,11 +895,11 @@ db.create_all()
   - Used to import additional form icons.
 
 - [Github](https://github.com/)
-  - Github stores my projects repository.
+  - GitHub stores my project's repository.
   - Provides a method for me to submit my project data for examination purposes.
 
 - [Gitpod](https://gitpod.io/)
-  - Gitpod served as my online-IDE during the project.
+  - Gitpod served as my online IDE during the project.
 
 - [Git](https://git-scm.com/)
   - Git is used in conjunction with the above for version control.
@@ -914,12 +908,12 @@ db.create_all()
   - Used to create Wireframes & Database Schema for the project during development.
 
 - [Adobe Illustrator](https://www.adobe.com/)
-  - Illustrator was used to create the websites logo image.
+  - Illustrator was used to create the website's logo image.
 
 - [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
   - Chrome's Dev Tools were essential during the development of this project.
   - They allowed me to test the responsiveness across various screen sizes during creation.
-  - Provided near endless opportunities for debugging and bug identification throughout the projects dev-cycle.
+  - Provided near-endless opportunities for debugging and bug identification throughout the project's dev cycle.
 
 - [CI TEMPLATE](https://github.com/Code-Institute-Org/gitpod-full-template)
   - This repository was initially created using Code Institute's Github template.
@@ -985,9 +979,9 @@ With thanks to:
 
 - Code Institute & their wider "Slack" community - For providing me with the necessary skills, knowledge and guidance to execute this project.
 
-- Ed Bradley - For suggesting I look into "Query Filters" when I asked a project related question on Slack. Put me on the right path to getting specific data to show on a page when called rather than all table data.
+- Ed Bradley - For suggesting I look into "Query Filters" when I asked a project-related question on Slack. This put me on the right path to getting specific data to show on a page when called rather than all table data.
 
-- Tech With Tim - A youtube with fantastic courses on Flask & Python. A huge help when getting sign up functionality working on this website.
+- Tech With Tim - A Youtuber with fantastic courses on Flask & Python. Served as a huge help when getting sign-up functionality working on this website.
 
 [Back to top ↑](#office-champion)
 
