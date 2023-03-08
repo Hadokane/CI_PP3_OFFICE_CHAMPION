@@ -378,14 +378,3 @@ def delete_member(member_id):
     db.session.commit()
     flash("Member Deleted!", category="success")
     return redirect(url_for("members"))
-
-
-# Create Admin Page
-@app.route("/admin")
-def admin():
-    id = current_user.id
-    if id == 3:
-        return render_template("admin.html", user=admin)
-    else:
-        flash("Sorry you must be the Admin to access this page")
-        return redirect(url_for("home"))
