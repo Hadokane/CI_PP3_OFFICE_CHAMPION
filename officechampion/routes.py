@@ -83,6 +83,11 @@ def sign_up():
         user = User.query.filter_by(username=username).first()
         if user:
             flash("Username already in use.", category="error")
+        # if username is shorter than 1 character
+        elif len(username) < 1:
+            flash(
+                "Username cannot be left blank.",
+                category="error")
         # if username is shorter than 4 characters
         elif len(username) < 4:
             flash(
@@ -93,6 +98,11 @@ def sign_up():
         elif len(username) > 25:
             flash(
                 "Username cannot exceed 25 characters.",
+                category="error")
+        # if password is less than 1 character
+        elif len(password1) < 1:
+            flash(
+                "Password cannot be left blank.",
                 category="error")
         # if password is shorter than 7 characters
         elif len(password1) < 8:
