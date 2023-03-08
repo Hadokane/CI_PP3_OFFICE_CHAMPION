@@ -12,7 +12,11 @@
 <!-- Sets Title shown in web browser tabs -->
 {% block title %}{{ league.league_name }}{% endblock %}
 {% block content %}
-<h1 class="center" id="champions">{{ league.league_name }}</h1>
+
+<!-- Section Header -->
+<div class="center">
+    <h1 id="champions">{{ league.league_name }}</h1>
+</div>
 
 <!-- Title Holders Displayed -->
 <div class="row">
