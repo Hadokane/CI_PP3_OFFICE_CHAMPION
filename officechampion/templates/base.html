@@ -41,6 +41,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a class="black-text" href="{{ url_for('home') }}">Home</a></li>
                     {% if user.is_authenticated %}
+                    <li><a class="black-text" href="{{ url_for('admin') }}">Admin</a></li>
                     <li><a class="black-text" href="{{ url_for('league') }}">Leagues</a></li>
                     <li><a class="black-text" href="{{ url_for('titles') }}">Titles</a></li>
                     <li><a class="black-text" href="{{ url_for('members') }}">Members</a></li>
@@ -53,7 +54,7 @@
                 </ul>
                 {% if user.is_authenticated %}
                 <!-- Display username greeting on larger screens -->
-                <span class="left-spacer hide-on-small-only">Hello "{{ user.username }}!"</span>
+                <span class="left-spacer hide-on-small-only">Hello "{{ user.username }}! | ID: {{ user.id }}"</span>
                 {% endif %}
             </div>
         </nav>
