@@ -6,7 +6,7 @@
 
 ![UI](officechampion/static/assets/images/docs/herolgt.png)
 
-The last update to this file was: **07 March 2023**
+The last update to this file was: **08 March 2023**
 
 ---
 
@@ -198,7 +198,6 @@ Each subheading below provides these initial goal lists, with added explanations
 13. Provide a multi-use case platform for the user. 
 
     1. The website can be used for numerous groups - such as the office, sports teams, gaming groups, etc. - with its current core features.
-
 
 ---
 
@@ -922,11 +921,17 @@ db.create_all()
 ## Validators Used:
 
 - [W3C HTML Validator](https://validator.w3.org/) - Validation of HTML.
+
 - [W3C JigSaw Validator](https://jigsaw.w3.org/css-validator/) - Validation of CSS.
+
 - [JSHint Validator](https://jshint.com/) - Validation of Javascript.
+
 - [Code Institute Python Linter](https://pep8ci.herokuapp.com/) - Validation of Python (Pep 8).
+
 - [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - Accessibility testing.
+
 - [A11y Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/) - Contrast testing.
+
 - [Lighthouse & Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Performance testing.
 
 ---
@@ -945,6 +950,8 @@ db.create_all()
 1. [Youtube: Tech With Tim](https://www.youtube.com/watch?v=dam0GPOAvVI) - For his stellar course on Flask & Python. Provided additional knowledge and explanation at a helpful pace. Responsible largely for the note and sign-up functionality of the website.
 
 1. [Youtube: Codemy](https://www.youtube.com/@Codemycom) - Additional useful series on Flask & Python. Provided a good explanation of SQLAlchemy.
+
+1. [Youtube: Pretty Printed](https://www.youtube.com/watch?v=NYWEf9bZhHQ) - Information on Flask Admin pages and functionality.
 
 1. [Flask Login Information](https://flask-login.readthedocs.io/en/latest/#flask_login.UserMixin) - Login Management & UserMixin documentation. Explained the use cases for both.
 

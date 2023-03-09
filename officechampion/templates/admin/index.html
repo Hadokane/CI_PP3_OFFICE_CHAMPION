@@ -1,0 +1,26 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+<div style="align-items: center; text-align: center;">
+    <!-- Page Header -->
+    <h1>Welcome to the Admin Page!</h1>
+    <p>To have access to the Office Champion Admin Suite, ensure you are signed in to an Admin account.</p>
+    <br>
+    <br>
+    <!-- Image -->
+    <img style="max-width: 400px; height: auto;" src="{{ url_for('static', filename='assets/images/oc_logo.png') }}"
+    alt="website logo">
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Page Header -->
+    <h2>If you are not authorised to access this page:</h2>
+    <br>
+    <br>
+    <!-- Return Home Button Link -->
+    <a href="{{ url_for('home') }}">
+        <button style="box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24); background-color: #ff8f00; font-size: 24px; padding: 16px; text-align:center;">
+        -> Return Home Here <-</button></a>
+</div>
+{% endblock %}

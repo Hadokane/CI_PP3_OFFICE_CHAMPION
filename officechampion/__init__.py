@@ -1,9 +1,14 @@
 import os
-from flask import Flask
+from flask import (
+    Flask, url_for, redirect, flash)
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+from flask_login import LoginManager, UserMixin, current_user
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
+
 if os.path.exists("env.py"):
     import env  # noqa
+
 
 # set Flask equal to app variable
 app = Flask(__name__)
@@ -19,6 +24,8 @@ else:  # elephantSQL
     app.config["SQLALCHEMY_DATABASE_URI"] = uri
 
 db = SQLAlchemy(app)
+admin = Admin(app)
+login = LoginManager(app)
 
 
 # reliant on the above Flask app & db already running
@@ -37,3 +44,24 @@ login_manager.init_app(app)
 @login_manager.user_loader
 def load_user(id):
     return User.query.get(int(id))
+
+
+# Custom ModelView to add security
+# ID==3 is Username: Admin
+class MyModelView(ModelView):
+    def is_accessible(self):
+        return current_user.id == 3
+
+    # If another user goes directly to a url like /admin/user
+    # This redirects them to the home screen
+    def inaccessible_callback(self, name, **kwargs):
+        flash("You are not the Admin!", category="warning")
+        return redirect(url_for("home"))
+
+
+# Add administrative views here
+admin.add_view(MyModelView(User, db.session))
+admin.add_view(MyModelView(League, db.session))
+admin.add_view(MyModelView(Member, db.session))
+admin.add_view(MyModelView(Note, db.session))
+admin.add_view(MyModelView(Title, db.session))

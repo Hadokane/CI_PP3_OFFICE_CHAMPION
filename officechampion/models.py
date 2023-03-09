@@ -131,6 +131,6 @@ class Member(db.Model):
     title_id = db.Column(db.Integer, db.ForeignKey(
         "title.id"))
 
-    # represent itself as a string
+    # represent itself
     def __repr__(self):
         return self

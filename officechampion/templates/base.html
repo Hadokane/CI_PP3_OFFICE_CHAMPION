@@ -41,6 +41,9 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a class="black-text" href="{{ url_for('home') }}">Home</a></li>
                     {% if user.is_authenticated %}
+                    {% if user.id == 3 %}
+                    <li><a class="black-text" href="{{ url_for('admin.index') }}">Admin</a></li>
+                    {% endif %}
                     <li><a class="black-text" href="{{ url_for('league') }}">Leagues</a></li>
                     <li><a class="black-text" href="{{ url_for('titles') }}">Titles</a></li>
                     <li><a class="black-text" href="{{ url_for('members') }}">Members</a></li>
@@ -62,6 +65,9 @@
     <ul class="sidenav amber darken-3" id="mobile-demo">
         <li><a class="black-text" href="{{ url_for('home') }}">Home</a></li>
         {% if user.is_authenticated %}
+        {% if user.id == 3 %}
+        <li><a class="black-text" href="{{ url_for('admin.index') }}">Admin</a></li>
+        {% endif %}
         <li><a class="black-text" href="{{ url_for('league') }}">Leagues</a></li>
         <li><a class="black-text" href="{{ url_for('titles') }}">Titles</a></li>
         <li><a class="black-text" href="{{ url_for('members') }}">Members</a></li>

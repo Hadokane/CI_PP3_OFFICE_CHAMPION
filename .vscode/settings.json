@@ -32,6 +32,7 @@
       "jsonify",
       "officechampion",
       "ondelete",
+      "sqla",
       "Webaim",
       "werkzeug"
    ]
