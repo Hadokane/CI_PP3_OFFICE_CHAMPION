@@ -740,7 +740,17 @@ Chrome Dev Tools served as one of my most important methods of debugging from st
 
 ---
 
+**Bug:** Index Promo cards squished and unreadable on smaller devices.
 
+<details><summary>Bug 1</summary><img src="officechampion/static/assets/images/docs/bugs/bug1.png" alt="Bug 1"></details>
+
+<details><summary>Bug 1 - Code</summary><img src="officechampion/static/assets/images/docs/bugs/bug1_c.png" alt="Bug 1 Code"></details>
+
+**Fix:** I realised I needed to change the default Materialize column class to make it responsive on smaller devices. Set it to display single cards on smaller devices and rows of 2 and 3 on larger screens.
+
+<details><summary>Bug 1 - Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug1.png" alt="Bug 1 Fix"></details>
+
+<details><summary>Bug 1 - Code Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug1_cfix.png" alt="Bug 1 Code Fix"></details>
 
 ---
 
@@ -748,12 +758,213 @@ Chrome Dev Tools served as one of my most important methods of debugging from st
 
 ---
 
+**Bug:** "Username" was being referenced before assignment. 
 
+<details><summary>Bug 2</summary><img src="officechampion/static/assets/images/docs/bugs/bug2.png" alt="Bug 2"></details>
+
+<details><summary>Bug 2 - Code</summary><img src="officechampion/static/assets/images/docs/bugs/bug2_c.png" alt="Bug 2 Code"></details>
+
+**Fix:** If/Else statements needed to be further indented as they were being accessed before they had been declared.
+
+<details><summary>Bug 2 - Code Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug2_cfix.png" alt="Bug 2 Fix"></details>
+
+---
+
+### BUG #3
+
+---
+
+**Bug:** Alerts not being removed onClick.
+
+<details><summary>Bug 3</summary><img src="officechampion/static/assets/images/docs/bugs/bug3.png" alt="Bug 3"></details>
+
+<details><summary>Bug 3 - Code</summary><img src="officechampion/static/assets/images/docs/bugs/bug3_c.png" alt="Bug 3"></details>
+
+**Fix:** Changed Javascript code to be a button callable function rather than reliant on an event listener.
+
+<details><summary>Bug 3</summary><img src="officechampion/static/assets/images/docs/bugs/bug3_cfix.png" alt="Bug 3"></details>
+
+---
+
+### BUG #4
+
+---
+
+**Bug:** "UserMixin" missing.
+
+<details><summary>Bug 4</summary><img src="officechampion/static/assets/images/docs/bugs/bug4.png" alt="Bug 4"></details>
+
+**Fix:** Had to install Flask Login separately from Flask.
+
+Realised pip installing Flask doesn't install every single Flask element. This issue would occur later on with Flask Admin and allowed me to solve it in the same manner.
+
+---
+
+### BUG #5
+
+---
+
+**Bug:** TypeError: 'method' is an invalid keyword argument for User.
+
+<details><summary>Bug 5</summary><img src="officechampion/static/assets/images/docs/bugs/bug5.png" alt="Bug 5"></details>
+
+**Fix:** Had to move `method` inside of the brackets.
+
+```
+new_user = User(
+    username=username, password=generate_password_hash(
+        password1, method="sha256")
+    )
+```
+
+---
+
+### BUG #6
+
+---
+
+**Bug:** Password hashing took passwords over the originally set character limit of (30) that I had defined originally in the models.py
+
+<details><summary>Bug 6</summary><img src="officechampion/static/assets/images/docs/bugs/bug6.png" alt="Bug 6"></details>
+
+**Fix:** 
+
+- Updated the database model to have a character limit of (300).
+
+<details><summary>Bug 6 - Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug6_fix.png" alt="Bug 6 - Fix"></details>
+
+- Had to drop & re-add the databases using the terminal in order to increase the character limit.
+
+<details><summary>Bug 6 - Fix 2</summary><img src="officechampion/static/assets/images/docs/bugs/bug6_fix2.png" alt="Bug 6 - Fix 2"></details>
+
+<details><summary>Bug 6 - Fix 3</summary><img src="officechampion/static/assets/images/docs/bugs/bug6_fix3.png" alt="Bug 6 - Fix 3"></details>
+
+---
+
+### BUG #7
+
+---
+
+**Bug:** Users were being added to the database on sign up but rather than being returned to the `Home` page, an error was being thrown - "Obj is "none" type".
+
+**Fix:** Added the following `User.query` statement to search the user once they're signed in and this fixed the issue.
+
+<details><summary>Bug 7</summary><img src="officechampion/static/assets/images/docs/bugs/bug7.png" alt="Bug 7"></details>
+
+---
+
+### BUG #8
+
+---
+
+**Bug:** Users can see all data available, not just their own.
+
+<details><summary>Bug 8</summary><img src="officechampion/static/assets/images/docs/bugs/bug8.png" alt="Bug 8"></details>
+
+**Fix:**
+
+- Turned out the `user.id` wasn't be parsed when creating a League, meaning all League's didn't have a `user.id` attached to them.
+
+<details><summary>Bug 8 - Code</summary><img src="officechampion/static/assets/images/docs/bugs/bug8_c.png" alt="Bug 8 Code"></details>
+
+- The two users: "1234" and "6363" were used in the opening image and are used here to check the results.
+
+<details><summary>Bug 8 - Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug8_fix.png" alt="Bug 8 Fix"></details>
+
+<details><summary>Bug 8 - User 1234</summary><img src="officechampion/static/assets/images/docs/bugs/bug8_fix_user1234.png" alt="Bug 8 - User 1234"></details>
+
+<details><summary>Bug 8 - User 6363</summary><img src="officechampion/static/assets/images/docs/bugs/bug8_fix_user6363.png" alt="Bug 8 - User 6363"></details>
+
+---
+
+### BUG #9
+
+---
+
+**Bug:** Foreign Key ID's won't shown on forms. In this example `Title's Leagues` not showing.
+
+<details><summary>Bug 9</summary><img src="officechampion/static/assets/images/docs/bugs/bug9.png" alt="Bug 9"></details>
+
+<details><summary>Bug 9 - Code</summary><img src="officechampion/static/assets/images/docs/bugs/bug9_c.png" alt="Bug 9 Code"></details>
+
+**Fix:** Adapted the code so that it searches League's attached to the specific user rather than all League's.
+
+<details><summary>Bug 9 - Code Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug9_cfix.png" alt="Bug 9 Code Fix"></details>
+
+<details><summary>Bug 9 - Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug9_fix.png" alt="Bug 9 Fix"></details>
+
+---
+
+### BUG #10
+
+---
+
+**Bug:** Title's being deleted but still showing.
+
+<details><summary>Bug 10</summary><img src="officechampion/static/assets/images/docs/bugs/bug12.png" alt="Bug 10"></details>
+
+**Fix:** Error in code present. Changed `Note` to `Title`
+
+<details><summary>Bug 10 - Code</summary><img src="officechampion/static/assets/images/docs/bugs/bug12_c.png" alt="Bug 10 Code"></details>
+
+<details><summary>Bug 10 - Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug12_fix.png" alt="Bug 10 - Fix"></details>
+
+---
+
+### BUG #11
+
+---
+
+**Bug:** `if statements` in jinja not populating page with only its relevant titles where the id matches.
+
+<details><summary>Bug 11</summary><img src="officechampion/static/assets/images/docs/bugs/bug13.png" alt="Bug 11"></details>
+
+**Fix:** Carried out numerous `query.filter_by` commands in `routes.py` and then accessed these using jinja on the `open_league` page in order to show only relevant search information. 
+
+<details><summary>Bug 11 - Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug13_fix2.png" alt="Bug 11 Fix"></details>
+
+<details><summary>Bug 11 - Fix 2</summary><img src="officechampion/static/assets/images/docs/bugs/bug13_fix.png" alt="Bug 11 Fix"></details>
+
+
+---
+
+### BUG #12
+
+---
+
+**Bug:** `Index` page `h1` overflowing on phone screens.
+
+<details><summary>Bug 12</summary><img src="officechampion/static/assets/images/docs/bugs/bug14.png" alt="Bug 12"></details>
+
+**Fix:** Set the `font-size` to `3em` in CSS, making it responsive to smaller screens.
+
+<details><summary>Bug 12 - Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug14_fix.png" alt="Bug 12 Fix"></details>
 
 ---
 
 ## Known Bugs
 
+### Known Bug 1
+
+Materialize gives auto-form field prompts to let users know that  they should: "Please fill in this field."
+
+This unfortunately doesn't occur on drop down select boxes.
+
+This is a known issue with Materialize classes.
+
+<details><summary>Known Bug 1 - Example</summary><img src="officechampion/static/assets/images/docs/bugs/kbug1.png" alt="Known Bug 1-1"></details>
+
+<details><summary>Known Bug 1 - Not showing on select</summary><img src="officechampion/static/assets/images/docs/bugs/kbug1_2.png" alt="Known Bug 1-2"></details>
+
+---
+
+### Known Bug 2
+
+Cards don't display uniformly in Materialize.
+
+I would personally fix this by changing the website over to Bootstrap and using their inbuilt classes instead. This has been added as a consideration to the Road Map section of the README.
+
+I've utilised custom CSS to mitigate these issues and ensure cards begin on a new row underneath the longest card of the row above.
 
 [Back to Top ↑](#testing-document)
 
