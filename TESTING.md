@@ -55,7 +55,7 @@ Next, I carried out validation of the CSS file by running the page through W3C C
 
 <details><summary>W3C CSS Pass</summary><img src="officechampion/static/assets/images/docs/validation/w3c_css.png" alt="W3C CSS Pass Screen"></details>
 
-The results came back successfully.
+The results came back successful.
 
 ---
 
@@ -92,11 +92,11 @@ I ran each Python page individually through the linter. With each returning a re
 
 - [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/)
 
-This was used to check that the Office Champion website was accessible to as many individuals needs as possible.
+This was used to check that the Office Champion website was accessible to as many individuals' needs as possible.
 
-On an initial scan I discovered the following accessibility errors:
+On an initial scan, I discovered the following accessibility errors:
 - The Materialize default of white text on an amber background was actually being flagged as a contrast issue.
-- Underlining being used on page headers wasn't best practice. A user could easily mistake this for a hyperlink.
+- Underlining being used on page headers wasn't the best practice. A user could easily mistake this for a hyperlink.
 - The home button contained the same link as the adjacent "Office Champions" Hero Image, that was included in the navbar. Repeating adjacent links seemed unnecessary to Wave.
 
 <details><summary>Wave Error #1</summary><img src="officechampion/static/assets/images/docs/validation/wave1.png" alt="Wave Error #1"></details>
@@ -105,9 +105,9 @@ On an initial scan I discovered the following accessibility errors:
 
 To fix the above issues:
 - I recoloured all menu and navigation text to black. Providing adequate contrast for users.
-- I removed all underlining throughout the websites headers.
+- I removed all underlining throughout the website's headers.
 
-I also decided to keep the "redundant" additional navigation link of "home". My reasoning being that most users will expect the navbar icon to take them home as this is an extremely common feature across numerous websites. The addition of the written "home" button will provide a means of getting to the home page for users without this expectation without harming the website or other users.
+I also decided to keep the "redundant" additional navigation link of "home". My reasoning is that most users will expect the navbar icon to take them home as this is an extremely common feature across numerous websites. The addition of the written "home" button will provide a means of getting to the home page for users without this expectation without harming the website or other users.
 
 After carrying out the above steps, Office Champion passed Wave validation.
 
@@ -119,7 +119,7 @@ After carrying out the above steps, Office Champion passed Wave validation.
 
 - [A11y Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/)
 
-This was used to ensure the websites colour contrast met WCAG 2.1 Guidelines.
+This was used to ensure the website's colour contrast met WCAG 2.1 Guidelines.
 
 An initial check showed that the burger menu icon on the side-nav bar was a contrast issue. I recoloured this icon from white to black, fixing the issue.
 
@@ -133,9 +133,9 @@ An initial check showed that the burger menu icon on the side-nav bar was a cont
 
 I utilised Lighthouse to run audits to check the performance, accessibility & SEO of my website.
 
-I was reminded to add ```<Meta>``` tags to my base template's head to provide a description of my website, improving it's SEO potential.
+I was reminded to add ```<Meta>``` tags to my base template's head to provide a description of my website, improving its SEO potential.
 
-After doing the above, Office Champion received very favourable results on both it's Desktop and Mobile audits.
+After doing the above, Office Champion received very favourable results on both its Desktop and Mobile audits.
 
 <details><summary>Lighthouse Desktop Pass</summary><img src="officechampion/static/assets/images/docs/validation/lighthouse_desktop.png" alt="Lighthouse Desktop Validation Screen"></details>
 
@@ -177,13 +177,13 @@ The website has also been tested on monitors of 16:9, 16:10 and 21:9 resolutions
 
 # Manual Testing
 
-From ensuring buttons led to the correct destination to testing if a user could access another users information, manual testing played a crucial role in the development of this website.
+From ensuring buttons led to the correct destination to testing if a user could access another user's information, manual testing played a crucial role in the development of this website.
 
 It has been carried out at each step of development through the use of Chrome Dev Tools for bug solving and finding missing tags, to user testing where friends, family and forum members helped to stress test the website and find any oversights I could fix.
 
-Once the project had reached it's developmental conclusion I compiled a list of my main concerns to check through before proceeding any further. I would need to ensure the website provides the user full C.R.U.D. functionality on each feature page, the sign-up & login pages work without a hitch and that alerts are present to provide guiding user feedback.
+Once the project had reached its developmental conclusion I compiled a list of my main concerns to check through before proceeding any further. I would need to ensure the website provides the user with full C.R.U.D. functionality on each feature page, the sign-up & login pages work without a hitch and that alerts are present to provide guiding user feedback.
 
-The following would need to all be checked thoroughly and work without error, in order for me to feel I'd met my previously outlined User & Site Owner Goals. Through this I feel I can ensure that I've satisfied my project brief and provided a fully functional full-stack website, fit for consumption by multiple users.
+The following would need to all be checked thoroughly and work without error, in order for me to feel I'd met my previously outlined User & Site Owner Goals. Through this, I feel I can ensure that I've satisfied my project brief and provided a fully functional full-stack website, fit for consumption by multiple users.
 
 (I have included an image or description proving the testing was successful for each website element below.)
 
@@ -198,9 +198,9 @@ The following would need to all be checked thoroughly and work without error, in
 
 ---
 
-2. Is the user warned of incorrect information during sign up?
+2. Is the user warned of incorrect information during sign-up?
 
-**Passes Testing:** Alerts display to tell the user the exact issue preventing sign up.
+**Passes Testing:** Alerts display to tell the user the exact issue preventing sign-up.
 
 <details><summary>Alert - Username too short</summary><img src="officechampion/static/assets/images/docs/manual_testing/alert_signup1.png" alt="Alert Warning 1"></details>
 
@@ -214,7 +214,7 @@ The following would need to all be checked thoroughly and work without error, in
 
 3. Can alerts be closed?
 
-**Passes Testing:** The below images show an Alert before and after a user clicks on it. The alert closes due to a JavaScript function that is ran `onClick`.
+**Passes Testing:** The below images show an Alert before and after a user clicks on it. The alert closes due to a JavaScript function that is run `onClick`.
 
 <details><summary>Alert - Open</summary><img src="officechampion/static/assets/images/docs/manual_testing/alert1.png" alt="Alert Click 1"></details>
 
@@ -256,7 +256,7 @@ The following would need to all be checked thoroughly and work without error, in
 
 5. Is the user able to Read elements on each of the feature pages?
 
-**Passes Testing:** Each feature page of the website includes a "View" are displaying all of the users created information
+**Passes Testing:** Each feature page of the website includes a "View" are displaying all of the user's created information
 
 <details><summary>View Leagues</summary><img src="officechampion/static/assets/images/docs/manual_testing/view_league.png" alt="View Leagues"></details>
 -
@@ -356,23 +356,23 @@ The following would need to all be checked thoroughly and work without error, in
 
 ---
 
-10. Can users see other users data? 
+10. Can users see other users' data? 
 
 The above examples were all carried out using the **"Tester"** account, we are signing in below with the **"Jerome"** account shown in the initial `Can a user create an account` section. This user shouldn't be able to see **"Tester's"** created information in their own feature pages.
 
 **Passes Testing:** All of Jerome's Feature pages are blank, meaning he cannot see Tester's information.
 
-<details><summary>Can users see others data? #1</summary><img src="officechampion/static/assets/images/docs/manual_testing/jerome1.png" alt="Can users see others data? #1"></details>
+<details><summary>Can users see others' data? #1</summary><img src="officechampion/static/assets/images/docs/manual_testing/jerome1.png" alt="Can users see others data? #1"></details>
 
-<details><summary>Can users see others data? #2</summary><img src="officechampion/static/assets/images/docs/manual_testing/jerome2.png" alt="Can users see others data? #2"></details>
+<details><summary>Can users see others' data? #2</summary><img src="officechampion/static/assets/images/docs/manual_testing/jerome2.png" alt="Can users see others data? #2"></details>
 
-<details><summary>Can users see others data? #3</summary><img src="officechampion/static/assets/images/docs/manual_testing/jerome3.png" alt="Can users see others data? #3"></details>
+<details><summary>Can users see others' data? #3</summary><img src="officechampion/static/assets/images/docs/manual_testing/jerome3.png" alt="Can users see others data? #3"></details>
 
-<details><summary>Can users see others data? #4</summary><img src="officechampion/static/assets/images/docs/manual_testing/jerome4.png" alt="Can users see others data? #4"></details>
+<details><summary>Can users see others' data? #4</summary><img src="officechampion/static/assets/images/docs/manual_testing/jerome4.png" alt="Can users see others data? #4"></details>
 
 ---
 
-11. Can users login on other devices and access their same information?
+11. Can users log in on other devices and access the same information?
 
 **Passes Testing:** **"Tester's"** information is available on a mobile device despite being created on a different laptop device.
 
@@ -418,7 +418,7 @@ The website is proven to feature all of the above elements as depicted in the ea
 
 The user is able to sign up for an account and have it saved to the project's SQL database. 
 
-Alerts are present for each possible issue that can occur during sign up.
+Alerts are present for each possible issue that can occur during sign-up.
 
 When pressing the submit button on an empty form, the website will display the following warnings.
 
@@ -436,11 +436,11 @@ When pressing the submit button on an empty form, the website will display the f
 
 **The above goal has been met**
 
-The website is proven to meet the above by Manual Testing section - (1).
+The website is proven to meet the above by the Manual Testing section - (1).
 
 Visual confirmation that the user is signed in is provided in the navigation bar by a permanently viewable greeting.
 
-An alert is displayed upon sign in to confirm success to the user.
+An alert is displayed upon sign-in to confirm success to the user.
 
 <details><summary>Nav - Signed In</summary><img src="officechampion/static/assets/images/docs/manual_testing/nav_in.png" alt="Nav - Signed In"></details>
 
@@ -452,13 +452,13 @@ An alert is displayed upon sign in to confirm success to the user.
     
     1. Clearly named website pages in the navbar.
     
-    2. Provide clear explanations throughout the website where action is required.
+    2. Provide clear explanations throughout the website where the action is required.
 
 **The above goal has been met**
 
 The website is proven to meet the above by Manual Testing sections - (4), (5), (6) & (7).
 
-Manual Testing section (4-7) shows numerous examples of the websites many pages and forms. As can be seen, the forms feature helpful prompts such as an example url being present under the `<img> input field` and textual icons provided to the left of each form field.
+The manual Testing section (4-7) shows numerous examples of the website's many pages and forms. As can be seen, the forms feature helpful prompts such as an example URL being present under the `<img> input field` and textual icons provided to the left of each form field.
 
 <details><summary>Form example</summary><img src="officechampion/static/assets/images/docs/manual_testing/add_member2.png" alt="Form Example"></details>
 
@@ -472,7 +472,7 @@ The promo cards on the web page provide a provocative yet descriptive explanatio
 
 All pages feature descriptive headers for each section, letting the viewer know where to "Create" or "Read/View" their data.
 
-Additionally a sub-heading is provided under each main feature pages "View" section to provide further description/incentive on what the user should do on this page.
+Additionally, a sub-heading is provided under each main feature page "View" section to provide further description/incentive on what the user should do on this page.
 
 <details><summary>Feature Page Sub Header Example 1</summary><img src="officechampion/static/assets/images/docs/manual_testing/feature_sub1.png" alt="Feature Page Sub Header Example 1"></details>
 
@@ -488,7 +488,7 @@ Additionally a sub-heading is provided under each main feature pages "View" sect
 
 The website has been tested on numerous devices as described in the [Device Testing](#device_testing) section above.
 
-This is further supported by Manual Testing section - (11) which provide a visual example of the website working on a mobile device & in the [README.md's Surface Plane section](/README.md#surface_plane) depicts images of the responsive design of the website.
+This is further supported by the Manual Testing section - (11) which provides a visual example of the website working on a mobile device & in the [README.md's Surface Plane section](/README.md#surface_plane) depicts images of the responsive design of the website.
 
 ---
 
@@ -506,11 +506,11 @@ This is further supported by Manual Testing section - (11) which provide a visua
 
 **The above goal has been met**
 
-These elements are shown to be met in Manual Testing section - (8).
+These elements are shown to be met in the Manual Testing section - (8).
 
 The user is able to sign in to their created account which will be read from the project's SQL database. 
 
-Alerts are present for login issues in the same manner as they were for sign up issues, providing positive feedback on success and warnings on incorrect inputs.
+Alerts are present for login issues in the same manner as they were for sign-up issues, providing positive feedback on success and warnings on incorrect inputs.
 
 <details><summary>Alert - Login Example</summary><img src="officechampion/static/assets/images/docs/manual_testing/alert_login1.png" alt="Alert - Login Example"></details>
 
@@ -531,7 +531,7 @@ These elements are shown to be met in Manual Testing sections - (4), (5), (6) & 
 
 The user has full C.R.U.D. functionality across each feature page of the website as proven throughout this document.
 
-This was a crucial feature in the design of this website and as such it has been tested and documented in fine detail.
+This was a crucial feature in the design of this website and as such, it has been tested and documented in fine detail.
 
 ---
 
@@ -543,7 +543,7 @@ This was a crucial feature in the design of this website and as such it has been
 
 **The above goal has been met**
 
-These elements are shown to be met in Manual Testing section - (11) and documented further in the above [Device Testing](#device_testing) section.
+These elements are shown to be met in the Manual Testing section - (11) and documented further in the above [Device Testing](#device_testing) section.
 
 ---
 
@@ -556,10 +556,10 @@ This is accomplished by the "open_league.html" page. Accessible via the "league"
 The Open League page features:
 - The League Name as a header.
 - Champions and their titles displayed proudly at the top.
-- Other Members displayed below.
-- Notes displayed at the bottom.
+- Other Members are displayed below.
+- Notes are displayed at the bottom.
 
-This page is not locked to signed in users like the main feature pages and is encouraged by text prompts to be shared with members of the league, allowing them to keep up to date with their groups rankings without the need to sign up themselves. This streamlines the user process and ensures the website can achieve a gamified feel to users, allowing them to compete against each other with minimal steps.
+This page is not locked to signed-in users like the main feature pages and is encouraged by text prompts to be shared with members of the league, allowing them to keep up to date with their group's rankings without the need to sign up themselves. This streamlines the user process and ensures the website can achieve a gamified feel to users, allowing them to compete against each other with minimal steps.
 
 <details><summary>Open League Page - Shown in an incognito browser without the user being signed in</summary><img src="officechampion/static/assets/images/docs/manual_testing/open_league.png" alt="Open League Page"></details>
 
@@ -575,7 +575,7 @@ This page is not locked to signed in users like the main feature pages and is en
 
 **The above goal has been met**
 
-I am confident this has been met through the undertaking of Manual Testing. The entire sections serves as a strong example to this User Story being achieved.
+I am confident this has been met through the undertaking of Manual Testing. The entire section serves as a strong example of this User Story being achieved.
 
 Logically named pages, buttons and forms all indicate this has been met.
 
@@ -599,9 +599,9 @@ This goal has been met for the same reasons as the above User Stories (4) & (7).
 
 Utilising the plugin "Flask Admin" I was able to include an Admin view for a specific user.
 
-Allowing the site owner to see an overview of each table on the website and have basic READ access to see all signed up users.
+Allowing the site owner to see an overview of each table on the website and have basic READ access to see all signed-up users.
 
-The websites navigation bar will display an additional "Admin" tab to this user only.
+The website's navigation bar will display an additional "Admin" tab for this user only.
 
 USERNAME: ADMIN
 PASSWORD: 43214321
@@ -630,21 +630,21 @@ If they go a step further and type in a specific table URL such as "admin/user" 
 
 **The above goal has been met**
 
-I am confident this has been met through the websites design philosophies as discussed in the [README.md's Surface Plane section](/README.md#surface_plane).
+I am confident this has been met through the website's design philosophies as discussed in the [README.md's Surface Plane section](/README.md#surface_plane).
 
 Examples of this "Gamification" can be seen in:
 
-- The websites main logo and colour scheme having connotations of championships.
+- The website's main logo and colour scheme have connotations of championships.
 
-- The promo cards using provocative language - that is fit for the site's target culture - to explain the premise of the site.
+- The promo cards use provocative language - that is fit for the site's target culture - to explain the premise of the site.
 
-- The use of feature pages and element cards to display the users data in a game-like manner.
+- The use of feature pages and element cards to display the user's data in a game-like manner.
 
-- The constant encouragement to compete as shown through the above and page subheadings.
+- The constant encouragement to compete is shown through the above and page subheadings.
 
-The websites entire purpose is to provide a fun manner in which users can make leagues for a variety of purposes to compete with each other.
+The website's entire purpose is to provide a fun manner in which users can make leagues for a variety of purposes to compete with each other.
 
-By providing a functioning, deployed website that meets all of it's assigned design and user goals, I can confidently say this goal has been met.
+By providing a functioning, deployed website that meets all of its assigned design and user goals, I can confidently say this goal has been met.
 
 ---
 
@@ -658,23 +658,23 @@ Included below is an example of **"Tester's"** `League` Page.
 
 <details><summary>Example League Page - Shown in an incognito browser without the user being signed in</summary><img src="officechampion/static/assets/images/docs/manual_testing/tester_league.png" alt="Example League Page"></details>
 
-As can be seen a multitude of examples were created and provided, proving this website can work for numerous groups such as:
+As can be seen, a multitude of examples was created and provided, proving this website can work for numerous groups such as:
 
 - Office Groups - Mirroring the intended "Employee of the Month" idea.
     - Track who has the most assignments completed in a given month.
-    - A lunch time sports league.
+    - A lunchtime sports league.
     - Office baking tournaments. (You'd be surprised how common these can be.)
 
-- Sports Teams - Reward the best players by making them champions, encourages your team to compete with each other and improve.
+- Sports Teams - Reward the best players by making them champions, and encourages your team to compete with each other and improve.
     - Most goals scored in a game.
-    - Who won a challenge at practice.
+    - Who won a challenge at practice?
     - MVP over a season.
 
-- Gaming Groups - Could be a competitive E-Sports team keeping track of their progress in games or a group of friends who want to compete amongst themselves casually.
+- Gaming Groups - This could be a competitive E-Sports team keeping track of their progress in games or a group of friends who want to compete amongst themselves casually.
     - Most kills in a game.
-    - Who came in first the most over a week.
+    - Who came in first the most over a week?
     - Competitive custom game battles amongst themselves.
-    - Who was the highest level at the end of a season.
+    - Who was the highest level at the end of a season?
 
 - Cooking Group - Who makes the best flan?
     - Who hosted the most dinner parties?
@@ -682,7 +682,7 @@ As can be seen a multitude of examples were created and provided, proving this w
 
 - Book Club - Gamify reading?
     - Who read the most books in a given month?
-    - Who read a book the fastest?
+    - Who reads a book the fastest?
     - Who retained the most information after finishing a book series?
 
 Realistically anything that involves a group of people who want to motivate themselves and compete, can use and benefit from Office Champion.
@@ -717,15 +717,15 @@ I have substantial reason to declare all user and site-owner stories met.
 
 # Bugs
 
-Over the course of this project I encountered numerous bugs that either impacted the functionality or design of the website and needed to be fixed.
+Over the course of this project, I encountered numerous bugs that either impacted the functionality or design of the website and needed to be fixed.
 
 ## Chrome Dev Tools
 
 Chrome Dev Tools served as one of my most important methods of debugging from start to finish. It allowed me to find numerous errors in the code such as: 
 
-- Noticing discrepancies in my `<div>` arrangements and classes and order them correctly so that elements opened and closed when they should have.
+- Noticing discrepancies in my `<div>` arrangements and classes and ordering them correctly so that elements opened and closed when they should have.
 
-- Test out the inline style's on numerous elements before committing those changes to CSS.
+- Test out the inline styles on numerous elements before committing those changes to CSS.
     - Used heavily while deciding on card designs.
 
 - See if an object had unintentional padding or margins being applied to it by default Materialize classes and remove/add where necessary.
@@ -758,7 +758,7 @@ Chrome Dev Tools served as one of my most important methods of debugging from st
 
 ---
 
-**Bug:** "Username" was being referenced before assignment. 
+**Bug:** "Username" was referenced before the assignment. 
 
 <details><summary>Bug 2</summary><img src="officechampion/static/assets/images/docs/bugs/bug2.png" alt="Bug 2"></details>
 
@@ -790,7 +790,7 @@ Chrome Dev Tools served as one of my most important methods of debugging from st
 
 ---
 
-**Bug:** "UserMixin" missing.
+**Bug:** "UserMixin" is missing.
 
 <details><summary>Bug 4</summary><img src="officechampion/static/assets/images/docs/bugs/bug4.png" alt="Bug 4"></details>
 
@@ -863,7 +863,7 @@ new_user = User(
 
 **Fix:**
 
-- Turned out the `user.id` wasn't be parsed when creating a League, meaning all League's didn't have a `user.id` attached to them.
+- Turned out the `user.id` wasn't parsed when creating a League, meaning all Leagues didn't have a `user.id` attached to them.
 
 <details><summary>Bug 8 - Code</summary><img src="officechampion/static/assets/images/docs/bugs/bug8_c.png" alt="Bug 8 Code"></details>
 
@@ -881,13 +881,13 @@ new_user = User(
 
 ---
 
-**Bug:** Foreign Key ID's won't shown on forms. In this example `Title's Leagues` not showing.
+**Bug:** Foreign Key IDs won't show on forms. In this example `Title's Leagues` not showing.
 
 <details><summary>Bug 9</summary><img src="officechampion/static/assets/images/docs/bugs/bug9.png" alt="Bug 9"></details>
 
 <details><summary>Bug 9 - Code</summary><img src="officechampion/static/assets/images/docs/bugs/bug9_c.png" alt="Bug 9 Code"></details>
 
-**Fix:** Adapted the code so that it searches League's attached to the specific user rather than all League's.
+**Fix:** Adapted the code so that it searches the League attached to the specific user rather than all Leagues.
 
 <details><summary>Bug 9 - Code Fix</summary><img src="officechampion/static/assets/images/docs/bugs/bug9_cfix.png" alt="Bug 9 Code Fix"></details>
 
@@ -915,7 +915,7 @@ new_user = User(
 
 ---
 
-**Bug:** `if statements` in jinja not populating page with only its relevant titles where the id matches.
+**Bug:** `if statements` in jinja not populating the page with only its relevant titles where the id matches.
 
 <details><summary>Bug 11</summary><img src="officechampion/static/assets/images/docs/bugs/bug13.png" alt="Bug 11"></details>
 
@@ -948,7 +948,7 @@ new_user = User(
 
 Materialize gives auto-form field prompts to let users know that  they should: "Please fill in this field."
 
-This unfortunately doesn't occur on drop down select boxes.
+This unfortunately doesn't occur on drop-down select boxes.
 
 This is a known issue with Materialize classes.
 
