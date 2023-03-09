@@ -48,7 +48,81 @@ def load_user(id):
 
 # Custom ModelView to add security
 # ID==3 is Username: Admin
-class MyModelView(ModelView):
+class UserView(ModelView):
+    can_create = False  # disable model deletion
+    can_edit = False  # disable model deletion
+    can_delete = False  # disable model deletion
+    can_export = True  # allows export of data as a spreadsheet
+    page_size = 25  # the number of entries to display on the list view
+    column_list = ('id', 'username')
+    column_searchable_list = ['id', 'username']
+
+    def is_accessible(self):
+        return current_user.id == 3
+
+
+# Custom ModelView
+class LeagueView(ModelView):
+    can_create = False  # disable model deletion
+    can_edit = False  # disable model deletion
+    can_delete = False  # disable model deletion
+    can_export = True  # allows export of data as a spreadsheet
+    page_size = 25  # the number of entries to display on the list view
+    column_list = (
+        'user_id', 'league_name')
+    column_searchable_list = [
+        'user_id', 'league_name']
+
+    def is_accessible(self):
+        return current_user.id == 3
+
+
+# Custom ModelView
+class TitleView(ModelView):
+    can_create = False  # disable model deletion
+    can_edit = False  # disable model deletion
+    can_delete = False  # disable model deletion
+    can_export = True  # allows export of data as a spreadsheet
+    page_size = 25  # the number of entries to display on the list view
+    column_list = (
+        'user_id', 'title_name', 'title_description', 'league.league_name')
+    column_searchable_list = [
+        'user_id', 'title_name', 'title_description', 'league.league_name']
+
+    def is_accessible(self):
+        return current_user.id == 3
+
+
+# Custom ModelView
+class NoteView(ModelView):
+    can_create = False  # disable model deletion
+    can_edit = False  # disable model deletion
+    can_delete = False  # disable model deletion
+    can_export = True  # allows export of data as a spreadsheet
+    page_size = 25  # the number of entries to display on the list view
+    column_list = (
+        'user_id', 'league.league_name', 'data', 'date')
+    column_searchable_list = [
+        'user_id', 'league.league_name', 'data', 'date']
+
+    def is_accessible(self):
+        return current_user.id == 3
+
+
+# Custom ModelView
+class MemberView(ModelView):
+    can_create = False  # disable model deletion
+    can_edit = False  # disable model deletion
+    can_delete = False  # disable model deletion
+    can_export = True  # allows export of data as a spreadsheet
+    page_size = 25  # the number of entries to display on the list view
+    column_list = (
+        'user_id', 'league.league_name', 'member_name', 'member_role',
+        'title.title_name')
+    column_searchable_list = [
+        'user_id', 'league.league_name', 'member_name', 'member_role',
+        'title.title_name']
+
     def is_accessible(self):
         return current_user.id == 3
 
@@ -60,8 +134,8 @@ class MyModelView(ModelView):
 
 
 # Add administrative views here
-admin.add_view(MyModelView(User, db.session))
-admin.add_view(MyModelView(League, db.session))
-admin.add_view(MyModelView(Member, db.session))
-admin.add_view(MyModelView(Note, db.session))
-admin.add_view(MyModelView(Title, db.session))
+admin.add_view(UserView(User, db.session))
+admin.add_view(LeagueView(League, db.session))
+admin.add_view(TitleView(Title, db.session))
+admin.add_view(MemberView(Member, db.session))
+admin.add_view(NoteView(Note, db.session))

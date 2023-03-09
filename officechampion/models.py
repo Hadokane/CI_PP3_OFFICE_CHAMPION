@@ -33,7 +33,7 @@ class User(db.Model, UserMixin):
 
     # represent itself as a string
     def __repr__(self):
-        return f"#{self.id} - Data: {self.username} - Date: {self.password}"
+        return self
 
 
 # creates a test note table to give the user something to do
