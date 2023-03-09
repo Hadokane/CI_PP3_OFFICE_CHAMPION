@@ -191,7 +191,7 @@ Each subheading below provides these initial goal lists, with added explanations
 
     2. Can all elements be interacted with by mouse and touch devices?
 
-11. Have admin privileges on the website. Ensuring I can edit/delete user data.
+11. Have admin privileges on the website. Ensuring I can see a list of users.
 
 12. Gamify the "employee of the month" concept to encourage users to compete and be more motivated.
 
