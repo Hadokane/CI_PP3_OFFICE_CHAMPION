@@ -603,9 +603,6 @@ Allowing the site owner to see an overview of each table on the website and have
 
 The website's navigation bar will display an additional "Admin" tab for this user only.
 
-USERNAME: ADMIN
-PASSWORD: 43214321
-
 <details><summary>Admin #1</summary><img src="officechampion/static/assets/images/docs/manual_testing/admin4.png" alt="Admin #1"></details>
 
 <details><summary>Admin #2</summary><img src="officechampion/static/assets/images/docs/manual_testing/admin5.png" alt="Admin #2"></details>
