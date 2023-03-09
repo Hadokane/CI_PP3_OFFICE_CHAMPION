@@ -74,66 +74,71 @@ def delete_note(note_id):
 # displays the sign-up page
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
-    # when data is POSTed we acquire the requested information
-    if request.method == "POST":
-        username = request.form.get("username")
-        password1 = request.form.get("password1")
-        password2 = request.form.get("password2")
-        # checks to see if user already exists
-        user = User.query.filter_by(username=username).first()
-        if user:
-            flash("Username already in use.", category="error")
-        # if username is shorter than 1 character
-        elif len(username) < 1:
-            flash(
-                "Username cannot be left blank.",
-                category="error")
-        # if username is shorter than 4 characters
-        elif len(username) < 4:
-            flash(
-                "Username must be greater than 3 characters.",
-                category="error")
-        # if username is longer than 25 characters
-        # maxlength allowed
-        elif len(username) > 25:
-            flash(
-                "Username cannot exceed 25 characters.",
-                category="error")
-        # if password is less than 1 character
-        elif len(password1) < 1:
-            flash(
-                "Password cannot be left blank.",
-                category="error")
-        # if password is shorter than 7 characters
-        elif len(password1) < 8:
-            flash(
-                "Password must be greater than 7 characters.",
-                category="error")
-        # if password is longer than 25 characters
-        # maxlength allowed
-        elif len(password1) > 25:
-            flash(
-                "Password cannot exceed 25 characters.",
-                category="error")
-        # if password's dont match
-        elif password1 != password2:
-            flash("Passwords do not match.", category="error")
-        # adds the new user to database
-        # hashes password for security using sha256 method
-        else:
-            new_user = User(
-                username=username, password=generate_password_hash(
-                    password1, method="sha256")
-                )
-            # saves the information to User table
-            db.session.add(new_user)
-            db.session.commit()
-            # logs in the user by finding there name first
+    # redirect if you are signed in
+    if current_user.is_authenticated:
+        flash("You are already signed in.", category="success")
+        return render_template("index.html", user=current_user)
+    else:
+        # when data is POSTed we acquire the requested information
+        if request.method == "POST":
+            username = request.form.get("username")
+            password1 = request.form.get("password1")
+            password2 = request.form.get("password2")
+            # checks to see if user already exists
             user = User.query.filter_by(username=username).first()
-            login_user(user, remember=True)
-            flash("Account created!", category="success")
-            return redirect(url_for("home"))
-    return render_template("sign_up.html", user=current_user)
+            if user:
+                flash("Username already in use.", category="error")
+            # if username is shorter than 1 character
+            elif len(username) < 1:
+                flash(
+                    "Username cannot be left blank.",
+                    category="error")
+            # if username is shorter than 4 characters
+            elif len(username) < 4:
+                flash(
+                    "Username must be greater than 3 characters.",
+                    category="error")
+            # if username is longer than 25 characters
+            # maxlength allowed
+            elif len(username) > 25:
+                flash(
+                    "Username cannot exceed 25 characters.",
+                    category="error")
+            # if password is less than 1 character
+            elif len(password1) < 1:
+                flash(
+                    "Password cannot be left blank.",
+                    category="error")
+            # if password is shorter than 7 characters
+            elif len(password1) < 8:
+                flash(
+                    "Password must be greater than 7 characters.",
+                    category="error")
+            # if password is longer than 25 characters
+            # maxlength allowed
+            elif len(password1) > 25:
+                flash(
+                    "Password cannot exceed 25 characters.",
+                    category="error")
+            # if password's dont match
+            elif password1 != password2:
+                flash("Passwords do not match.", category="error")
+            # adds the new user to database
+            # hashes password for security using sha256 method
+            else:
+                new_user = User(
+                    username=username, password=generate_password_hash(
+                        password1, method="sha256")
+                    )
+                # saves the information to User table
+                db.session.add(new_user)
+                db.session.commit()
+                # logs in the user by finding there name first
+                user = User.query.filter_by(username=username).first()
+                login_user(user, remember=True)
+                flash("Account created!", category="success")
+                return redirect(url_for("home"))
+        return render_template("sign_up.html", user=current_user)
 
 
 # handles login data requests
@@ -141,7 +146,7 @@ def sign_up():
 def login():
     if current_user.is_authenticated:
         flash("You are already signed in.", category="success")
-        return render_template("home.html", user=current_user)
+        return render_template("index.html", user=current_user)
     else:
         if request.method == "POST":
             username = request.form.get("username")
