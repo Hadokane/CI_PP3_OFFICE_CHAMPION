@@ -139,25 +139,29 @@ def sign_up():
 # handles login data requests
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password")
-        # searches the User table and compares username entered
-        # against those stored within the db
-        # should only be 1 result, as unique usernames so check first result
-        user = User.query.filter_by(username=username).first()
-        # if username exists, compare the password against hashed result
-        if user:
-            if check_password_hash(user.password, password):
-                flash("Login Successful", category="success")
-                # remembers user is logged in, unless cache cleared
-                login_user(user, remember=True)
-                return redirect(url_for("home"))
+    if current_user.is_authenticated:
+        flash("You are already signed in.", category="success")
+        return render_template("home.html", user=current_user)
+    else:
+        if request.method == "POST":
+            username = request.form.get("username")
+            password = request.form.get("password")
+            # searches the User table and compares username entered
+            # against those stored within the db
+            # unique usernames mean one result
+            user = User.query.filter_by(username=username).first()
+            # if username exists, compare the password against hashed result
+            if user:
+                if check_password_hash(user.password, password):
+                    flash("Login Successful", category="success")
+                    # remembers user is logged in, unless cache cleared
+                    login_user(user, remember=True)
+                    return redirect(url_for("home"))
+                else:
+                    flash("Incorrect password, try again.", category="error")
             else:
-                flash("Incorrect password, try again.", category="error")
-        else:
-            flash("Username does not exists.", category="success")
-    return render_template("login.html", user=current_user)
+                flash("Username does not exists.", category="success")
+        return render_template("login.html", user=current_user)
 
 
 # logs the user out
