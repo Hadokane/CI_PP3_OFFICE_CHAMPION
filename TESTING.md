@@ -956,6 +956,8 @@ This is a known issue with Materialize classes.
 
 <details><summary>Known Bug 1 - Not showing on select</summary><img src="officechampion/static/assets/images/docs/bugs/kbug1_2.png" alt="Known Bug 1-2"></details>
 
+[Example Article](https://stackoverflow.com/questions/38457266/materialize-alignment-issue-with-cards)
+
 ---
 
 ### Known Bug 2
@@ -963,6 +965,8 @@ This is a known issue with Materialize classes.
 Cards don't display uniformly in Materialize.
 
 I would personally fix this by changing the website over to Bootstrap and using their inbuilt classes instead. This has been added as a consideration to the Road Map section of the README.
+
+[Example Article](https://stackoverflow.com/questions/38457266/materialize-alignment-issue-with-cards)
 
 I've utilised custom CSS to mitigate these issues and ensure cards begin on a new row underneath the longest card of the row above.
 
