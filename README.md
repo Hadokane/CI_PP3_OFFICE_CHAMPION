@@ -867,7 +867,7 @@ db.create_all()
 - [Heroku](https://heroku.com/)
   - Heroku is used for the deployment & hosting of this project.
 
-- [ElephantSQL](ElephantSQL.com)
+- [ElephantSQL](https://elephantSQL.com)
   - For hosting the PostgreSQL database for Heroku to access.
 
 - [PostgreSQL](https://www.postgresql.org/)
@@ -906,7 +906,7 @@ db.create_all()
 - [Draw io](https://www.draw.io)
   - Used to create Wireframes & Database Schema for the project during development.
 
-- [Adobe Illustrator](https://www.adobe.com/)
+- [Adobe Illustrator](https://www.adobe.com/products/illustrator.html)
   - Illustrator was used to create the website's logo image.
 
 - [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
