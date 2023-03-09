@@ -618,6 +618,13 @@ On-click a modal will open containing two buttons which either:
 <details><summary>Delete Modal</summary><img src="officechampion/static/assets/images/docs/surface/dlt_modal.png" alt="Delete Modal"></details>
 -
 
+If a signed in user attempts to access the "Sign-up" or "Login" Pages they are redirected back to the home page and provided with an Alert.
+
+<details><summary>Existing User Alert 1</summary><img src="officechampion/static/assets/images/docs/surface/exuser.png" alt="Existing User Alert 1"></details>
+
+<details><summary>Existing User Alert 2</summary><img src="officechampion/static/assets/images/docs/surface/exuser2.png" alt="Existing User Alert 2"></details>
+-
+
 **Visual Separation**
 
 Visual separation is achieved across the website through the use of Materialize `Row and Columns`. 
